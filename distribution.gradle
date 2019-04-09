@@ -1,0 +1,103 @@
+apply plugin: 'distribution'
+
+ configurations {
+ dynaprop 
+ }
+
+dependencies { 
+ dynaprop  "com.ford.it.fjf:dynapropadmin:2.8.1:ear@ear" 
+ }
+
+distZip.extension = 'jar'
+distTar.enabled = false
+distZip.enabled = buildForHteam
+distZip << {println "Distribution file is created in path ${distZip.archivePath}"}
+distributions {
+        main {
+            baseName="${ubuildName}-v${ubuildVersion}-${ubuildEnv}"
+            contents {
+                into('/') {            	
+    				from { project(':WipsEar').ear }
+    				from { injectDynaPropAdmin }
+    				from { createWebJarFile }
+    				from "${projectDir}/WipsEar/resources/install/common/applicationbase.py"
+    				from "${projectDir}/WipsEar/resources/install/${ubuildEnv}/application.py"
+    				println "Project Dir:: ${projectDir}"
+    				println "Build Dir:: ${buildDir}"
+               }
+            }
+        }
+}
+println "Distribution directory:: "+ distZip.destinationDir
+println "Distribution archive path:: "+ distZip.archivePath
+
+subprojects {
+		tasks.matching{it.name == "check"}.all{
+			distZip.mustRunAfter it
+		}
+}	
+
+task createWebJarFile(type:Jar){
+    onlyIf {buildForHteam}
+	baseName='web'
+	//dependsOn ':WipsUIWeb:runGruntTask'
+	dependsOn ':WipsUIWeb:build'
+	dependsOn ':WipsWeb:build'
+	//from("${buildDir}/WipsUIWeb/WebContent/"){
+    //    include('index.html')
+    //    into('/')
+    //}
+    //from("${buildDir}/WipsUIWeb/WebContent/"){
+    //    into('/WipsUIWeb')
+    //}
+    //from("${buildDir}/WipsUIWeb/WebContent/"){
+    //    into('/WipsUIWeb')
+    //}
+    //from(project(':WipsUIWeb').projectDir.getAbsolutePath()+'/WebContent/'){
+    //    include('WEB-INF/**')
+    //    include('ford_icon.ico')
+    //    into('/WipsUIWeb')
+    //}
+    from(project(':WipsUIWeb').projectDir.getAbsolutePath()+'/WebContent/'){
+        include('index.html')
+        into('/')
+    }
+    from(project(':WipsUIWeb').projectDir.getAbsolutePath()+'/WebContent/'){
+        into('/WipsUIWeb')
+    }
+	from(project(':WipsWeb').projectDir.getAbsolutePath()+'/WebContent/'){
+		into('/WipsWeb')
+	}
+
+}
+
+
+task injectDynaPropAdmin(type:Zip, dependsOn: ':WipsProperties:assemble'){
+	baseName = "DynaPropAdmin"
+	version = ""
+	extension = "ear"
+	File dynapropFile = configurations.dynaprop.singleFile
+	from zipTree(dynapropFile)
+	into ('/lib') {
+		from { wipsPropertiesJar }
+	}
+	
+}
+task wipsPropertiesJar (type:Zip) {
+    onlyIf {buildForHteam}
+	baseName = "WipsDynaPropAdminPropertiesJar"
+	version = ""
+	extension = "jar"
+	from (project(':WipsProperties').projectDir.getAbsolutePath()+"/src/main/resources/${ubuildEnv}") {
+		include ("fjf/*.xml")
+		into ('/')
+	}
+	from (project(':WipsProperties').projectDir.getAbsolutePath()+"/src/main/resources/common/fjf/") {
+		include ("fjf-security-plugins-config.xml")
+		into ('/fjf')
+	}
+}
+fordWasServer{
+	externalEarFilePath = injectDynaPropAdmin.archivePath
+}
+

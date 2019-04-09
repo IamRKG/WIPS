@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:ns="urn:ford/Application/Attachment/v1.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:ford/interface/Application/Attachment/v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApplicationAttachment" targetNamespace="urn:ford/interface/Application/Attachment/v1.0">
+
+    <wsdl:documentation>
+        Service definition for the Generic Application Attachment service.
+        Entity name (EDM Alignment): Application
+	    Business Qualifier: Attachment
+	    Resulting Service Name: ApplicationAttachment
+    </wsdl:documentation>
+    
+    <wsdl:types>
+            <xsd:schema elementFormDefault="qualified" targetNamespace="urn:ford/interface/Application/Attachment/v1.0">
+            <xsd:import namespace="urn:ford/Application/Attachment/v1.0" schemaLocation="ApplicationAttachment.xsd"/>
+          	<xsd:element name="Upload">
+                	<xsd:complexType>
+					<xsd:sequence>
+					     <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+					 </xsd:sequence>
+                  	 </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UploadResponse">
+                     <xsd:complexType>
+                         <xsd:sequence>
+                             <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+                         </xsd:sequence>
+                     </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Update">
+					<xsd:complexType>
+						<xsd:sequence>
+						     <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+						 </xsd:sequence>
+				     </xsd:complexType>
+			 </xsd:element>
+			 <xsd:element name="UpdateResponse">
+			     <xsd:complexType>
+					 <xsd:sequence>
+					     <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+					 </xsd:sequence>
+			     </xsd:complexType>
+             </xsd:element>
+             <xsd:element name="Download">
+				<xsd:complexType>
+					<xsd:sequence>
+					     <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+					 </xsd:sequence>
+				</xsd:complexType>
+ 		 	 </xsd:element>
+ 			 <xsd:element name="DownloadResponse">
+			     <xsd:complexType>
+					 <xsd:sequence>
+					     <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+					 </xsd:sequence>
+			     </xsd:complexType>
+             </xsd:element>
+             <xsd:element name="Delete">
+				 <xsd:complexType>
+					<xsd:sequence>
+					     <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+					 </xsd:sequence>
+				</xsd:complexType>
+			 </xsd:element>
+			 <xsd:element name="DeleteResponse">
+			     <xsd:complexType>
+					 <xsd:sequence>
+					     <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+					 </xsd:sequence>
+			     </xsd:complexType>
+             </xsd:element>
+			 <xsd:element name="Search">
+			 	<xsd:complexType>
+			 		<xsd:sequence>
+			 			<xsd:element ref="ns:AttachmentSearchCriteria"/>
+			 		</xsd:sequence>
+			 	</xsd:complexType>
+			 </xsd:element>
+			 <xsd:element name="SearchResponse">
+			 	<xsd:complexType>
+			 		<xsd:sequence>
+			 			<xsd:element ref="ns:AttachmentSearchResults"/>
+			 		</xsd:sequence>
+			 	</xsd:complexType>
+			 </xsd:element>
+            </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="UploadMsg">
+         <wsdl:part element="tns:Upload" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="UploadResponseMsg">
+         <wsdl:part element="tns:UploadResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateMsg">
+         <wsdl:part element="tns:Update" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateResponseMsg">
+         <wsdl:part element="tns:UpdateResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="DownloadMsg">
+             <wsdl:part element="tns:Download" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="DownloadResponseMsg">
+             <wsdl:part element="tns:DownloadResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="DeleteMsg">
+             <wsdl:part element="tns:Delete" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="DeleteResponseMsg">
+                 <wsdl:part element="tns:DeleteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="SearchRequest">
+    	<wsdl:part element="tns:Search" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="SearchResponse">
+    	<wsdl:part element="tns:SearchResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:portType name="IApplicationAttachment">
+            <wsdl:documentation>
+	            Interface for ApplicationAttachment service.
+	            Provides operations for upload, update, download, and delete attachment(s).
+		        //TODO:Add url to link the service interface to its logical model
+		        
+		        All of the below operations uses SOAP Fault messages (faultcode and faultString) to report any 
+		        errors during the process.SOAP Fault message will have the fault code and the description.Find 
+		        below the list of possible SOAP Fault codes and its purpose.
+		        
+		        SOAP client fault codes :
+		        =========================
+		        soap:Client = Generic SOAP client fault code.
+		        soap:Client.Validation = Thrown when the consumers passes the Invalid data.
+		        soap:Client.Database = Thrown when the consumer database cannot contacted due to some issue.
+		        
+		        
+	
+		        SOAP Server fault codes :
+		        =========================
+		        soap:Server = Generic SOAP server fault code.
+		        soap:Server.Validation = Thrown when the Server configured with Invalid data.
+		        soap:Server.Database = Thrown when the server database cannot contacted due to some issue.
+		        
+		        
+		        Note: TimeStamp will be added as part of the "faultString" to facilitate distributed 
+		        cross-referencing and trouble-shooting.
+		        
+            </wsdl:documentation>
+            <wsdl:operation name="Upload">
+                <wsdl:documentation>
+                    Upload operation persists the attachment(s) in the application specific database.
+                    It takes the attachments specific details and returns the corresponding AttachmentID's
+                    after the upload.
+                </wsdl:documentation>
+                <wsdl:input message="tns:UploadMsg"/>
+                <wsdl:output message="tns:UploadResponseMsg"/>
+            </wsdl:operation>
+            <wsdl:operation name="Update">
+		    <wsdl:documentation>
+				Update operation updates the attachment(s) in the application specific database.
+				It takes the application specific attachments ID's and updates the same.
+		    </wsdl:documentation>
+		    <wsdl:input message="tns:UpdateMsg"/>
+		    <wsdl:output message="tns:UpdateResponseMsg"/>
+            </wsdl:operation>
+	    <wsdl:operation name="Download">
+		    <wsdl:documentation>
+				Download operation downloads the attachment(s) from application specific database.
+				It takes the application specific attachments ID's to download them.
+		    </wsdl:documentation>
+		    <wsdl:input message="tns:DownloadMsg"/>
+		    <wsdl:output message="tns:DownloadResponseMsg"/>
+	    </wsdl:operation>
+	    <wsdl:operation name="Delete">
+		    <wsdl:documentation>
+				Delete operation deletes the attachment(s) from application specific database.
+				It takes the application specific attachments ID's to delete them.
+		    </wsdl:documentation>
+		    <wsdl:input message="tns:DeleteMsg"/>
+		    <wsdl:output message="tns:DeleteResponseMsg"/>
+	    </wsdl:operation>
+
+	    <wsdl:operation name="Search">
+	    	<wsdl:input message="tns:SearchRequest"/>
+	    	<wsdl:output message="tns:SearchResponse"/>
+	    </wsdl:operation>
+    </wsdl:portType>
+    
+    
+        <wsdl:binding name="ApplicationAttachmentSOAP" type="tns:IApplicationAttachment">
+            <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http">
+            </soap:binding>
+            <wsdl:operation name="Upload">
+                <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Upload">
+                </soap:operation>
+                <wsdl:input>
+                    <soap:body use="literal"/>
+                </wsdl:input>
+                <wsdl:output>
+                    <soap:body use="literal"/>
+                </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="Update">
+                <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Update">
+                </soap:operation>
+                <wsdl:input>
+                    <soap:body use="literal"/>
+                </wsdl:input>
+                <wsdl:output>
+                    <soap:body use="literal"/>
+                </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="Download">
+                <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Download">
+                </soap:operation>
+                <wsdl:input>
+                    <soap:body use="literal"/>
+                </wsdl:input>
+                <wsdl:output>
+                    <soap:body use="literal"/>
+                </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="Delete">
+                <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Delete">
+                </soap:operation>
+                <wsdl:input>
+                    <soap:body use="literal"/>
+                </wsdl:input>
+                <wsdl:output>
+                    <soap:body use="literal"/>
+                </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="Search">
+                <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Search">
+                </soap:operation>
+                <wsdl:input>
+                    <soap:body use="literal"/>
+                </wsdl:input>
+                <wsdl:output>
+                    <soap:body use="literal"/>
+                </wsdl:output>
+            </wsdl:operation>
+        </wsdl:binding>
+        <wsdl:service name="ApplicationAttachmentService">
+            <wsdl:port binding="tns:ApplicationAttachmentSOAP" name="ApplicationAttachment">
+                <soap:address location="http://localhost:9080/AASWeb/ApplicationAttachmentService"/>
+            </wsdl:port>
+        </wsdl:service>
+    </wsdl:definitions>

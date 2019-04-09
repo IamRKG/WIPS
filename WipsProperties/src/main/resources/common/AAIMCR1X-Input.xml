@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<DataArea name="TPI-INPUT">
+	<Parameter name="TPI-IOINDIC" pic="X" />
+	<Parameter name="TPI-PFKEY" pic="99" />
+	<Parameter name="TPI-SORMK1" pic="X(69)" />
+	<Parameter name="TPI-SORMK2" pic="X(69)" />
+	<Parameter name="TPI-SORMK3" pic="X(69)" />
+	<Parameter name="TPI-SORMK4" pic="X(69)" />
+	<Parameter name="TPI-SORMK5" pic="X(69)" />
+	<Parameter name="TPI-SORMK6" pic="X(69)" />
+	<Parameter name="TPI-SORMK7" pic="X(69)" />
+	<Parameter name="TPI-SORMK8" pic="X(69)" />
+	<Parameter name="TPI-SORMK9" pic="X(69)" />
+	<Parameter name="TPI-SORMK10" pic="X(69)" />
+	<Parameter name="TPI-SORMK11" pic="X(69)" />
+	<Parameter name="TPI-SORMK12" pic="X(69)" />
+	<Parameter name="TPI-SORMK13" pic="X(69)" />
+</DataArea>

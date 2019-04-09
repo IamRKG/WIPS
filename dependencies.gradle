@@ -1,0 +1,190 @@
+ext {
+
+	buildForHteam = false
+	
+    println project.hasProperty("ubuildName")
+    println project.hasProperty("ubuildVersion")
+    println project.hasProperty("ubuildEnv")
+    
+    ubuildName = project.hasProperty("ubuildName") ? project.get("ubuildName") : "wips"
+    ubuildVersion = project.hasProperty("ubuildVersion") ? project.get("ubuildVersion"): "1.0.0"
+    ubuildEnv = project.hasProperty("ubuildEnv") ?project.get("ubuildEnv"): "desktop"
+    
+    println "hasProperty('ubuildName')::"+hasProperty('ubuildName')
+    println "hasProperty('ubuildVersion')::"+hasProperty('ubuildVersion')
+    println "hasProperty('ubuildEnv')::"+hasProperty('ubuildEnv')
+    println "ubuildName :: "+ubuildName
+    println "ubuildVersion :: "+ubuildVersion
+    println "ubuildEnv :: "+ubuildEnv
+    
+    javaVersion = '1.6'
+
+	itCoreVersion = "2.52"
+    fordCacheVersion = "1.2.7"
+    ehCacheVersion = "2.5.5"
+    
+    fordRestVersion = "latest.release"
+    fordTestCoreVersion = "latest.release"
+    fordTestCdiVersion = "latest.release"
+
+    junitVersion = "4.+"
+    
+    justifyRestVersion = "6.1.+"
+    justifyCoreVersion = "6.1.+"
+    testutilVersion = "2.+"    
+    jerseyVersion = "1.19.1"
+    jerseyClientVersion = "1.19.1"
+    mockitoVersion = "1.9.5"
+    commonsLang3Version = "3.3.+"
+    javaxWsRsVersion = "2.0"
+    assertJVersion = "1.7.+"
+    findBugsVersion = "2.0.+"
+    javaxServletApiVersion = "3.0.+"
+    javaxInjectVersion = "1"
+    javaxEnterpriseCdiVersion = "1.1"
+    jacocoVersion = "0.7.4.+"
+    disruptorVersion = "3.3.2"
+    slf4jVersion = "1.7.2"
+    log4jApiVersion="2.3"
+    log4jCoreVersion="2.3"
+    commonCodecsVersion = "1.9"
+    connectorVersion = "1.12"
+    wscoreVersion = "2.8"
+    jsr311Version = "1.1.1"
+    eabVersion = "4.0.3"
+    imsIcoVersion= "10.1.1"
+    recordVersion ="4.0.2"
+    wsHandlersVersion = "1.5"
+    javaeeApiVersion = "6.0"
+	wipsDistributedTestDependencies = [
+            dependencies.create("com.ford.it.fjf:fordtest-core:$fordTestCoreVersion"){
+                exclude (group: "com.ford.it.fjf", module: "itcore")
+            },
+            dependencies.create("com.ford.it.fjf:fordtest-cdi:$fordTestCdiVersion"){
+                exclude (group: "org.jboss.weld.se", module: "weld-se-core")
+                exclude (group: "com.google.guava", module: "guava")
+                exclude (group: "com.ford.it.fjf", module: "itcore")
+            },      
+            "junit:junit:$junitVersion",
+            "org.mockito:mockito-all:$mockitoVersion",
+            "org.assertj:assertj-core:$assertJVersion",
+        ]    
+
+	libraries = [
+        wipsCommonCompile : [
+        	dependencies.create("com.ford.it.fjf:itcore:$itCoreVersion"){
+               exclude (group: "org.hibernate", module: "hibernate-validator")
+               exclude (group: "org.apache.deltaspike.cdictrl", module: "deltaspike-cdictrl-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-impl")
+            },
+            "org.slf4j:slf4j-api:$slf4jVersion",
+            "commons-codec:commons-codec:$commonCodecsVersion",
+            dependencies.create("com.ford.it.fjf:connector:$connectorVersion"){
+                exclude (group: "com.ibm", module: "connector2.ims.ico")
+                exclude (group: "javax", module: "javaee-api")
+                exclude (group: "com.ford.it.fjf", module: "itcore")
+            },
+        	"org.apache.commons:commons-lang3:$commonsLang3Version",
+        	"j2ee:javaee:$javaeeApiVersion",
+        ],
+        wipsCommonTestCompile : [
+             wipsDistributedTestDependencies,
+        ],
+        wipsBusinessCompile : [
+            dependencies.create("com.ford.it.fjf:itcore:$itCoreVersion"){
+               exclude (group: "org.hibernate", module: "hibernate-validator")
+               exclude (group: "org.apache.deltaspike.cdictrl", module: "deltaspike-cdictrl-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-impl")
+            },
+            project(':WipsConsumer'),
+            project(':WipsDomain'),
+            "com.ford.it.fjf:wscore:$wscoreVersion",
+            "org.slf4j:slf4j-api:$slf4jVersion",
+            dependencies.create("net.sf.ehcache:ehcache-core:$ehCacheVersion"){
+                exclude group: "org.slf4j"
+            },
+        ],
+        wipsBusinessTestCompile : [
+        	wipsDistributedTestDependencies,
+        	"javax.ws.rs:jsr311-api:$jsr311Version",
+        ],
+        wipsDomainCompile : [
+			project(':WipsCommon'),
+             "org.slf4j:slf4j-api:$slf4jVersion",
+             "org.apache.commons:commons-lang3:$commonsLang3Version",
+        ],
+        wipsDomainTestCompile : [
+             wipsDistributedTestDependencies,
+             "javax.ws.rs:jsr311-api:$jsr311Version",
+             "javax.servlet:javax.servlet-api:$javaxServletApiVersion",
+             "com.ibm:ivj.eab:$eabVersion",
+             "com.ibm.connector2:ims.ico:$imsIcoVersion",
+             "com.ibm:record:$recordVersion",
+        ],
+        wipsConsumerCompile : [
+            project(':WipsCommon'),
+			"com.ford.it.fjf:wscore:$wscoreVersion",
+			dependencies.create("com.ford.it.fjf:itcore:$itCoreVersion"){
+               exclude (group: "org.hibernate", module: "hibernate-validator")
+               exclude (group: "org.apache.deltaspike.cdictrl", module: "deltaspike-cdictrl-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-impl")
+            },
+             "org.slf4j:slf4j-api:$slf4jVersion",
+             dependencies.create("com.ford.it.fjf:wsHandlers:$wsHandlersVersion"){transitive = false},
+        ],
+        wipsConsumerTestCompile : [
+             
+        ],
+        wipsWebCompile : [
+			project(':WipsBusiness'),
+			dependencies.create("com.ford.it.fjf:itcore:$itCoreVersion"){
+               exclude (group: "org.hibernate", module: "hibernate-validator")
+               exclude (group: "org.apache.deltaspike.cdictrl", module: "deltaspike-cdictrl-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-impl")
+            },
+			"com.ford.it.fjf:cache:$fordCacheVersion",
+			dependencies.create("net.sf.ehcache:ehcache-core:$ehCacheVersion"){
+                exclude group: "org.slf4j"
+                exclude group: "org.hibernate"
+                transitive = false
+            },
+            dependencies.create("com.ford.it.fjf:ford-rest:$fordRestVersion"){
+                transitive = false
+            }
+        ],
+        wipsWebProvidedCompile: [
+            "javax.enterprise:cdi-api:$javaxEnterpriseCdiVersion",
+			"javax.inject:javax.inject:$javaxInjectVersion",
+			"javax.ws.rs:jsr311-api:$jsr311Version",
+			"javax.servlet:javax.servlet-api:$javaxServletApiVersion",
+			"javax:javaee-api:$javaeeApiVersion",
+			"j2ee:javaee:$javaeeApiVersion",
+        ],
+        
+        wipsWebTestCompile : [
+        	project(':WipsBusiness'),
+             wipsDistributedTestDependencies,
+             "javax.ws.rs:jsr311-api:$jsr311Version",
+             "com.sun.jersey:jersey-core:$jerseyVersion",
+             "com.sun.jersey:jersey-client:$jerseyClientVersion",
+             dependencies.create("com.ford.it.fjf:itcore:$itCoreVersion"){
+               exclude (group: "org.hibernate", module: "hibernate-validator")
+               exclude (group: "org.apache.deltaspike.cdictrl", module: "deltaspike-cdictrl-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-api")
+               exclude (group: "org.apache.deltaspike.core", module: "deltaspike-core-impl")
+            },
+             "org.slf4j:slf4j-api:$slf4jVersion",
+             dependencies.create("com.ford.it.fjf:ford-rest:$fordRestVersion"){
+                exclude (group: "com.ford.it.fjf", module: "itcore")
+                exclude (group: "com.google.guava", module: "guava")
+                exclude (group: "org.hibernate:", module: "hibernate-validator")
+             },
+        ]
+
+	]
+	
+}

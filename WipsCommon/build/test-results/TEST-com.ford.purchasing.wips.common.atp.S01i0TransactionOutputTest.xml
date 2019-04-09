@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:10" hostname="WGC100HHBHH92" time="0.018">
+  <properties/>
+  <testcase name="getS01i0OutputFailurePath" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.001"/>
+  <testcase name="getS01i0OutputSuccessPath" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.0"/>
+  <testcase name="getS01i0OutputExceptionPath" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.001"/>
+  <testcase name="getS01i0ApproveOrRejectOutputFailurePath" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.009"/>
+  <testcase name="getS01i0ApproveOrRejectOutputConfirmMessage_4236" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.0"/>
+  <testcase name="getS01i0ApproveOrRejectOutputConfirmMessage_4276" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.0"/>
+  <testcase name="getS01i0ApproveOrRejectOutputConfirmMessage_4524" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.0"/>
+  <testcase name="getS01i0ApproveOrRejectOutputExceptionPath" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.001"/>
+  <testcase name="getS01i0RejectOutputSuccessPath" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.0"/>
+  <testcase name="getS01i0ApproveOutputSuccessPath" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.001"/>
+  <testcase name="getS01i0ApproveOrRejectOutputRejectMessage_4499" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.0"/>
+  <testcase name="getS01i0ApproveOrRejectOutputRejectMessage_4628" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.0"/>
+  <testcase name="getS01i0ApproveRejectOutput_WithError" classname="com.ford.purchasing.wips.common.atp.S01i0TransactionOutputTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

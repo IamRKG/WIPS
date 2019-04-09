@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="StringUtilTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:10" hostname="WGC100HHBHH92" time="0.008">
+  <properties/>
+  <testcase name="splitStringEmptyInput" classname="StringUtilTest" time="0.0"/>
+  <testcase name="splitPcsString_lessThanWordlength" classname="StringUtilTest" time="0.0"/>
+  <testcase name="retriveCostSign" classname="StringUtilTest" time="0.001"/>
+  <testcase name="splitPcsStringEmptyInput" classname="StringUtilTest" time="0.0"/>
+  <testcase name="splitPcsString_moreThanWordlength" classname="StringUtilTest" time="0.0"/>
+  <testcase name="splitString_lessThanWordlength" classname="StringUtilTest" time="0.001"/>
+  <testcase name="splitString_moreThanWordlength" classname="StringUtilTest" time="0.001"/>
+  <testcase name="retrieveCostFailurePath" classname="StringUtilTest" time="0.0"/>
+  <testcase name="retrieveCostMinusSignSuccessPath" classname="StringUtilTest" time="0.001"/>
+  <testcase name="createBlankSpacesSuccessPath" classname="StringUtilTest" time="0.0"/>
+  <testcase name="retrieveCostSuccessPath" classname="StringUtilTest" time="0.0"/>
+  <testcase name="retriveCostPlusSign" classname="StringUtilTest" time="0.0"/>
+  <testcase name="buildUserRemarksSuccessPath" classname="StringUtilTest" time="0.0"/>
+  <testcase name="retriveCostMinusSign" classname="StringUtilTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

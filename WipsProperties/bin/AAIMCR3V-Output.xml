@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TPO-LLZZ">
+		<Parameter name="TPO-LLZZ-BUFSIZE" pic="9(4) COMP" />
+		<Parameter name="TPO-LLZZ-ZERO" pic="9(4) COMP" />
+	</DataArea>
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-SYSID-ATTR" pic="XX" />
+		<Parameter name="TPO-SYSID" pic="X(4)" />
+		<Parameter name="TPO-VERSION-ATTR" pic="XX" />
+		<Parameter name="TPO-VERSION" pic="X(2)" />
+		<Parameter name="TPO-DATE-ATTR" pic="XX" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="XX" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-USERCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-USERCODE" pic="X(4)" />
+		<Parameter name="TPO-USERNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-USERNAME" pic="X(17)" />
+		<Parameter name="TPO-SUPPCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-SUPPCODE" pic="X(5)" />
+		<Parameter name="TPO-SUPPNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-SUPPNAME" pic="X(10)" />
+		<Parameter name="TPO-EPPSNO-ATTR" pic="XX" />
+		<Parameter name="TPO-EPPSNO" pic="X(6)" />
+		<Parameter name="TPO-CLMTTLE-ATTR" pic="XX" />
+		<Parameter name="TPO-CLMTTLE" pic="X(20)" />
+		<Parameter name="TPO-EFFDATE-ATTR" pic="XX" />
+		<Parameter name="TPO-EFFDATE" pic="X(6)" />
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="15">
+			<Parameter name="TPO-POARKS-ATTR" pic="XX" />
+			<Parameter name="TPO-POARKS" pic="X(72)" />
+		</Array>
+	</DataArea>
+</DataArea>

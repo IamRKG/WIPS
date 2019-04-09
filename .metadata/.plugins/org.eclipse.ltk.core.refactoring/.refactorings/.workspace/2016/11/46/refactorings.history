@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 10 resources" deleteContents="false" description="Delete 10 resources" element1="/WipsBusiness" element10="/WipsWeb" element2="/WipsCommon" element3="/WipsConsumer" element4="/WipsDomain" element5="/WipsEar" element6="/WipsProperties" element7="/WipsServer" element8="/WipsTest" element9="/WipsUIWeb" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="10" stamp="1478681841471"/>
+</session>

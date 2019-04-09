@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:07" hostname="WGC100HHBHH92" time="0.105">
+  <properties/>
+  <testcase name="saveRemarksAndApproveOrRejectAtp_Failure" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.002"/>
+  <testcase name="confirmPaymentDescription_Success" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.0"/>
+  <testcase name="retrieveLumpSumAttachmentsWithServerException" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.031"/>
+  <testcase name="retrieveLumpSumAttachmentDetails_Success" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.012"/>
+  <testcase name="retrieveLumpSumAttachmentsWithValidationException" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.012"/>
+  <testcase name="retrieveLumpSumDetailsAndAttachments_Success" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.01"/>
+  <testcase name="saveRemarksAndApproveOrRejectAtp_Success" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.001"/>
+  <testcase name="retrieveLumpSumDetailsWithoutAttachments_Success" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.007"/>
+  <testcase name="retrieveLumpSumAttachmentsWithInvalidDoumentNumber" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.007"/>
+  <testcase name="saveLumpSumDetails_Success" classname="com.ford.purchasing.wips.inbound.lumpsum.LumpSumDetailBFTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

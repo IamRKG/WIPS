@@ -1,0 +1,4 @@
+dependencies{
+	compile libraries.wipsConsumerCompile
+	//testCompile libraries.jab7BusinessTestCompile
+}

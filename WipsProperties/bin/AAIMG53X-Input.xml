@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<DataArea name="TPI-INPUT">
+	<Parameter name="TPI-IOINDIC" pic="X" />
+	<Parameter name="TPI-PFKEY" pic="99" />
+	<Parameter name="TPI-PAGENO" pic="X(2)" />
+	<Parameter name="TPI-PTPNID" pic="X(2)" />
+	<Parameter name="TPI-PTPNMORE" pic="X" />
+	<Parameter name="TPI-RANKNO" pic="X(2)" />
+	<Parameter name="TPI-RECPRSN" pic="X" />
+	<Parameter name="TPI-EFFDATE" pic="X(6)" />
+	<Parameter name="TPI-ZTOIND1" pic="X"/>
+	<Parameter name="TPI-ZTOIND2" pic="X"/>
+	<Parameter name="TPI-ZTOIND3" pic="X"/>
+	<Parameter name="TPI-AUTHCD1" pic="X(2)" />
+	<Parameter name="TPI-AUTHCD2" pic="X(2)" />
+	<Parameter name="TPI-AUTHCD3" pic="X(2)" />
+	<Parameter name="TPI-ASHPPT1" pic="X(5)" />
+	<Parameter name="TPI-ASHPPT2" pic="X(5)" />
+	<Parameter name="TPI-ASHPPT3" pic="X(5)" />
+	<Parameter name="TPI-AUTOPO" pic="X" />
+	<Parameter name="TPI-COMAND" pic="X(8)" />
+</DataArea>

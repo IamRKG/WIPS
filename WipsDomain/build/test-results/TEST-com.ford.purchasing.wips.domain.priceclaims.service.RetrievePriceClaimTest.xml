@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.domain.priceclaims.service.RetrievePriceClaimTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:18" hostname="WGC100HHBHH92" time="0.008">
+  <properties/>
+  <testcase name="retrievePriceClaim" classname="com.ford.purchasing.wips.domain.priceclaims.service.RetrievePriceClaimTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

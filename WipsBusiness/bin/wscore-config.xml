@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE property-group PUBLIC "PropertyGroup.dtd" "PropertyGroup.dtd">
+
+<property-group name="WscConfig">
+
+    <property-group name="DeclarativeLogging">
+        <property name="logProviderRequestReceived">false</property>
+        <property name="logProviderSuccessInboundMessage">false</property>
+        <property name="logProviderSuccessOutboundMessage">false</property>
+        <property name="logProviderFailedInboundMessage">true</property>
+        <property name="logProviderFailedOutboundMessage">true</property>
+        <property name="logProviderDurationsSummary">true</property>
+	
+        <property name="logConsumerMessageSent">false</property>
+        <property name="logConsumerSuccessOutboundMessage">false</property>
+        <property name="logConsumerSuccessInboundMessage">false</property>
+        <property name="logConsumerFailedOutboundMessage">true</property>
+        <property name="logConsumerFailedInboundMessage">true</property>
+        <property name="logConsumerDurationSummary">true</property>
+    </property-group>
+    
+    <property-group name="ApplicationAttachmentService">
+        
+        <!-- Required to perform the binding to the given URL.               -->
+        <property name="providerServiceEndpointAddress">
+            https://wwwqa.pps.ford.com/AASWeb/ApplicationAttachmentService
+        </property>
+
+        <!-- Fully qualified class name of the generated consumer service.   -->        
+        <property name="consumerServiceClassName">
+            ford._interface.application.attachment.v1.ApplicationAttachmentService
+        </property>
+        
+        <property name="consumerServiceClassMethod">
+            getApplicationAttachment
+        </property>
+        
+        <!-- Optional WebSphere (proprietary) timeout property.              -->
+        <!-- 
+        <property name="responseTimeOutSeconds">10</property>
+         -->
+    </property-group>
+    
+</property-group>

@@ -1,0 +1,4 @@
+dependencies{
+	compile libraries.wipsBusinessCompile
+	testCompile libraries.wipsBusinessTestCompile
+}

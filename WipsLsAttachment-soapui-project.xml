@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="WipsLsAttachment" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ApplicationAttachmentSOAP" type="wsdl" bindingName="{urn:ford/interface/Application/Attachment/v1.0}ApplicationAttachmentSOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/Projects/accurev/WIPSWeb_WMMobile_DEV/WipsConsumer/src/main/java/META-INF/wsdl/ApplicationAttachment.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Projects/accurev/WIPSWeb_WMMobile_DEV/WipsConsumer/src/main/java/META-INF/wsdl/ApplicationAttachment.wsdl"><con:part><con:url>file:/C:/Projects/accurev/WIPSWeb_WMMobile_DEV/WipsConsumer/src/main/java/META-INF/wsdl/ApplicationAttachment.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ApplicationAttachment" targetNamespace="urn:ford/interface/Application/Attachment/v1.0" xmlns:ns="urn:ford/Application/Attachment/v1.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:ford/interface/Application/Attachment/v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>Service definition for the Generic Application Attachment service.
+        Entity name (EDM Alignment): Application
+	    Business Qualifier: Attachment
+	    Resulting Service Name: ApplicationAttachment</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="urn:ford/interface/Application/Attachment/v1.0">
+      <xsd:import namespace="urn:ford/Application/Attachment/v1.0" schemaLocation="ApplicationAttachment.xsd"/>
+      <xsd:element name="Upload">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UploadResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Update">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Download">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DownloadResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:ApplicationAttachmentInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Search">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:AttachmentSearchCriteria"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SearchResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns:AttachmentSearchResults"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadMsg">
+    <wsdl:part element="tns:Upload" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UploadResponseMsg">
+    <wsdl:part element="tns:UploadResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateMsg">
+    <wsdl:part element="tns:Update" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateResponseMsg">
+    <wsdl:part element="tns:UpdateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DownloadMsg">
+    <wsdl:part element="tns:Download" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DownloadResponseMsg">
+    <wsdl:part element="tns:DownloadResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteMsg">
+    <wsdl:part element="tns:Delete" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteResponseMsg">
+    <wsdl:part element="tns:DeleteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SearchRequest">
+    <wsdl:part element="tns:Search" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SearchResponse">
+    <wsdl:part element="tns:SearchResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="IApplicationAttachment">
+    <wsdl:documentation>Interface for ApplicationAttachment service.
+	            Provides operations for upload, update, download, and delete attachment(s).
+		        //TODO:Add url to link the service interface to its logical model
+		        
+		        All of the below operations uses SOAP Fault messages (faultcode and faultString) to report any 
+		        errors during the process.SOAP Fault message will have the fault code and the description.Find 
+		        below the list of possible SOAP Fault codes and its purpose.
+		        
+		        SOAP client fault codes :
+		        =========================
+		        soap:Client = Generic SOAP client fault code.
+		        soap:Client.Validation = Thrown when the consumers passes the Invalid data.
+		        soap:Client.Database = Thrown when the consumer database cannot contacted due to some issue.
+		        
+		        
+	
+		        SOAP Server fault codes :
+		        =========================
+		        soap:Server = Generic SOAP server fault code.
+		        soap:Server.Validation = Thrown when the Server configured with Invalid data.
+		        soap:Server.Database = Thrown when the server database cannot contacted due to some issue.
+		        
+		        
+		        Note: TimeStamp will be added as part of the "faultString" to facilitate distributed 
+		        cross-referencing and trouble-shooting.</wsdl:documentation>
+    <wsdl:operation name="Upload">
+      <wsdl:documentation>Upload operation persists the attachment(s) in the application specific database.
+                    It takes the attachments specific details and returns the corresponding AttachmentID's
+                    after the upload.</wsdl:documentation>
+      <wsdl:input message="tns:UploadMsg"/>
+      <wsdl:output message="tns:UploadResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:documentation>Update operation updates the attachment(s) in the application specific database.
+				It takes the application specific attachments ID's and updates the same.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateMsg"/>
+      <wsdl:output message="tns:UpdateResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <wsdl:documentation>Download operation downloads the attachment(s) from application specific database.
+				It takes the application specific attachments ID's to download them.</wsdl:documentation>
+      <wsdl:input message="tns:DownloadMsg"/>
+      <wsdl:output message="tns:DownloadResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation>Delete operation deletes the attachment(s) from application specific database.
+				It takes the application specific attachments ID's to delete them.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMsg"/>
+      <wsdl:output message="tns:DeleteResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input message="tns:SearchRequest"/>
+      <wsdl:output message="tns:SearchResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ApplicationAttachmentSOAP" type="tns:IApplicationAttachment">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="Upload">
+      <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Upload"></soap:operation>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Update"></soap:operation>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Download"></soap:operation>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Delete"></soap:operation>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="urn:ford/interface/Application/Attachment/v1.0/Search"></soap:operation>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ApplicationAttachmentService">
+    <wsdl:port binding="tns:ApplicationAttachmentSOAP" name="ApplicationAttachment">
+      <soap:address location="http://localhost:9080/AASWeb/ApplicationAttachmentService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Projects\accurev\WIPSWeb_WMMobile_DEV\WipsConsumer\src\main\java\META-INF\wsdl\ApplicationAttachment.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:ford/Application/Attachment/v1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:ford/Application/Attachment/v1.0">
+  <xs:annotation>
+    <xs:documentation>
+      <!--TODO: add url to link the schema to its logical model-->
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="ApplicationAttachmentInfoType">
+    <xs:annotation>
+      <xs:documentation>This entity represents the root element of the Service and it contains the Attachment</xs:documentation>
+      <xs:documentation>Meta data and actual attachments.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="tns:AttachmentApplication"/>
+      <xs:element ref="tns:Attachments"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationAttachmentInfo" type="tns:ApplicationAttachmentInfoType"/>
+  <xs:element name="AttachmentApplication" type="tns:AttachmentApplicationType"/>
+  <xs:element name="Attachment" type="tns:AttachmentType"/>
+  <xs:element name="Attachments" type="tns:AttachmentsType"/>
+  <xs:complexType name="AttachmentsType">
+    <xs:sequence>
+      <xs:element ref="tns:Attachment" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AttachmentApplicationType">
+    <xs:annotation>
+      <xs:documentation>This entity has the application specific information to which this Attachment Service interacts with.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ApplicationID" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is the unique Application Indentifier so that the Service can indentify the consumers. ITMS Number of the Consumer application is recommended for this element value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EntityName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Considering an application can have multiple entities to store the attachments,this field should be</xs:documentation>
+          <xs:documentation>populated with the corresponding entity name to which the attachment can be stored</xs:documentation>
+          <xs:documentation>based on the ApplicationID value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="tns:EntityAttributes" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Collection of Mandatory entity attributes</xs:documentation>
+          <xs:documentation>that should be populated when the attachment record</xs:documentation>
+          <xs:documentation>gets inserted /updated.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityAttributeType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityAttributesType">
+    <xs:sequence>
+      <xs:element name="EntityAttribute" minOccurs="1" maxOccurs="unbounded" type="tns:EntityAttributeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityAttributes" type="tns:EntityAttributesType"/>
+  <xs:complexType name="AttachmentType">
+    <xs:annotation>
+      <xs:documentation>This entity represents the actual attachment with any Mime type.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AttachmentID" type="xs:integer" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Application specific unique sequence indentifier for the attachment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AttachmentName" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The Name of the Attachment file name.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AttachmentMIMEType" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This attribute holds the MIME type of the attachment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="File" type="xs:base64Binary" xmime:expectedContentTypes="*/*" minOccurs="0" maxOccurs="1" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
+        <xs:annotation>
+          <xs:documentation>This property holds the actual attachment file.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AttachmentUserID" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This attribute holds the UserID who performs the Transaction.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttachmentSearchCriteria" type="tns:AttachmentSearchCriteriaType"/>
+  <xs:element name="AttachmentSearchResults" type="tns:AttachmentSearchResultsType"/>
+  <xs:complexType name="AttachmentSearchCriteriaType">
+    <xs:sequence>
+      <xs:element name="ApplicationID" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>ITMS number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentNumber" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="DocumentVersion" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="Indicator" minOccurs="0" maxOccurs="1" type="tns:attachIndicator">
+        <xs:annotation>
+          <xs:documentation>I for internal, E for External, none for both</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AttachmentSearchResultsType">
+    <xs:sequence>
+      <xs:element name="AttachmentSearchResults" minOccurs="0" maxOccurs="unbounded" type="tns:AttachmentSearchResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AttachmentSearchResult">
+    <xs:sequence>
+      <xs:element name="DocumentNumber" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="DocumentVersion" minOccurs="1" maxOccurs="1" default="0" type="xs:string"/>
+      <xs:element name="AttachmentID" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+      <xs:element name="AttachmentName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="AttachmentMIMEType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="AttachmentDescription" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Indicator" type="tns:attachIndicator" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>I for internal, E for External</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UploadDate" minOccurs="1" maxOccurs="1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="attachIndicator" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="I"/>
+      <xs:enumeration value="E"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9080/AASWeb/ApplicationAttachmentService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:ford/interface/Application/Attachment/v1.0/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/AASWeb/ApplicationAttachmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn:ford/interface/Application/Attachment/v1.0" xmlns:v11="urn:ford/Application/Attachment/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Delete>
+         <v11:ApplicationAttachmentInfo>
+            <v11:AttachmentApplication>
+               <v11:ApplicationID>?</v11:ApplicationID>
+               <v11:EntityName>?</v11:EntityName>
+               <!--Optional:-->
+               <v11:EntityAttributes>
+                  <!--1 or more repetitions:-->
+                  <v11:EntityAttribute>
+                     <v11:Name>?</v11:Name>
+                     <v11:value>?</v11:value>
+                  </v11:EntityAttribute>
+               </v11:EntityAttributes>
+            </v11:AttachmentApplication>
+            <v11:Attachments>
+               <!--1 or more repetitions:-->
+               <v11:Attachment>
+                  <!--Optional:-->
+                  <v11:AttachmentID>?</v11:AttachmentID>
+                  <!--Optional:-->
+                  <v11:AttachmentName>?</v11:AttachmentName>
+                  <!--Optional:-->
+                  <v11:AttachmentMIMEType>?</v11:AttachmentMIMEType>
+                  <!--Optional:-->
+                  <v11:File>cid:1207676704240</v11:File>
+                  <!--Optional:-->
+                  <v11:AttachmentUserID>?</v11:AttachmentUserID>
+               </v11:Attachment>
+            </v11:Attachments>
+         </v11:ApplicationAttachmentInfo>
+      </v1:Delete>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ford/interface/Application/Attachment/v1.0/Delete"/></con:call></con:operation><con:operation isOneWay="false" action="urn:ford/interface/Application/Attachment/v1.0/Download" name="Download" bindingOperationName="Download" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Attachment Download Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="cookie" value="WSL-credential=VxX8w1cWiWMBAREABHVzZXJpZD1zaGFyaXByMQBpcGFkZHI9MTkuMjM4LjE1My4yMDdfMTkuMjM3LjEwOS4yMDkAYWNpZ3JvdXA9Tk9OT1ZWTQBkZXB0PTEzNjcyMDBGVABvcmdjb2RlPT8AZW1wY29kZT1GAG1ycm9sZT1OAG9yZz1GQVBBQwBjb21wYW55PUZPUkQuR0xPQkFMLkJVU0lORVNTLlNFUlZJQ0VTAGRpdmFiYnI9SVRTAHNpdGVjb2RlPTc1NTgAY2l0eT1DSEVOTkFJAHN0YXRlPT8AY291bnRyeT1JTkQAc3ViamVjdGlkPXNoYXJpcHIxQGZvcmQuY29tAGF1dGh0eXBlPUEAAABDTj13c2x2NC1pbnRlcm5hbACtfBsQAhthYF5FTeRzZw9KfG9tlbcQzGFRBlsC2zaEFiNxvv3yz8KjRRn7PX18yLfMOyVqTNIO3umvQ+/Y+nqrbcitm/FuQ3TJ5cS3KeNx0XSseglFNhe34joHZoCVLOrvTS4cDHuox4e6aaIkEAfy+IZQyNZqIg9GSyDNwThSfA==" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://wwwqa.pps.ford.com/AASWeb/ApplicationAttachmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn:ford/interface/Application/Attachment/v1.0" xmlns:v11="urn:ford/Application/Attachment/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Download>
+         <v11:ApplicationAttachmentInfo>
+            <v11:AttachmentApplication>
+               <v11:ApplicationID>858</v11:ApplicationID>
+               <v11:EntityName>WIPS_ATTACHMENT</v11:EntityName>
+               <!--Optional:-->
+               <v11:EntityAttributes>
+                  <!--1 or more repetitions:-->
+                  <v11:EntityAttribute>
+                     <v11:Name>?</v11:Name>
+                     <v11:value>?</v11:value>
+                  </v11:EntityAttribute>
+               </v11:EntityAttributes>
+            </v11:AttachmentApplication>
+            <v11:Attachments>
+               <!--1 or more repetitions:-->
+               <v11:Attachment>
+                  <v11:AttachmentID>28712</v11:AttachmentID>
+               </v11:Attachment>
+            </v11:Attachments>
+         </v11:ApplicationAttachmentInfo>
+      </v1:Download>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ford/interface/Application/Attachment/v1.0/Download"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="urn:ford/interface/Application/Attachment/v1.0/Search" name="Search" bindingOperationName="Search" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Attachment Search request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="cookie" value="WSL-credential=VxX23lcWg34BAREABHVzZXJpZD1zaGFyaXByMQBpcGFkZHI9MTkuMjM4LjE1My4yMDdfMTkuMjM3LjEwOS4yMDkAYWNpZ3JvdXA9Tk9OT1ZWTQBkZXB0PTEzNjcyMDBGVABvcmdjb2RlPT8AZW1wY29kZT1GAG1ycm9sZT1OAG9yZz1GQVBBQwBjb21wYW55PUZPUkQuR0xPQkFMLkJVU0lORVNTLlNFUlZJQ0VTAGRpdmFiYnI9SVRTAHNpdGVjb2RlPTc1NTgAY2l0eT1DSEVOTkFJAHN0YXRlPT8AY291bnRyeT1JTkQAc3ViamVjdGlkPXNoYXJpcHIxQGZvcmQuY29tAGF1dGh0eXBlPUEAAABDTj13c2x2NC1pbnRlcm5hbADeJs3l9qp3TaxaXYFdUy96l6mLqbv4LUnALcVjhY2JyhVz+Qr39+KyfkiuXAHqjNanxG6t3wpKtwPnHmELv9dCO0eZiL3vncw4LxO4qUvzZRX/j4fPKPaY+VgS3DWwelJiDIl5/2llPfptmcR4md6IvjXEmQZYEb5x/lyJquMiVQ==" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://wwwqa.pps.ford.com/AASWeb/ApplicationAttachmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn:ford/interface/Application/Attachment/v1.0" xmlns:v11="urn:ford/Application/Attachment/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Search>
+         <v11:AttachmentSearchCriteria>
+            <v11:ApplicationID>858</v11:ApplicationID>
+            <v11:DocumentNumber>DZ2329</v11:DocumentNumber>
+            <v11:DocumentVersion>1</v11:DocumentVersion>
+            <!--Optional:-->
+            <v11:Indicator>1</v11:Indicator>
+         </v11:AttachmentSearchCriteria>
+      </v1:Search>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ford/interface/Application/Attachment/v1.0/Search"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="urn:ford/interface/Application/Attachment/v1.0/Update" name="Update" bindingOperationName="Update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/AASWeb/ApplicationAttachmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn:ford/interface/Application/Attachment/v1.0" xmlns:v11="urn:ford/Application/Attachment/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Update>
+         <v11:ApplicationAttachmentInfo>
+            <v11:AttachmentApplication>
+               <v11:ApplicationID>?</v11:ApplicationID>
+               <v11:EntityName>?</v11:EntityName>
+               <!--Optional:-->
+               <v11:EntityAttributes>
+                  <!--1 or more repetitions:-->
+                  <v11:EntityAttribute>
+                     <v11:Name>?</v11:Name>
+                     <v11:value>?</v11:value>
+                  </v11:EntityAttribute>
+               </v11:EntityAttributes>
+            </v11:AttachmentApplication>
+            <v11:Attachments>
+               <!--1 or more repetitions:-->
+               <v11:Attachment>
+                  <!--Optional:-->
+                  <v11:AttachmentID>?</v11:AttachmentID>
+                  <!--Optional:-->
+                  <v11:AttachmentName>?</v11:AttachmentName>
+                  <!--Optional:-->
+                  <v11:AttachmentMIMEType>?</v11:AttachmentMIMEType>
+                  <!--Optional:-->
+                  <v11:File>cid:92750426101</v11:File>
+                  <!--Optional:-->
+                  <v11:AttachmentUserID>?</v11:AttachmentUserID>
+               </v11:Attachment>
+            </v11:Attachments>
+         </v11:ApplicationAttachmentInfo>
+      </v1:Update>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ford/interface/Application/Attachment/v1.0/Update"/></con:call></con:operation><con:operation isOneWay="false" action="urn:ford/interface/Application/Attachment/v1.0/Upload" name="Upload" bindingOperationName="Upload" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/AASWeb/ApplicationAttachmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn:ford/interface/Application/Attachment/v1.0" xmlns:v11="urn:ford/Application/Attachment/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Upload>
+         <v11:ApplicationAttachmentInfo>
+            <v11:AttachmentApplication>
+               <v11:ApplicationID>?</v11:ApplicationID>
+               <v11:EntityName>?</v11:EntityName>
+               <!--Optional:-->
+               <v11:EntityAttributes>
+                  <!--1 or more repetitions:-->
+                  <v11:EntityAttribute>
+                     <v11:Name>?</v11:Name>
+                     <v11:value>?</v11:value>
+                  </v11:EntityAttribute>
+               </v11:EntityAttributes>
+            </v11:AttachmentApplication>
+            <v11:Attachments>
+               <!--1 or more repetitions:-->
+               <v11:Attachment>
+                  <!--Optional:-->
+                  <v11:AttachmentID>?</v11:AttachmentID>
+                  <!--Optional:-->
+                  <v11:AttachmentName>?</v11:AttachmentName>
+                  <!--Optional:-->
+                  <v11:AttachmentMIMEType>?</v11:AttachmentMIMEType>
+                  <!--Optional:-->
+                  <v11:File>cid:164653039522</v11:File>
+                  <!--Optional:-->
+                  <v11:AttachmentUserID>?</v11:AttachmentUserID>
+               </v11:Attachment>
+            </v11:Attachments>
+         </v11:ApplicationAttachmentInfo>
+      </v1:Upload>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ford/interface/Application/Attachment/v1.0/Upload"/></con:call></con:operation></con:interface><con:testSuite name="ApplicationAttachmentSOAP TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Download TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Download"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ApplicationAttachmentSOAP</con:interface><con:operation>Download</con:operation><con:request name="Download"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/AASWeb/ApplicationAttachmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn:ford/interface/Application/Attachment/v1.0" xmlns:v11="urn:ford/Application/Attachment/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Download>
+         <v11:ApplicationAttachmentInfo>
+            <v11:AttachmentApplication>
+               <v11:ApplicationID>?</v11:ApplicationID>
+               <v11:EntityName>?</v11:EntityName>
+               <!--Optional:-->
+               <v11:EntityAttributes>
+                  <!--1 or more repetitions:-->
+                  <v11:EntityAttribute>
+                     <v11:Name>?</v11:Name>
+                     <v11:value>?</v11:value>
+                  </v11:EntityAttribute>
+               </v11:EntityAttributes>
+            </v11:AttachmentApplication>
+            <v11:Attachments>
+               <!--1 or more repetitions:-->
+               <v11:Attachment>
+                  <!--Optional:-->
+                  <v11:AttachmentID>?</v11:AttachmentID>
+                  <!--Optional:-->
+                  <v11:AttachmentName>?</v11:AttachmentName>
+                  <!--Optional:-->
+                  <v11:AttachmentMIMEType>?</v11:AttachmentMIMEType>
+                  <!--Optional:-->
+                  <v11:File>cid:403025930151</v11:File>
+                  <!--Optional:-->
+                  <v11:AttachmentUserID>?</v11:AttachmentUserID>
+               </v11:Attachment>
+            </v11:Attachments>
+         </v11:ApplicationAttachmentInfo>
+      </v1:Download>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:wsaConfig action="urn:ford/interface/Application/Attachment/v1.0/Download"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Search TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Search"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ApplicationAttachmentSOAP</con:interface><con:operation>Search</con:operation><con:request name="Search"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="cookie" value="WSL-credential=VxSDKFcVD8gBAQIABHVzZXJpZD1zaGFyaXByMQBpcGFkZHI9MTkuMjM4LjE1My4yMDcAYWNpZ3JvdXA9Tk9OT1ZWTQBkZXB0PTEzNjcyMDBGVABvcmdjb2RlPT8AZW1wY29kZT1GAG1ycm9sZT1OAG9yZz1GQVBBQwBjb21wYW55PUZPUkQuR0xPQkFMLkJVU0lORVNTLlNFUlZJQ0VTAGRpdmFiYnI9SVRTAHNpdGVjb2RlPTc1NTgAY2l0eT1DSEVOTkFJAHN0YXRlPT8AY291bnRyeT1JTkQAc3ViamVjdGlkPXNoYXJpcHIxQGZvcmQuY29tAGF1dGh0eXBlPUEAAABDTj13c2x2NC1pbnRlcm5hbADbNFp0x1kSiLpCX5yl3T/+c5dhZ01xATVcUg258jrMnM+SrRPVQZj8530DUzwkIkhoeybM+WHmUnkGx3+xT+5grCHcXBeJeTZc1ytTM/FQHQLXUBoWA1loUiTfIkA/eABog7zbeKfz8sJnqQ8L6p6wMBFIJUpZlJm+ogCeyz4JoA==" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://wwwqa.pps.ford.com/AASWeb/ApplicationAttachmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn:ford/interface/Application/Attachment/v1.0" xmlns:v11="urn:ford/Application/Attachment/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Search>
+         <v11:AttachmentSearchCriteria>
+            <v11:ApplicationID>858</v11:ApplicationID>
+            <v11:DocumentNumber>DZ2137</v11:DocumentNumber>
+            <v11:DocumentVersion>02</v11:DocumentVersion>
+            <v11:Indicator></v11:Indicator>
+         </v11:AttachmentSearchCriteria>
+      </v1:Search>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="urn:ford/interface/Application/Attachment/v1.0/Search" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>

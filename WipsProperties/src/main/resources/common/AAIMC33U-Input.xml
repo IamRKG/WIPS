@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-INPUT-BUFFER">
+    <DataArea name="TP-INPUT-FIELDS">
+	<Parameter name="TPI-IOINDIC" pic="X" />
+	<Parameter name="TPI-PFKEY" pic="99" />
+	<Parameter name="TPI-CTEAM" pic="X(2)" />
+	<Parameter name="TPI-CLASS" pic="X(2)" />
+	<Parameter name="TPI-WORKTASK" pic="X(6)" />
+	<Parameter name="TPI-MISCREF" pic="X(10)" />
+	<Parameter name="TPI-ACC1AMT" pic="X(14)" />
+	<Parameter name="TPI-ACC1SGN" pic="X" />
+	<Parameter name="TPI-ACC2AMT" pic="X(14)" />
+	<Parameter name="TPI-ACC2SGN" pic="X" />
+	<Parameter name="TPI-FBSCSTAT" pic="X" />
+	<Parameter name="TPI-DIRAPP" pic="X" />
+	<Parameter name="TPI-APPDATE" pic="X(6)" />
+	<Parameter name="TPI-TVMITEM" pic="X(12)" />
+	<Parameter name="TPI-MODELYR" pic="X(4)" />
+	<Parameter name="TPI-MOD1" pic="X(3)" />
+	<Parameter name="TPI-MOD2" pic="X(3)" />
+	<Parameter name="TPI-MOD3" pic="X(3)" />
+	<Parameter name="TPI-MOD4" pic="X(3)" />
+	<Parameter name="TPI-MOD5" pic="X(3)" />
+	<Parameter name="TPI-MOD6" pic="X(3)" />
+	<Parameter name="TPI-MOD7" pic="X(3)" />
+	<Parameter name="TPI-MOD8" pic="X(3)" />
+	<Parameter name="TPI-MOD9" pic="X(3)" />
+	<Parameter name="TPI-MOD10" pic="X(3)" />
+	<Parameter name="TPI-MOD11" pic="X(3)" />
+	<Parameter name="TPI-MOD12" pic="X(3)" />
+	<Array name="TPI-BUFFER-SEGLOOP" occurs="8">
+		<Parameter name="TPI-PAYDESC" pic="X(72)" />
+	</Array>
+</DataArea>
+</DataArea>

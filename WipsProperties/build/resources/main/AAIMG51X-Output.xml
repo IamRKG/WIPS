@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-P01002-ATTR" pic="XX" />
+		<Parameter name="TPO-P01002" pic="X(4)" />
+		<Parameter name="TPO-PROGRAM-ATTR" pic="XX" />
+		<Parameter name="TPO-PROGRAM" pic="X(4)" />
+		<Parameter name="TPO-P01012-ATTR" pic="XX" />
+		<Parameter name="TPO-P01012" pic="X(2)" />
+		<Parameter name="TPO-DATE-ATTR" pic="XX" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="XX" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-JCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-JCODE" pic="X(4)" />
+		<Parameter name="TPO-EMPLNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-EMPLNAME" pic="X(17)" />
+		<Parameter name="TPO-PAGENO-ATTR" pic="XX" />
+		<Parameter name="TPO-PAGENO" pic="X(2)" />
+		<Parameter name="TPO-MORE-ATTR" pic="XX" />
+		<Parameter name="TPO-MORE" pic="X(7)" />
+		<Parameter name="TPO-ERRMSG2-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG2" pic="X(66)" />
+		<Parameter name="TPO-PREFIX-ATTR" pic="XX" />
+		<Parameter name="TPO-PREFIX" pic="X(6)" />
+		<Parameter name="TPO-BASE-ATTR" pic="XX" />
+		<Parameter name="TPO-BASE" pic="X(8)" />
+		<Parameter name="TPO-SUFFIX-ATTR" pic="XX" />
+		<Parameter name="TPO-SUFFIX" pic="X(8)" />
+		<Parameter name="TPO-PRGNUM-ATTR" pic="XX" />
+		<Parameter name="TPO-PRGNUM" pic="X(6)" />
+		<Parameter name="TPO-JOBCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-JOBCODE" pic="X(4)" />
+		<Parameter name="TPO-PARTNM-ATTR" pic="XX" />
+		<Parameter name="TPO-PARTNM" pic="X(34)" />
+		<Parameter name="TPO-ENGLVL-ATTR" pic="XX" />
+		<Parameter name="TPO-ENGLVL" pic="X(18)" />
+		
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="11">
+			<Parameter name="TPO-SELECT-ATTR" pic="XX" />
+			<Parameter name="TPO-SELECT" pic="X" />
+			<Parameter name="TPO-STTYPE-ATTR" pic="XX" />
+			<Parameter name="TPO-STTYPE" pic="X(20)" />
+			<Parameter name="TPO-STTITL-ATTR" pic="XX" />
+			<Parameter name="TPO-STTITL" pic="X(21)" />
+			<Parameter name="TPO-STCOST-ATTR" pic="XX" />
+			<Parameter name="TPO-STCOST" pic="X(12)" />
+			<Parameter name="TPO-STSTAT-ATTR" pic="XX" />
+			<Parameter name="TPO-STSTAT" pic="X(11)" />
+			<Parameter name="TPO-STDATE-ATTR" pic="XX" />
+			<Parameter name="TPO-STDATE" pic="X(6)" />
+		</Array>
+	</DataArea>
+</DataArea>

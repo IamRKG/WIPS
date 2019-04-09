@@ -1,0 +1,25 @@
+apply plugin: 'war'
+webAppDirName = 'WebContent'
+
+dependencies{
+	compile libraries.wipsWebCompile
+	providedCompile libraries.wipsWebProvidedCompile
+	testCompile libraries.wipsWebTestCompile
+}
+
+war{  
+	classpath = sourceSets.main.output.classesDir
+	manifest{
+		attributes("Class-Path": configurations.compile.collect {"lib/" + it.getName() }.join(' '))
+	}
+	  
+	if(!buildForHteam){
+		eachFile {
+			if (it.file == project.file("${webAppDir}/WEB-INF/ibm-web-ext.xml")){
+				it.filter { line ->
+					line.replaceAll('<enable-file-serving value="false"/>','<enable-file-serving value="true"/>')
+				}
+			}
+		}	
+	}
+}

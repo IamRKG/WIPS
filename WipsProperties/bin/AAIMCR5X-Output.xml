@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-SYSID-ATTR" pic="XX" />
+		<Parameter name="TPO-SYSID" pic="X(4)" />
+		 <Parameter name="TPO-PROGRAM-ATTR" pic="XX" />
+        <Parameter name="TPO-PROGRAM" pic="X(4)" />
+		<Parameter name="TPO-VERSION-ATTR" pic="XX" />
+		<Parameter name="TPO-VERSION" pic="X(2)" />
+		<Parameter name="TPO-MENUTXT-ATTR" pic="XX" />
+        <Parameter name="TPO-MENUTXT" pic="X(27)" />
+		<Parameter name="TPO-DATE-ATTR" pic="XX" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="XX" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-USERCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-USERCODE" pic="X(4)" />
+		<Parameter name="TPO-USERNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-USERNAME" pic="X(17)" />
+		<Parameter name="TPO-PAGENO-ATTR" pic="XX" />
+		<Parameter name="TPO-PAGENO" pic="X(2)" />
+		<Parameter name="TPO-MORE-ATTR" pic="XX" />
+		<Parameter name="TPO-MORE" pic="X(7)" />
+		<Parameter name="TPO-SUPPCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-SUPPCODE" pic="X(5)" />
+		<Parameter name="TPO-SUPPNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-SUPPNAME" pic="X(15)" />
+		<Parameter name="TPO-STATTXT-ATTR" pic="XX" />
+        <Parameter name="TPO-STATTXT" pic="X(11)" />
+		<Parameter name="TPO-LSPNO-ATTR" pic="XX" />
+		<Parameter name="TPO-LSPNO" pic="X(6)" />
+		<Parameter name="TPO-LSPVERST-ATTR" pic="XX" />
+		<Parameter name="TPO-LSPVERST" pic="X(14)" />
+		<Parameter name="TPO-TITLTXT-ATTR" pic="XX" />
+        <Parameter name="TPO-TITLTXT" pic="X(9)" />
+		<Parameter name="TPO-LSPTITLE-ATTR" pic="XX" />
+		<Parameter name="TPO-LSPTITLE" pic="X(20)" />
+		<Parameter name="TPO-EFFDATE-ATTR" pic="XX" />
+		<Parameter name="TPO-EFFDATE" pic="X(6)" />
+		<Parameter name="TPO-ENTRUSER-ATTR" pic="XX" />
+		<Parameter name="TPO-ENTRUSER" pic="X(4)" />
+		<Parameter name="TPO-ENTRNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-ENTRNAME" pic="X(17)" />
+		<Parameter name="TPO-CAUSFACT-ATTR" pic="XX" />
+		<Parameter name="TPO-CAUSFACT" pic="X" />
+		<Parameter name="TPO-JOBCDE-ATTR" pic="XX" />
+		<Parameter name="TPO-JOBCDE" pic="X(2)" />
+		<Parameter name="TPO-JOBTTLE-ATTR" pic="XX" />
+		<Parameter name="TPO-JOBTTLE" pic="X(19)" />
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="13">
+			<Parameter name="TPO-APPRMKS-ATTR" pic="XX" />
+			<Parameter name="TPO-APPRMKS" pic="X(72)" />
+		</Array>
+	</DataArea>
+</DataArea>

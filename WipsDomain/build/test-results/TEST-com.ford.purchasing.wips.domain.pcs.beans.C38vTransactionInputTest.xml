@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.domain.pcs.beans.C38vTransactionInputTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:18" hostname="WGC100HHBHH92" time="0.011">
+  <properties/>
+  <testcase name="loadC38vDataAreaWithoutMultiplePages" classname="com.ford.purchasing.wips.domain.pcs.beans.C38vTransactionInputTest" time="0.007"/>
+  <testcase name="loadC38vDataArea" classname="com.ford.purchasing.wips.domain.pcs.beans.C38vTransactionInputTest" time="0.002"/>
+  <testcase name="loadC38vDataAreaWithValues" classname="com.ford.purchasing.wips.domain.pcs.beans.C38vTransactionInputTest" time="0.001"/>
+  <testcase name="loadC38vDataAreaMultiplePagesCase" classname="com.ford.purchasing.wips.domain.pcs.beans.C38vTransactionInputTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

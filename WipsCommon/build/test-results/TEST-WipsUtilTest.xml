@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WipsUtilTest" tests="17" skipped="2" failures="0" errors="0" timestamp="2016-11-09T09:36:10" hostname="WGC100HHBHH92" time="0.04">
+  <properties/>
+  <testcase name="populatePlaceholderInSqlHappyPath" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="decryptHappyPath" classname="WipsUtilTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="populatePlaceholdersInSqlHappyPath" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="encryptHappyPath" classname="WipsUtilTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="populateWarningMessagesHappyPath" classname="WipsUtilTest" time="0.001"/>
+  <testcase name="isExceptionContainingMessageCodeHappyPath" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="convertDateStringToFormattedDateStringNullTest" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="convertDateStringToFormattedDateStringHappyPath" classname="WipsUtilTest" time="0.001"/>
+  <testcase name="getDefaultFormattedCurrentDateFailurePath" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="convertDateStringToFormattedDateIndexExceptionPath" classname="WipsUtilTest" time="0.001"/>
+  <testcase name="getDefaultFormattedCurrentDateHappyPath" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="isExceptionContainingMessageCodeFailurePath" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="convertDateStringToFormattedDateStringNullExceptionPath" classname="WipsUtilTest" time="0.019"/>
+  <testcase name="getFormattedCurrentDateFailurePath" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="getFormattedCurrentDateHappyPath" classname="WipsUtilTest" time="0.001"/>
+  <testcase name="getMapFromListHappyPath" classname="WipsUtilTest" time="0.0"/>
+  <testcase name="populatePlaceholdersInSqlHappyPathMultiple" classname="WipsUtilTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Nov 09, 2016 3:06:10 PM com.ford.it.logging.JdkMapper log
+WARNING: dateFormatter
+]]></system-err>
+</testsuite>

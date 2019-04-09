@@ -1,0 +1,80 @@
+<!-- Build v4.0 -->
+<project name="WIPS" default="buildAll" basedir="." xmlns:fbf="antlib:com.ford.it.buildframework" xmlns="antlib:org.apache.tools.ant">
+	<target name="buildAll">
+
+		<property name="app.scm.server.name" value="www.accurev.ford.com" />
+
+		<fbf:fordProject name="WIPS">
+
+			<fbf:distributionPackage name="WIPS">
+
+				<fbf:sourceRepository>
+					<fbf:accuRevRepository serverName="${app.scm.server.name}" />
+				</fbf:sourceRepository>
+
+				<fbf:earProject name="WipsEar" setBuildVersionInfo="true" utilityJarsInEarLib="true">
+
+					<fbf:utilityProject name="WipsCommon" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+					</fbf:utilityProject>
+
+					<fbf:utilityProject name="WipsConsumer" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+					</fbf:utilityProject>
+
+					<fbf:utilityProject name="WipsDomain" id="WipsDomainJar" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+					</fbf:utilityProject>
+
+					<fbf:utilityProject name="WipsBusiness" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+					</fbf:utilityProject>
+
+					<fbf:PropertiesProject name="WipsProperties">
+						<fbf:additionalEnvironment name="dist" />
+					</fbf:PropertiesProject>
+
+					<fbf:warProject name="WipsUIWeb" webContentLocation="WebContent" webContextRoot="WipsUIWeb" createJavadocs="false">
+					</fbf:warProject>
+
+					<fbf:warProject name="WipsWeb" webContentLocation="WebContent" webContextRoot="WipsWeb" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+					</fbf:warProject>
+
+				</fbf:earProject>
+
+				<fbf:propertyJar name="WipsDynaPropAdminPropertiesJar" id="WipsDynaPropJar">
+					<fileSet dir="WipsProperties/bin" includes="fjf/fjf-security-plugins-config.xml,
+				                     fjf/dynaprop-config.xml, fjf/simple_auth_groups.xml" />
+
+				</fbf:propertyJar>
+
+				<fbf:prePackagedApp name="WipsMobilePrepackagedApps">
+					<fbf:injectJar>
+						<fbf:jarToInject refid="WipsDynaPropJar" />
+						<fbf:injectIntoEAR name="DynaPropAdmin.ear" />
+					</fbf:injectJar>
+				</fbf:prePackagedApp>
+
+			</fbf:distributionPackage>
+
+		</fbf:fordProject>
+	</target>
+
+	<patternset id="exclude_test_directories">
+		<exclude name="**/testing/**" />
+	</patternset>
+
+	<patternset id="font_static_content">
+		<include name="**/*.ttf" />
+		<include name="**/*.eot" />
+		<include name="**/*.woff" />
+		<include name="**/*.svg" />
+	</patternset>
+
+	<patternset id="static_content">
+		<include id="default_static_content" />
+		<include id="font_static_content" />
+	</patternset>
+
+</project>

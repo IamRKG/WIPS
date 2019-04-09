@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE property-group PUBLIC "PropertyGroup.dtd" "PropertyGroup.dtd">
+<property-group name="WIPSDatabase" comment="">
+    <property-group name="DB2" comment="">
+        <property-group name="Credentials" comment="">
+            <property name="JNDIName" comment="">jdbc/DBCONN</property>
+            <property name="password" comment="">pwd</property>
+            <property name="userName" comment="">id</property>
+        </property-group>
+        <property-group name="SQLQueries" comment="">
+            <property name="retrieveBuyerJobCodesAndNames" comment=""><![CDATA[SELECT A.CD_JOB_CODE, C.NA_EMPLE_NAME 
+    FROM NEDX1.AATOWNRA.AAT_091_JOBS A, NEDX1.AATOWNRA.AAT_090_EMPJOBPT B, NEDX1.AATOWNRA.AAT_089_EMPLOYEE C 
+    WHERE  A.CD_JOB_CODE in (#@$%!) 
+        AND A.CD_JOB_CODE = B.CD_JOB_CODE
+                AND B.IN_EMP_PERM_IND = 'P'
+                AND (B.DT_EMP_START_DATE < ? OR B.DT_EMP_START_DATE = ?)
+        AND B.DT_EMPMT_END_DATE > ? 
+        AND B.ID_RACF_USER_ID = C.ID_RACF_USER_ID
+                AND A.IN_DELETE_IND  <> 'Y'
+        AND B.IN_DELETE_IND  <> 'Y'
+                AND C.IN_DELETE_IND  <> 'Y']]></property>
+            <property name="retrieveGsaAuditValues" comment="Query to retrieve list of GSA Audit values"><![CDATA[SELECT SEL_CODE, SEL_CODE_DESC FROM NEDX1.AATOWNRA.AAT_334_PICK_LIST WHERE SEL_TYPE = 'LSPAUDIT' AND SEL_ACTIVE_IND = 'Y']]></property>
+            <property name="retrieveJobCodesAndNames" comment="Query for retrieving list of Job Codes and Names"><![CDATA[SELECT A.ID_RACF_USER_ID USER_RACF, B.NA_EMPLE_NAME USER_NAME, A.CD_JOB_CODE JOB_CODE, E.CD_JOB_TITLE_CD JOB_TITLE,(SELECT D.NA_EMPLE_NAME FROM NEDX1.AATOWNRA.AAT_089_EMPLOYEE D, NEDX1.AATOWNRA.AAT_090_EMPJOBPT C WHERE D.ID_RACF_USER_ID = C.ID_RACF_USER_ID AND C.CD_JOB_CODE = A.CD_JOB_CODE AND C.IN_EMP_PERM_IND = 'P' AND C.DT_EMP_START_DATE <= ? AND C.DT_EMPMT_END_DATE  > ? AND C.IN_DELETE_IND <> 'Y' AND D.IN_DELETE_IND <> 'Y' FETCH FIRST 1 ROW ONLY)  JOB_EMPL_NAME FROM  NEDX1.AATOWNRA.AAT_089_EMPLOYEE B, NEDX1.AATOWNRA.AAT_091_JOBS E, NEDX1.AATOWNRA.AAT_090_EMPJOBPT A WHERE  A.ID_RACF_USER_ID = ? AND  A.DT_EMP_START_DATE <= ? AND A.DT_EMPMT_END_DATE > ? AND A.IN_DELETE_IND <> 'Y' AND B.ID_RACF_USER_ID = A.ID_RACF_USER_ID AND B.IN_DELETE_IND <> 'Y' AND E.CD_JOB_CODE = A.CD_JOB_CODE AND E.IN_DELETE_IND <> 'Y']]></property>
+            <property name="retrieveLumpSumApprovers" comment="Query for retrieving list of approvers for the given lumpsum"><![CDATA[SELECT A.CD_APPR_JOB_CD AS JOBCODE ,(CASE WHEN A.CD_APPR_STATUS <> '1' THEN (SELECT NA_EMPLE_NAME FROM NEDX1.AATOWNRA.AAT_089_EMPLOYEE C WHERE C.ID_RACF_USER_ID = A.CD_APPR_RACF_ID) ELSE (SELECT E.NA_EMPLE_NAME END FROM NEDX1.AATOWNRA.AAT_090_EMPJOBPT D ,NEDX1.AATOWNRA.AAT_089_EMPLOYEE E WHERE D.CD_JOB_CODE = A.CD_APPR_JOB_CD AND D.DT_EMP_START_DATE <= ? AND D.DT_EMPMT_END_DATE > ? AND D.IN_EMP_PERM_IND =  'P' AND D.IN_DELETE_IND = 'N' AND E.ID_RACF_USER_ID = D.ID_RACF_USER_ID AND E.IN_DELETE_IND = 'N' FETCH FIRST 1 ROWS ONLY) END) AS NAME ,DATE(A.TS_APPR_UPDATED) AS APPRL_DATE ,(CASE WHEN A.CD_APPR_STATUS = '1' THEN ' ' WHEN A.CD_APPR_STATUS = '2' THEN 'APPROVED' WHEN A.CD_APPR_STATUS = '3' THEN 'REJECTED' END) AS STATUS ,(CASE WHEN B.CD_RMKS_JOB_CD IS NULL THEN 'NO' ELSE 'YES' END) AS REMARKS FROM NEDX1.AATOWNRA.AAT_532_LSP_APPR A LEFT OUTER JOIN NEDX1.AATOWNRA.AAT_533_LSP_RMKS B ON     B.NO_LSP_NO = A.NO_LSP_NO AND B.NO_LSP_VERSION = A.NO_LSP_VERSION AND B.CD_RMKS_JOB_CD = A.CD_APPR_JOB_CD AND B.NO_RMKS_SEQ = 1 WHERE A.NO_LSP_NO = ? AND A.NO_LSP_VERSION = ? AND A.IN_DELETE_IND = 'N' ORDER BY A.NO_APPR_SEQ]]></property>
+            <property name="retrieveLumpSumClassifications" comment="Query To Retrieve LumpSum Classifications"><![CDATA[SELECT SUBSTR(A.SEL_CODE,1,2) AS CLASS_CODE ,SUBSTR(A.SEL_CODE_DESC,1,20)  AS CLASS_DESC ,SUBSTR(A.SEL_CODE_DESC,22,8)  AS ACCOUNT ,SUBSTR(A.SEL_CODE_DESC,30,6) AS SUB_DIVISION ,SUBSTR(A.SEL_CODE_DESC,36,10) AS DEPARTMENT ,SUBSTR(A.SEL_CODE_DESC,46,4)  AS FINANCE_ANALYST ,SUBSTR(A.SEL_CODE_DESC,51,1) AS PRE_PAY_IND ,SUBSTR(A.SEL_CODE_DESC,52,1) AS PREPAY_ACCOUNT_TYPE ,SUBSTR(A.SEL_CODE_DESC,55,3) AS NATIONAL_COMPANY ,SUBSTR(A.SEL_CODE_DESC,59,2) AS PLANT FROM NEDX1.AATOWNRA.AAT_334_PICK_LIST A ,NEDX1.AATOWNRA.AAT_531_LSP B WHERE  B.NO_LSP_NO = ? AND B.NO_LSP_VERSION = ? AND A.SEL_TYPE = 'LSPCLASS' AND LOCATE((SUBSTR(A.SEL_CODE,3,6)),B.CD_REGION CONCAT B.CD_FUND_ORG CONCAT B.CD_COMM_TEAM) > 0 AND A.SEL_ACTIVE_IND = 'Y' AND ((SUBSTR(A.SEL_CODE_DESC,46,4) = B.CD_FIN_JOB_CODE AND EXISTS (SELECT '1' FROM NEDX1.AATOWNRA.AAT_334_PICK_LIST C, NEDX1.AATOWNRA.AAT_100_PLANT D WHERE SUBSTR(A.SEL_CODE_DESC,46,4) = B.CD_FIN_JOB_CODE AND D.CD_PLANT_CODE = B.CD_PLANT_TO_PAY AND D.IN_DELETE_IND  <> 'Y' AND C.SEL_TYPE = 'LSPOPLOC' AND C.SEL_CODE = B.CD_FUND_ORG CONCAT B.CD_NAT_CMPNY_CODE CONCAT D.CD_REAL_PLANT_CODE AND C.SEL_ACTIVE_IND = 'Y' AND SUBSTR(A.SEL_CODE_DESC,36,4) = C.SEL_CODE_DESC)) OR (SUBSTR(A.SEL_CODE_DESC,22,3) = 'N/A'))]]></property>
+            <property name="retrieveLumpSumSuppliers" comment="Query to retrieve list of suppliers for the given lumpsum"><![CDATA[SELECT   '1' AS CNT                     
+        ,A.CD_EURO_SUPP_CODE CONCAT         
+         A.CD_SUPP_SITE_CODE  AS SITE_CODE     
+        ,A02_SITE_MEMO_NAME  AS SITE_NAME            
+  FROM   NEDX1.AATOWNRA.AAT_531_LSP A                   
+        ,NEDX1.AATOWNRA.GBV_A02_SITE                    
+ WHERE   A.NO_LSP_NO      = ?                  
+   AND   A.NO_LSP_VERSION = ?                          
+   AND   A02_SITE_CODE = A.CD_EURO_SUPP_CODE           
+                 CONCAT  A.CD_SUPP_SITE_CODE           
+UNION                                                  
+SELECT   '2'                                           
+        ,B.CD_EURO_SUPP_CODE CONCAT                    
+         B.CD_SUPP_SITE_CODE                           
+        ,A02_SITE_MEMO_NAME                            
+FROM     NEDX1.AATOWNRA.AAT_537_LSP_SUPPLR B            
+        ,NEDX1.AATOWNRA.AAT_531_LSP C                   
+        ,NEDX1.AATOWNRA.GBV_A02_SITE                    
+WHERE    B.NO_LSP_NO = ?                        
+  AND    C.NO_LSP_NO = B.NO_LSP_NO                     
+  AND    C.NO_LSP_VERSION = 1                          
+  AND    (B.CD_EURO_SUPP_CODE <> C.CD_EURO_SUPP_CODE   
+   OR    B.CD_SUPP_SITE_CODE <> C.CD_SUPP_SITE_CODE)   
+  AND    B.IN_DELETE_IND <> 'Y'                        
+  AND    A02_SITE_CODE = B.CD_EURO_SUPP_CODE           
+                 CONCAT  B.CD_SUPP_SITE_CODE
+ORDER BY 1,2,3]]></property>
+            <property name="retrieveSupplierCodesAndNames" comment="">SELECT A02_SIT_SHORT_NAME,A02_SITE_CODE FROM NEDX1.AATOWNRA.GBV_A02_SITE WHERE A02_SITE_CODE in (#@$%!)</property>
+             <property name="retrieveSupplierCodesAndNamesForPriceClaims" comment="">SELECT A02_SITE_CODE AS SUPPLIER_CODE, A02_SIT_SHORT_NAME AS SUPPLIER_NAME FROM NEDX1.AATOWNRA.GBV_A02_SITE  
+WHERE A02_SITE_CODE in (#@$%!) UNION
+SELECT A01_SUPPLIER_CODE AS SUPPLIER_CODE, A01_SUP_MEMO_NAME AS SUPPLIER_NAME FROM NEDX1.AATOWNRA.GBV_A01_SUPPLIER
+WHERE A01_SUPPLIER_CODE in (#@$%!)</property>
+        </property-group>
+    </property-group>
+</property-group>

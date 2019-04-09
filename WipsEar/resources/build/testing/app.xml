@@ -1,0 +1,130 @@
+<project name="WIPS" default="buildAll" basedir="." 
+	xmlns:fbf="antlib:com.ford.it.buildframework" 
+	xmlns="antlib:org.apache.tools.ant">
+
+	<import file="../setupProperties-app.xml" />
+	<import file="unitTestExecution-app.xml" />
+
+	<!-- ******************************************************************* -->
+	<!-- This is the main target "buildAll" that creates the HTEAM           -->
+	<!-- distribution package for JAB.                                       -->
+	<!-- ******************************************************************* -->
+	<target name="buildAll" depends="setupCommonProperties">
+		<fbf:fordProject name="WIPS">
+
+			<fbf:distributionPackage name="WIPS">
+
+				<fbf:sourceRepository>
+					<fbf:accuRevRepository serverName="${app.scm.server.name}" />
+				</fbf:sourceRepository>
+
+				<fbf:earProject name="${EarProjectName}" setBuildVersionInfo="true" utilityJarsInEarLib="true">
+
+					<fbf:utilityProject name="${CommonProjectName}" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+						<fbf:javaSource location="testing" />
+					</fbf:utilityProject>
+
+					
+					
+					<fbf:utilityProject name="${DomainProjectName}" id="WipsDomainJar" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+						<fbf:javaSource location="testing" />
+						<fbf:javaSource location="testingBuild" />
+					</fbf:utilityProject>
+					
+					<fbf:utilityProject name="${ConsumerProjectName}" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+						<fbf:javaSource location="testing" />
+					</fbf:utilityProject>
+					
+					<fbf:utilityProject name="${BusinessProjectName}" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+						<fbf:javaSource location="testing" />
+						<fbf:javaSource location="testingBuild" />
+					</fbf:utilityProject>
+
+					<fbf:PropertiesProject name="${PropertyProjectName}">
+						<fbf:additionalEnvironment name="dist" />
+					</fbf:PropertiesProject>
+
+					<fbf:warProject name="${WebUiProjectName}" webContentLocation="WebContent" webContextRoot="WipsUIWeb" createJavadocs="false">
+					</fbf:warProject>
+
+					<fbf:warProject name="${WebProjectName}" webContentLocation="WebContent" webContextRoot="WipsWeb" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+						<fbf:javaSource location="testing" />
+					</fbf:warProject>
+					
+					<fbf:utilityProject name="${WebProjectName}" createJavadocs="false">
+						<fbf:javaSource location="src/main/java" />
+						<fbf:classPath location="${extract.dir}/${WebProjectName}/WebContent/WEB-INF/lib" />
+					</fbf:utilityProject> 
+
+					
+				</fbf:earProject>
+
+				<fbf:propertyJar name="WipsDynaPropAdminPropertiesJar" id="WipsDynaPropJar">
+					<fileSet dir="WipsProperties/bin" includes="fjf/fjf-security-plugins-config.xml,
+		                                     fjf/dynaprop-config.xml, fjf/simple_auth_groups.xml" />
+
+				</fbf:propertyJar>
+
+				<fbf:prePackagedApp name="WipsMobilePrepackagedApps">
+					<fbf:injectJar>
+						<fbf:jarToInject refid="WipsDynaPropJar" />
+						<fbf:injectIntoEAR name="DynaPropAdmin.ear" />
+					</fbf:injectJar>
+				</fbf:prePackagedApp>
+
+			</fbf:distributionPackage>
+
+			<!-- Build WIPS Testing projects
+			            -->
+			<fbf:jar name="${TestingProjectName}" createJavadocs="false" includeWASLibraries="false">
+				<fbf:sourceRepository>
+					<fbf:accuRevRepository serverName="${app.scm.server.name}" />
+				</fbf:sourceRepository>
+
+				<fbf:javaSource location="src" />
+				<fbf:javaSource location="test" />
+				<fbf:classPath location="${extract.dir}/${TestingProjectName}/lib" />
+				<fbf:classPath location="${extract.dir}/${EarProjectName}/lib" />
+				<fbf:classPath location="${extract.dir}/${EarProjectName}/lib/testing" />
+				<fbf:classPath location="${current.build.dir}" />
+				<fbf:classPath location="${current.build.dir}/test" />
+				<fbf:runTarget name="unitTestForDesktop" type="postPackage" />
+			</fbf:jar>
+
+		</fbf:fordProject>
+	</target>
+
+
+
+	<!-- ********************************************************************** -->
+	<!-- This target is only executed if the build is performed on the desktop. -->
+	<!-- This allows us to run unit tests and code coverage when testing the    -->
+	<!-- build locally on the desktop. If running on the CI uBuild server the   -->
+	<!-- unit test and code coverage targets are executed as separate steps in  -->
+	<!-- in the configured build process.                                       -->
+	<!-- ********************************************************************** -->
+	<target name="unitTestForDesktop" if="is.desktop.build">
+		<property name="UBUILD.UNITTESTS.PROPERTY" value="**/*Test.class" />
+		<property name="JACOCO.HOME" value="C:\proj\buildfw\jacoco" />
+		<antcall target="unitTestAndCoverageReport" />
+	</target>
+
+	
+	<patternset id="font_static_content">
+		<include name="**/*.ttf" />
+		<include name="**/*.eot" />
+		<include name="**/*.woff" />
+		<include name="**/*.svg" />
+	</patternset>
+
+	<patternset id="static_content">
+		<include id="default_static_content" />
+		<include id="font_static_content" />
+	</patternset>
+	
+</project>

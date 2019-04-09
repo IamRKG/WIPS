@@ -1,0 +1,21 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="atpApproveModalInstanceController.reject()">&times;</button>
+	<h3 class="modal-title">WARNING</h3>
+</div>
+<div class="modal-body">
+		<div ng-repeat="messageCodeName in atpApproveModalInstanceController.approvalWarningMessage.warningMessagesList">
+          <div ng-if="messageCodeName.messageCode == atpApproveModalInstanceController.currentStep.messageCode">
+           	 {{atpApproveModalInstanceController.currentStep.errorMessage}}
+           	 <div class="modal-footer form-actions">
+					<button id="modal-submit" class="btn btn-primary-default" ng-if="atpApproveModalInstanceController.currentStep.actionTaken == 'Approve' || atpApproveModalInstanceController.currentStep.actionTaken == 'Confirm'" ng-click="atpApproveModalInstanceController.nextStep('{{atpApproveModalInstanceController.currentStep.actionTaken}}','{{$index}}');">
+						<span ng-if="atpApproveModalInstanceController.currentStep.actionTaken == 'Approve'">Confirm</span>
+						<span ng-if="atpApproveModalInstanceController.currentStep.actionTaken == 'Confirm'">{{atpApproveModalInstanceController.currentStep.actionTaken}}</span>
+					</button>
+					<button id="modal-submit" class="btn btn-danger" ng-if="atpApproveModalInstanceController.currentStep.actionTaken == 'Reject ATP'" ng-click="atpApproveModalInstanceController.nextStep('{{atpApproveModalInstanceController.currentStep.actionTaken}}','{{$index}}');">
+						{{atpApproveModalInstanceController.currentStep.actionTaken}}
+					</button>
+					<button id="modal-cancel" class="btn btn-secondary" ng-click="atpApproveModalInstanceController.reject()">Cancel</button>
+			 </div>
+          </div>
+        </div>
+</div>

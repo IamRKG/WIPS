@@ -1,0 +1,100 @@
+<project name="SetupProperties">
+
+	<!-- ******************************************************************* -->
+	<!-- This target sets up properties that are needed for multiple targets -->
+	<!-- ******************************************************************* -->
+	<target name="setupCommonProperties">
+		<echo message="setupCommonProperties....." />
+		<property name="app.scm.server.name" value="www.accurev.ford.com" />
+
+		<!-- Set up project properties that can be used by all targets -->
+		<property name="EarProjectName" value="WipsEar" />
+		<property name="CommonProjectName" value="WipsCommon" />
+		<property name="DomainProjectName" value="WipsDomain" />
+		<property name="BusinessProjectName" value="WipsBusiness" />
+		<property name="PropertyProjectName" value="WipsProperties" />
+		<property name="WebUiProjectName" value="WipsUIWeb" />
+		<property name="WebProjectName" value="WipsWeb" />
+		<property name="ConsumerProjectName" value="WipsConsumer" />
+
+		<property name="TestingProjectName" value="WipsTest" />
+
+		<condition property="is.desktop.build">
+			<equals arg1="${ORIGINATING.TOOL}" arg2="desktop" />
+		</condition>
+
+		<!-- This pattern set is defined in order to keep any jars located in    -->
+		<!-- a lib/src directory from being included. -->
+		<patternset id="exclude_test_directories">
+			<exclude name="**/lib/source/**" />
+		</patternset>
+
+
+
+	</target>
+
+
+	<!-- ******************************************************************* -->
+	<!-- This target sets up any properties that will be needed for unittest -->
+	<!-- ******************************************************************* -->
+	<target name="setupTestingProperties" depends="setupCommonProperties">
+		<echo message="setupTestingProperties....." />
+
+		<!-- Compiled artifact directories that can be used by all targets -->
+		<property name="common.bin.dir" value="${extract.dir}/${CommonProjectName}/bin" />
+		<property name="domain.bin.dir" value="${extract.dir}/${DomainProjectName}/bin" />
+		<property name="business.bin.dir" value="${extract.dir}/${BusinessProjectName}/bin" />
+		<property name="property.bin.dir" value="${extract.dir}/${PropertyProjectName}/bin" />
+		<property name="webui.classes.dir" value="${extract.dir}/${WebUiProjectName}/WebContent/WEB-INF/classes" />
+		<property name="web.classes.dir" value="${extract.dir}/${WebProjectName}/WebContent/WEB-INF/classes" />
+		<property name="junit.jar" value="${extract.dir}/${TestingProjectName}/lib/junit-4.12.jar" />
+		<!-- lib directories for the EAR and WAR projects -->
+		<property name="ear.lib.dir" value="${extract.dir}/${EarProjectName}/lib" />
+		<property name="webui.lib.dir" value="${extract.dir}/${WebUiProjectName}/WebContent/WEB-INF/lib" />
+		<property name="web.lib.dir" value="${extract.dir}/${WebProjectName}/WebContent/WEB-INF/lib" />
+
+	
+
+		<property name="testProject.bin.dir" value="${extract.dir}/${TestingProjectName}/bin" />
+		<property name="testProject.lib.dir" value="${extract.dir}/${TestingProjectName}/lib" />
+		<path id="testProject.lib.path">
+			<fileset dir="${testProject.lib.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="${current.build.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+			<!-- <fileset dir="${WEBSPHERE.RESOURCES}/was/install/h2">
+				<include name="**/*.jar" />
+			</fileset> -->
+			<!-- Add required jars for WLP -->
+		</path>
+
+		<!-- DB driver jar -->
+		<!-- <property name="dbdrivers.dir" value="${WEBSPHERE.RESOURCES}/was/install/mssqlserver/v301301/sqljdbc4.jar" /> -->
+
+
+		<!-- path element for the jars in the JabEAR/lib directory -->
+		<path id="ear.lib.path">
+			<fileset dir="${ear.lib.dir}">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+
+		<!-- path element for all the WIPS jars that have been built by this -->
+		<!-- invocation of the build excluding the WIPS test project jar -->
+		<path id="currBuild.lib.path">
+			<fileset dir="${current.build.dir}">
+				<include name="*.jar" />
+				<exclude name="${TestingProjectName}.jar" />
+			</fileset>
+		</path>
+		<property name="currBuildProject.classpath" refid="currBuild.lib.path" />
+
+		<!-- Set up reports dir -->
+		<property name="build.reports.dir" value="${current.build.dir}" />
+		<property name="jacoco.exec.file" value="${build.reports.dir}/jacoco.exec" />
+
+	</target>
+
+</project>

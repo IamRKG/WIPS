@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/com.ford.it.fjf/wscore/2.8/3e9891e386d80524870970ac992132142bc8caf7/wscore-2.8.jar" sourcepath="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/com.ford.it.fjf/wscore/2.8/1cd9e96d2b0893e5155e8f957012ea3115c675d7/wscore-2.8-sources.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/com.ford.it.fjf/itcore/2.52/f9cade1d91362e003903788af945cb931e9e95c9/itcore-2.52.jar" sourcepath="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/com.ford.it.fjf/itcore/2.52/aa6abd0c75b28fd11cf3b5b4de6655dbb51dd1ec/itcore-2.52-sources.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.2/81d61b7f33ebeab314e07de0cc596f8e858d97/slf4j-api-1.7.2.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/com.ford.it.fjf/wsHandlers/1.5/bcb6dd32fc24bc0b524bd79059deae8c1ed0d1d2/wsHandlers-1.5.jar" sourcepath="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/com.ford.it.fjf/wsHandlers/1.5/aeb531679801caabc0affe79a71e848e96043a95/wsHandlers-1.5-sources.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.2/7a87d845ad3a155297e8f67d9008f4c1e5656b71/commons-beanutils-1.9.2.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/junit/junit/3.8.2/7e4cde26b53a9a0e3fe5b00d1dbbc7cc1d46060/junit-3.8.2.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/org.apache/cactus/1.8.1/53ce496c092572a7dd29b4ff799a177382ad0248/cactus-1.8.1.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/com.ibm/snacc/1.0/d23daef2cb63a23958af9597b98501f457868081/snacc-1.0.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar"/>
+<classpathentry kind="lib" path="C:/Users/gradhak3/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar"/>
+</classpath>

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<DataArea name="TPI-INPUT">
+	<Parameter name="TPI-IOINDIC" pic="X" />
+	<Parameter name="TPI-PFKEY" pic="99" />
+	<Parameter name="TPI-SELVOL" pic="X" />
+	<Parameter name="TPI-SELPRC" pic="X" />
+	<Parameter name="TPI-SELAPP" pic="X" />
+	<Parameter name="TPI-SELPCS" pic="X" />
+	<Parameter name="TPI-SELPCT" pic="X" />
+	<Parameter name="TPI-SELINT" pic="X" />
+	<Parameter name="TPI-SELUOM" pic="X" />
+	<Parameter name="TPI-SELCOMM" pic="X(4)" />
+	<Parameter name="TPI-SELBUS" pic="X(5)" />
+	<Parameter name="TPI-SELDEL" pic="X" />
+</DataArea>

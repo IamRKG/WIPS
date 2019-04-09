@@ -1,0 +1,47 @@
+.ct-chart .ct-label.ct-vertical, .ct-chart .ct-label, .ct-chart .ct-label.ct-horizontal {
+    color: #000;
+    fill: rgba(0,0,0,1);
+}
+
+.ct-chart .ct-area {
+    fill-opacity: .2;
+}
+
+@media screen and (min-width: 300px) {
+    .ct-chart .ct-label {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .ct-chart .ct-label {
+        font-size: 1.5rem;
+    }
+}
+
+.ct-chart .ct-series.ct-series-a .ct-bar {
+    stroke: #1B4B94;
+}
+
+.ct-chart .ct-series.ct-series-b .ct-bar {
+    stroke: #0D2447;
+}
+
+.ct-chart .ct-series.ct-series-c .ct-bar {
+    stroke: #618DD0;
+}
+
+.ct-chart .ct-series.ct-series-d .ct-bar {
+    stroke: #233147;
+}
+
+.ct-chart .ct-series.ct-series-e .ct-bar {
+    stroke: #2565C7;
+}
+
+
+.ct-slice
+.ct-slice:hover{
+    fill: #333 !important;
+    transition: all 0.3s ease;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE property-group PUBLIC "PropertyGroup.dtd" "PropertyGroup.dtd">
+<property-group name="DynaPropDatabaseConfig">
+    <!-- DB2     -->
+
+    <property name="DbType">db2</property>
+    <property name="TableName">DDAA102.AAT_001_DYNAPROP</property>
+    <property name="ColumnPrefix">AAT001</property>
+        
+</property-group>

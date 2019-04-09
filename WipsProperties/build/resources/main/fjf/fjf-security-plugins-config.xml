@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE property-group SYSTEM "PropertyGroup.dtd">
+<property-group name="AuthorizationProviderFactory">
+    <property name="DYNAPROP_FW">
+        com.ford.it.security.plugins.SimpleAuthorizationProviderFactory
+    </property>
+      <property name="DEFAULT">
+        com.ford.it.security.plugins.SimpleAuthorizationProviderFactory
+    </property>
+</property-group>

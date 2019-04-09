@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" xmlns:ng="http://angularjs.org">
+<head>
+	<base href=""/>
+
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+
+
+	<!-- build:css webCore/assets/css/FRF-Vendor.min.css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css"/>
+	<!-- endbuild -->
+
+	<!-- build:css webCore/assets/css/FRF-webCore.min.css -->
+	<link rel="stylesheet" href="webCore/assets/css/charts.css"/>
+	<link rel="stylesheet" href="webCore/assets/css/webcore.css"/>
+	<!-- endbuild -->
+
+	<!-- build:css wipsUiApp/assets/css/app.min.css -->
+	<link rel="stylesheet" href="wipsUiApp/assets/css/app.css"/>
+	<!-- endbuild -->
+
+
+
+
+	<link rel="shortcut icon" href="ford_icon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="ford_icon.ico">
+	<meta name="msapplication-square150x150logo" content="ford_icon.ico">
+	<meta name="msapplication-square70x70logo" content="ford_icon.ico">
+	<meta name="msapplication-square310x310logo" content="ford_icon.ico">
+	<meta name="msapplication-TileColor" content="#003e7d">
+	<meta name="format-detection" content="telephone=no">
+
+	<title>Purchasing - WIPS</title>
+
+</head>
+
+<body>
+<div ng-app="WipsUiAppModule" id="ng-app">
+
+	<div wc-loading-indicator></div>
+	<div ui-view wc-page-title></div>
+</div>
+
+
+<!-- build:js webCore/FRF-Vendor.min.js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="bower_components/angular-i18n/angular-locale_en-us.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/angular-translate/angular-translate.min.js"></script>
+<script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.min.js"></script>
+<script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+<script src="bower_components/angular-ui-select/dist/select.min.js"></script>
+<script src="bower_components/chartist/dist/chartist.min.js"></script>
+<script src="bower_components/ui-utils-0.2.3/ui-utils.min.js"></script>
+<script src="bower_components/angular-grid/dist/angular-grid.js"></script>
+<script src="bower_components/ui-grid/ui-grid.min.js"></script>
+<script src="bower_components/Smart-Table/dist/smart-table.min.js"></script>
+<!-- endbuild -->
+<!-- build:js webCore/FRF-webCore.min.js -->
+<script src="webCore/WebCoreModule.js"></script>
+<script src="webCore/services/wcAlertConsoleService/WcAlertConsoleService.js"></script>
+<script src="webCore/services/wcAuthorizationService/WcAuthorizationCacheHelper.js"></script>
+<script src="webCore/services/wcAuthorizationService/WcAuthorizationService.js"></script>
+<script src="webCore/services/wcHttpRequestService/WcHttpRequestService.js"></script>
+<script src="webCore/services/wcTranslateConfiguratorService/WcTranslateConfiguratorService.js"></script>
+<script src="webCore/prototypes/wcHttpEndpointPrototype/WcHttpEndpointPrototype.js"></script>
+<script src="webCore/prototypes/wcDateRangePickerPrototype/WcDateRangePickerPrototype.js"></script>
+<script src="webCore/directives/wcPageTitleDirective/wcPageTitleDirective.js"></script>
+<script src="webCore/directives/wcAlertConsoleDirective/wcAlertConsoleDirective.js"></script>
+<script src="webCore/directives/wcProtectedResourceDirective/wcProtectedResourceDirective.js"></script>
+<script src="webCore/directives/wcCheckAllNoneDirective/wcCheckAllNoneDirective.js"></script>
+<script src="webCore/directives/wcDataTableDirective/wcDataTableDirective.js"></script>
+<script src="webCore/directives/wcDataTableDirective/WcDataTableService.js"></script>
+<script src="webCore/directives/wcDataTableDirective/dataTables.bootstrap.paging.js"></script>
+<script src="webCore/directives/wcLoadingIndicatorDirective/wcLoadingIndicatorDirective.js"></script>
+<script src="webCore/directives/wcChartDirective/wcChartDirective.js"></script>
+<script src="webCore/directives/wcValidationIndicatorDirective/wcValidationIndicatorDirective.js"></script>
+<script src="webCore/directives/wcContinueIfValidDirective/wcContinueIfValidDirective.js"></script>
+<script src="webCore/directives/wcClickOnceDirective/wcClickOnceDirective.js"></script>
+<script src="webCore/directives/wcNavMenuDirective/wcNavMenuDirective.js"></script>
+<script src="webCore/directives/wcPaginationDirective/wcPaginationDirective.js"></script>
+<script src="webCore/filters/wcPriceFilter/WcPriceFilter.js"></script>
+<!-- endbuild -->
+
+<!-- build:js wipsUiApp/WipsUiApp.min.js -->
+<script src="wipsUiApp/components/WipsUiApp.ComponentsModule.js"></script>
+<script src="wipsUiApp/components/services/userInformation/userInformation.js"></script>
+<script src="wipsUiApp/components/services/applicationPolicyService/ApplicationPolicyService.js"></script>
+<script src="wipsUiApp/components/services/userService/UserService.js"></script>
+<script src="wipsUiApp/components/services/wipsHttpStatusCodesServices/wipsHttpStatusCodesServices.js"></script>
+<script src="wipsUiApp/components/constant/wipsHttpStatusCodesConstant.js"></script>
+<script src="wipsUiApp/components/services/wipsUtilityServices/wipsUtilityServices.js"></script>
+
+<script src="wipsUiApp/components/directives/wipsFormInvalidFocusDirectives.js"></script>
+<script src="wipsUiApp/components/directives/scrollTopDirectives.js"></script>
+<script src="wipsUiApp/components/directives/wipsReadUnReadFlag.js"></script>
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/directives/wipsListDirectives.js"></script>
+
+
+<script src="wipsUiApp/modules/loginModule/components/WipsUiApp.Login.ComponentsModule.js"></script>
+<script src="wipsUiApp/modules/loginModule/WipsUiApp.LoginModule.js"></script>
+
+<script src="wipsUiApp/modules/loginModule/states/login/LoginController.js"></script>
+<script src="wipsUiApp/modules/loginModule/states/login/enterLoginInformation/EnterLoginInformationController.js"></script>
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/WipsUiApp.homePendingApprovalModule.js"></script>
+<script src="wipsUiApp/modules/textMessageNotificationModule/WipsUiApp.textMessageNotificationModule.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/components/WipsUiApp.homePendingApproval.ComponentsModule.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/components/services/switchJobServices/switchJobFactory.js"></script>
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/states/homePendingApproval/homePendingApprovalController.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/components/services/switchJobServices/switchJobServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/components/services/switchJobServices/switchJobFactory.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/components/modals/switchATPJobCodeModal/SwitchATPJobCodeModalService.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/components/modals/switchATPJobCodeModal/SwitchATPJobCodeModalInstanceController.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/components/services/ViewAttachmentDetailsServices/ViewAttachmentDetailsServices.js"></script>
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/WipsUiApp.atpPendingApproval.ComponentsModule.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/services/AtpPendingApprovalServices/AtpPendingApprovalServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/WipsUiApp.atpPendingApprovalModule.js"></script>
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/states/atpPendingApproval/atpPendingApprovalController.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/prototypes/AtpRecapPrototype/AtpRecapPrototype.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/services/AtpRecapServices/AtpRecapServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/services/AtpApproveServices/AtpApproveServices.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/modals/confirmModal/confirmModalService.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/modals/confirmModal/confirmModalInstanceController.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/modals/atpApproveModal/atpApproveModalService.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/modals/atpApproveModal/atpApproveModalInstanceController.js"></script>
+
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/states/atpRecap/ATPRecapController.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/prototypes/AtpRemarkPrototype/AtpRemarksPrototype.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/services/AtpRemarksServices/AtpRemarksServices.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/states/atpRemarks/ATPRemarksController.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/prototypes/AtpStrategyDetailsPrototype/AtpStrategyDetailsPrototype.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/services/AtpStrategyDetailsServices/AtpStrategyDetailsServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/states/atpStrategyDetails/ATPStrategyDetailsController.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/services/sessionServices/sessionServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/atpPendingApprovalModule/components/services/logoutServices/logoutServices.js"></script>
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/lumpSumPendingApprovalModule/components/WipsUiApp.lumpSumPendingApproval.ComponentsModule.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/lumpSumPendingApprovalModule/components/services/LumpSumPendingApprovalServices/LumpSumPendingApprovalServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/lumpSumPendingApprovalModule/WipsUiApp.lumpSumPendingApprovalModule.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/lumpSumPendingApprovalModule/components/directives/wipsActiveButtonDirectives.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/lumpSumPendingApprovalModule/states/lumpSumPendingApproval/lumpSumPendingApprovalController.js"></script>
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/lumpSumPendingApprovalModule/components/prototypes/LumpSumDetailsApprovalsPrototype/LumpSumDetailsApprovalsPrototype.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/lumpSumPendingApprovalModule/components/services/LumpSumDetailsApprovalServices/LumpSumDetailsApprovalServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/lumpSumPendingApprovalModule/states/lumpSumDetailsApprovals/lumpSumDetailsApprovalsController.js"></script>
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/priceClaimPendingApprovalModule/components/WipsUiApp.priceClaimPendingApproval.ComponentsModule.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/priceClaimPendingApprovalModule/components/services/priceClaimPendingApprovalServices/priceClaimPendingApprovalServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/priceClaimPendingApprovalModule/WipsUiApp.priceClaimPendingApprovalModule.js"></script>
+
+
+<script src="wipsUiApp/modules/homePendingApprovalModule/priceClaimPendingApprovalModule/states/priceClaimPendingApproval/priceClaimPendingApprovalController.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/priceClaimPendingApprovalModule/components/services/priceClaimDetailsApprovalServices/priceClaimDetailsApprovalServices.js"></script>
+<script src="wipsUiApp/modules/homePendingApprovalModule/priceClaimPendingApprovalModule/states/priceClaimDetailsApprovals/priceClaimDetailsApprovalsController.js"></script>
+
+<script src="wipsUiApp/modules/textMessageNotificationModule/states/textMessageNotificationController.js"></script>
+<script src="wipsUiApp/modules/textMessageNotificationModule/components/services/textMessageNotificationServices/textMessageNotificationServices.js"></script>
+<script src="wipsUiApp/modules/textMessageNotificationModule/components/WipsUiApp.textMessageNotification.ComponentsModule.js"></script>
+
+<script src="wipsUiApp/WipsUiAppModule.js"></script>
+<script src="wipsUiApp/WipsUiAppController.js"></script>
+
+<!-- endbuild -->
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{
+	"name": "Jab7Ui",
+	"version": "1.0.0",
+	"description": "The front-end application for JAB",
+	"author": [{
+		"name": "Ford Motor Company - Web COE",
+		"homepage": "http://www.x.ford.com/webcoe"
+	}],
+	"private": true,
+	"dependencies": {
+		"angular": "1.2.21",
+		"angular-animate": "1.2.21",
+		"angular-mocks": "1.2.21",
+		"angular-i18n": "1.2.21",
+		"angular-ui-router": "0.2.10",
+		"angular-bootstrap": "0.11.0",
+		"angular-ui-select": "0.9.5",
+		"bootstrap": "3.1.1",
+		"datatables": "1.9.4",
+		"jquery": "1.11.1",
+		"restangular": "1.4.0",
+		"underscore": "1.6.0",
+		"angular-translate": "2.1.0",
+		"angular-translate-loader-static-files": "2.1.0",
+		"angular-translate-loader-partial": "2.1.0",
+		"angular-touch": "1.2.21",
+		"foundation-icons": "ed2ae6b59bf7cea55f93cdcd64056216199b143c",
+		"fontawesome": "4.1.0",
+		"chartist": "0.7.3"
+	},
+	"resolutions": {
+		"jquery": "1.11.1",
+		"angular": "1.2.21"
+	}
+}

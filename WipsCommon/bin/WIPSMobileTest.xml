@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE property-group PUBLIC "PropertyGroup.dtd" "PropertyGroup.dtd">
+<property-group name="WIPSMobile" comment="">
+    <property-group name="Application" comment="">
+        <property-group name="Encryption" comment="">
+            <property name="key" comment="">KEY=ApA2/WbI6EbRTx44wwuMeRfGmo2KWy79bggpIooGJGU=</property>
+        </property-group>
+    </property-group>
+    <property-group name="DBSchema" comment="">
+        <property name="SchemaName" comment="">NEDX1.AATOWNRA</property>
+    </property-group>
+    <property-group name="SessionMaintenance" comment="Property Group for session settings">
+        <property name="SessionTimeOut" comment="Session Time Out value in milli seconds">900000</property>
+    </property-group>
+    <property-group name="proxyConnection" comment="">
+        <property name="password" comment="" >genericpwd</property>
+        <property name="userName" comment="">genericid</property>
+    </property-group>
+</property-group>

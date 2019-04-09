@@ -1,0 +1,64 @@
+<server description="new server">
+
+	<featureManager>
+		<feature>cdi-1.0</feature>
+		<feature>localConnector-1.0</feature>
+		<feature>jsf-2.0</feature>
+		<feature>jdbc-4.0</feature>
+		<feature>jaxws-2.2</feature>
+		<feature>adminCenter-1.0</feature>
+		<feature>jaxrs-1.1</feature>
+		<feature>jndi-1.0</feature>
+		<feature>servlet-3.0</feature>
+		<feature>jca-1.6</feature>
+		<feature>json-1.0</feature>
+		<feature>jpa-2.0</feature>
+		<feature>ldapRegistry-3.0</feature>
+		<feature>usr:sampleCustomUserRegistry-1.0</feature>
+		<feature>federatedRegistry-1.0</feature>
+		<feature>usr:fordSecurity-1.0</feature>
+		<feature>ssl-1.0</feature>
+	</featureManager>
+	<sslDefault sslRef="wipsSSLConfig"/>
+    <ssl id="WipsSSLConfig" keyStoreRef="serverKeyStore" trustStoreRef="serverTrustStore"/>
+    <keyStore id="serverKeyStore" location="${server.config.dir}/resources/security/cacerts.jks" password="changeit" readOnly="true" type="JKS" updateTrigger="disabled"/>
+    <keyStore id="serverTrustStore" location="${server.config.dir}/resources/security/cacerts.jks" password="changeit" readOnly="true" type="JKS" updateTrigger="disabled"/>
+	<webContainer deferServletLoad="false"/>
+	
+	
+	<library id="global">
+		<fileset dir="${wlp.user.dir}/lib/global" includes="*.jar"/>
+    </library>
+	
+	<library description="DB2 DB Driver" id="DB2LIB" name="DB2LIB">
+		<fileset dir="C:/proj/websphereresources/was/install/ibmdb2/v9fp7" includes="*.jar"/>
+	</library>
+	
+	<jdbcDriver id="DB2Driver" libraryRef="DB2LIB"/>
+
+	<dataSource id="DynaPropDB" jdbcDriverRef="DB2Driver" jndiName="jdbc/fjf/DynaPropJDBC" type="javax.sql.DataSource">
+		<properties.db2.jcc databaseName="NEDX1" portNumber="446" serverName="www.neb1.ford.com"/>
+	</dataSource>
+
+	<dataSource id="DBCONN" jdbcDriverRef="DB2Driver" jndiName="jdbc/DBCONN" type="javax.sql.DataSource">
+		<properties.db2.jcc databaseName="NEDE1" portNumber="5027" serverName="www.neb1.ford.com"/>
+	</dataSource>
+	
+	<resourceAdapter id="ims" location="${server.config.dir}/lib/global/imsico1212.rar"/> 
+	
+	<connectionFactory id="IMS_TB" jndiName="eis/ims/RT/IMSTB">
+		<properties.ims dataStoreName="IMSTB" hostName="esneb1.niehl.ford.com" portNumber="3011"/>
+	</connectionFactory>
+
+	<httpEndpoint host="*" httpPort="14000" httpsPort="14443" id="defaultHttpEndpoint"/>
+
+	<applicationMonitor updateTrigger="mbean"/>	
+	<logging consoleLogLevel="INFO" traceSpecification="*=info"/>
+
+	<!-- <enterpriseApplication id="WipsEar" location="WipsEar.ear" name="WipsEar" /> -->
+
+	<quickStartSecurity userName="wlp" userPassword="wlp"/>
+
+	<keyStore id="defaultKeyStore" password="Liberty"/>
+	
+</server>

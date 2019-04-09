@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-SYSID-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SYSID" pic="X(4)" />
+		<Parameter name="TPO-PGMNAME-ATTR" pic="X(6)" />
+		<Parameter name="TPO-PGMNAME" pic="X(4)" />
+		<Parameter name="TPO-VERSION-ATTR" pic="X(6)" />
+		<Parameter name="TPO-VERSION" pic="X(2)" />
+		<Parameter name="TPO-DATE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="X(6)" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="X(6)" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-JOBCODE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-JOBCODE" pic="X(4)" />
+		<Parameter name="TPO-EMPNAME-ATTR" pic="X(6)" />
+		<Parameter name="TPO-EMPNAME" pic="X(17)" />
+		<Parameter name="TPO-PAGENO-ATTR" pic="X(6)" />
+		<Parameter name="TPO-PAGENO" pic="X(2)" />
+		<Parameter name="TPO-MORE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-MORE" pic="X(7)" />
+		<Parameter name="TPO-SELNO-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELNO-CHAR" pic="X(3)" />
+		<Parameter name="TPO-SELPRE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELPRE" pic="X(6)" />
+		<Parameter name="TPO-SELBAS-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELBAS" pic="X(8)" />
+		<Parameter name="TPO-SELSUF-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELSUF" pic="X(8)" />
+		<Parameter name="TPO-SELSUP-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELSUP" pic="X(5)" />
+		<Parameter name="TPO-SELCAUS-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELCAUS" pic="X(6)" />
+		<Parameter name="TPO-SELAGE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELAGE-CHAR" pic="X(5)" />
+		<Parameter name="TPO-SELRESP-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELRESP" pic="X(4)" />
+		<Parameter name="TPO-SELPROG-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELPROG" pic="X(8)" />
+		<Parameter name="TPO-SELNUM-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELNUM" pic="X(6)" />
+		<Parameter name="TPO-SELREAD-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELREAD" pic="X" />
+		<Parameter name="TPO-SELCAT-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELCAT" pic="X(12)" />
+		<Parameter name="TPO-SELENG-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SELENG" pic="X(18)" />
+		<Parameter name="TPO-SUPNAME-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SUPNAME" pic="X(5)" />
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="13">
+			<Parameter name="TPO-SELECT-ATTR" pic="X(6)" />
+			<Parameter name="TPO-SELECT" pic="X" />
+			<Parameter name="TPO-DETAIL-ATTR" pic="X(6)" />
+			<DataArea name="TPO-DETAIL">
+				<Parameter name="TPO-FILLER1" pic="X(12)" />
+				<Parameter name="TPO-FILLER2" pic="X(1)" />
+				<Parameter name="TPO-PART-PREFIX" pic="X(6)" />
+				<Parameter name="TPO-FILLER3" pic="X(1)" />
+				<Parameter name="TPO-PART-BASE" pic="X(8)" />
+				<Parameter name="TPO-FILLER4" pic="X(1)" />
+				<Parameter name="TPO-PART-SUFFIX" pic="X(8)" />
+				<Parameter name="TPO-FILLER5" pic="X(1)" />
+				<Parameter name="TPO-SUPPLIER" pic="X(5)" />
+				<Parameter name="TPO-FILLER6" pic="X(1)" />
+				<Parameter name="TPO-CAUSAL" pic="X(6)" />
+				<Parameter name="TPO-FILLER7" pic="X(1)" />
+				<Parameter name="TPO-AGE" pic="X(5)" />
+				<Parameter name="TPO-FILLER8" pic="X(1)" />
+				<Parameter name="TPO-RESP-JOB" pic="X(4)" />
+				<Parameter name="TPO-FILLER9" pic="X(1)" />
+				<Parameter name="TPO-PRIORITY" pic="X(8)" />
+				<Parameter name="TPO-FILLER10" pic="X(1)" />
+				<Parameter name="TPO-ATP-NUMBER" pic="X(6)" />
+			</DataArea>
+		</Array>
+		<Parameter name="TPO-F14TITLE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-F14TITLE" pic="X(12)" />
+		<Parameter name="TPO-F20TITLE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-F20TITLE" pic="X(12)" />
+		<Parameter name="TPO-F21TITLE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-F21TITLE" pic="X(15)" />
+		<Parameter name="TPO-F22TITLE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-F22TITLE" pic="X(12)" />
+	</DataArea>
+</DataArea>

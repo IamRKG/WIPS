@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-INPUT-BUFFER">
+	<DataArea name="TP-INPUT-FIELDS">
+		<Parameter name="TPI-IOINDIC" pic="X" />
+		<Parameter name="TPI-PFKEY" pic="99" />
+		<Parameter name="TPI-LINKRSV" pic="X(6)" />
+		<Parameter name="TPI-PAYTITLE" pic="X(56)" />
+		<Parameter name="TPI-LSPTYPE" pic="X" />
+		<Parameter name="TPI-MANAPPR" pic="X" />
+		<Parameter name="TPI-PAYPLANT" pic="X(2)" />
+		<Parameter name="TPI-PAYNATCO" pic="X(3)" />
+		<Parameter name="TPI-SUPPLIER" pic="X(5)" />
+		<Parameter name="TPI-FUND" pic="X" />
+		<Parameter name="TPI-PARTPFX" pic="X(6)" />
+		<Parameter name="TPI-PARTBSE" pic="X(8)" />
+		<Parameter name="TPI-PARTSFX" pic="X(8)" />
+		<Parameter name="TPI-COMMCODE" pic="X(4)" />
+		<Parameter name="TPI-CAUSFACT" pic="X" />
+		<Parameter name="TPI-NEGJOB" pic="X(4)" />
+		<Parameter name="TPI-PAYTYPE" pic="X" />
+		<Parameter name="TPI-PAYTERM" pic="X" />
+		<Parameter name="TPI-ISSUEDTE" pic="X(6)" />
+		<Parameter name="TPI-COSTDATE" pic="X(6)" />
+		<Parameter name="TPI-GSAREQ" pic="X" />
+		<Parameter name="TPI-GSAAUDIT" pic="X" />
+		<Parameter name="TPI-COST" pic="X(14)" />
+		<Parameter name="TPI-COSTSIGN" pic="X" />
+		<Parameter name="TPI-GSACOST" pic="X(14)" />
+		<Parameter name="TPI-GSACOSTS" pic="X" />
+		<Parameter name="TPI-PAIDAMT" pic="X(14)" />
+		<Parameter name="TPI-PAIDSGN" pic="X" />
+		<Parameter name="TPI-PAIDDT" pic="X(6)" />
+		<Parameter name="TPI-KEEPLS" pic="X" />
+		<Parameter name="TPI-AUTOISS" pic="X" />
+		<Parameter name="TPI-PFK24OPT" pic="X(8)" />
+	</DataArea>
+</DataArea>

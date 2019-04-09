@@ -1,0 +1,56 @@
+<header role="banner" class="container-fluid">
+	<div class="app-branding row hidden-xxs">
+		<div class="col-xs-8 col-sm-9">
+			<div class="media">
+				<a class="pull-left" href="#/">
+					<img class="media-object logo"
+						 src="webCore/assets/image/Ford-Oval.png"
+						 alt="Ford Oval"/>
+				</a>
+				<div class="media-body">
+					<a class="media-heading" href="#/">{{'application.title' | translate}}</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="col-xs-4 col-sm-3" ng-if="wipsUiAppController.isMenuVislbe != 'login.enter-login-information'">
+			<ul class="list-group text-right">
+				<li class="list-group-item text-right">
+					<span class="welcome-text">{{wipsUiAppController.userInformation.jobDetail.jobName}}</span>
+					<span><a ui-sref="login.enter-login-information" ng-click="wipsUiAppController.logOut()">Logout</a></span>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	<div class="navbar navbar-default visible-xxs">
+		<div class="media navbar-brand col-xs-9">
+			<a class="pull-left" href="#/">
+				<img class="media-object logo" src="webCore/assets/image/Ford-Oval.png" alt="Ford Oval"/>
+			</a>
+			<div class="media-body">
+				<a class="media-heading" href="#/">{{'application.shortTitle' | translate}}</a>
+			</div>
+		</div>
+	</div>
+</header>
+<nav class="navbar navbar-default" role="navigation" ng-if="wipsUiAppController.isMenuVislbe != 'login.enter-login-information'">
+		<!-- commanded for displaying the menu details in IOS mobile <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
+			<span class="sr-only">{{'application.navigation.toggleTitle'
+				| translate}}</span> <span class="icon-bar"></span> <span
+				class="icon-bar"></span> <span class="icon-bar"></span>
+		</button>-->
+		<div class="navbar-collapse collapse">
+  			<ul class="nav navbar-nav" >
+					<li ui-sref-active="active"><a ng-click="wipsUiAppController.atpPendingApproval();" ui-sref-opts="{reload: true, notify: true}">{{'application.navigation.links.atpsPendingApproval' | translate}}</a></li>
+					<li><a ng-click="wipsUiAppController.textMessageNotificationPage();" ui-sref-opts="{reload: true, notify: true}">{{'application.navigation.links.Notification' | translate}}</a></li>
+			</ul>
+			<ul class="nav app-branding visible-xxs">
+			<li>
+				<span class="welcome-text">{{wipsUiAppController.userInformation.jobDetail.jobName}}</span>
+				<span class="pull-right"><a ui-sref="login.enter-login-information" ng-click="wipsUiAppController.logOut()">Logout</a></span>
+			</li>
+		    </ul>
+		</div>
+	</nav>

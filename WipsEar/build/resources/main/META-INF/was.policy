@@ -1,0 +1,92 @@
+/*******************************************************************************/
+/*                                                                             */
+/*                        Default WAS 8.0.x was.policy                         */
+/*                                                                             */
+/* The contents of this file may be placed in the was.policy file located in   */
+/*       the /<EarProjectName>/META-INF folder of your application             */
+/*******************************************************************************/
+
+/* Note: Add any additional lines required by your application based on        */
+/*       "access denied" errors when doing Java2 security testing in DEV with  */
+/*       set ENABLE_SECURITY_DEBUGGING "TRUE" flag in your application.jacl    */
+
+
+/*                                                                             */
+/* FJFCONFIG_ROOT = /proj/fjfconfig/was/install                                */
+/* APPLICATION_INSTALL_BASE = /proj/jab (or /proj/JABTestServer on desktop)    */
+/* WAS_HOME =  (depends on desktop or shared env)                              */
+/* WAS_USER_HOME = /ford/thishost/u/wasadm01                                   */
+/* WEBSPHERERESOURCES_ROOT = /proj/websphereresources/was/install              */
+/* MERCURY_HOME = /opt/MercuryDiagnostics/JAVAProbe                            */
+/*                                                                             */
+grant codeBase "file:${application}" {
+  /*** DO NOT MODIFY ***/
+  permission java.io.FilePermission "${FJFCONFIG_ROOT}/-", "read";
+  permission java.io.FilePermission "${APPLICATION_INSTALL_BASE}/-", "read, write, delete";
+  permission java.io.FilePermission "${WAS_HOME}/-", "read";
+  permission java.io.FilePermission "${WAS_USER_HOME}/-", "read";
+  permission java.io.FilePermission "${WAS_USER_HOME}${/}-", "read, write"; 
+  permission java.io.FilePermission "${WEBSPHERERESOURCES_ROOT}/-", "read";
+  permission java.io.FilePermission "${WAS_HOME}/profiles/node/temp/-", "read,write,delete";
+  permission java.io.FilePermission "${MERCURY_HOME}/-", "read, write, delete";
+  permission java.io.FilePermission "${/}tmp", "read, write";
+  permission java.io.FilePermission "${/}tmp${/}-", "read, write, delete";
+  
+  /*********************/
+
+  /*** WELL-KNOWN ENTRIES ***/
+  permission java.lang.RuntimePermission "getClassLoader";
+  permission java.lang.RuntimePermission "setFactory";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.misc";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.beans.infos";
+  permission java.lang.RuntimePermission "accessDeclaredMembers";
+  permission java.lang.RuntimePermission "*", "getenv";
+  permission java.net.SocketPermission "*", "accept, resolve, connect";
+  permission java.util.PropertyPermission "*", "read, write";
+  permission java.util.PropertyPermission "net.sf.ehcache.sizeof.agent.instrumentationSystemProperty", "read"; 
+  permission java.security.SecurityPermission "printIdentity";
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.lang.RuntimePermission "modifyThread";
+  permission java.lang.RuntimePermission "modifyThreadGroup";
+  permission java.security.SecurityPermission "getProperty.ssl.SocketFactory.provider";
+  permission com.ibm.websphere.security.WebSphereRuntimePermission "accessRuntimeClasses";
+  permission com.ibm.websphere.security.WebSphereRuntimePermission "getSSLConfig";
+  permission org.osgi.framework.ServicePermission "com.ibm.ws.runtime.service.Repository", "get";
+  permission org.osgi.framework.ServicePermission "com.ibm.ws.runtime.service.VariableMap", "get";
+  permission com.ibm.websphere.security.WebSphereRuntimePermission "AdminPermission";
+  permission javax.management.MBeanPermission "javax.management.*", "*";
+  permission java.io.FilePermission "/META-INF/MANIFEST.MF", "read";
+  permission org.osgi.framework.AdminPermission "*", "lifecycle,class,execute,extensionLifecycle,listener,metadata,resolve,resource,startlevel,context";
+  permission javax.management.MBeanServerPermission "createMBeanServer";
+  
+  permission com.ibm.tools.attach.AttachPermission "createAttachProvider" ;
+  permission com.sun.tools.attach.AttachPermission "createAttachProvider" ;
+  permission com.ibm.tools.attach.AttachPermission "attachVirtualMachine" ; 
+  
+  
+  /* Added to retrieve additional attribute values for the logged on user */
+  permission javax.security.auth.AuthPermission "wssecurity.getCallerSubject";
+  
+  /**************************/
+  /*** ADD USER-DEFINED ENTRIES HERE ***/
+
+  /* Needed for FJF Cache Framework */
+  permission java.lang.RuntimePermission "shutdownHooks";
+  
+  /* Needed by APS for logging */
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.util.logging.resources";
+  
+  /* Needed by JSF - in org.apache.myfaces.extensions.cdi.jsf2.impl.listener.phase.CodiLifecycleWrapper */
+  permission java.io.FilePermission "/META-INF", "read";
+  
+  /* Needed by Health Check Servlet from web_monitor */
+  permission java.io.FilePermission "/usr/local/WebSphere/AppServer/plugins/com.ibm.ws.security.crypto.jar", "read";
+  
+  /*************************************/
+};
+
+grant codeBase "file:/tmp/ehcache-sizeof-agent22773403802776617.jar" {
+ permission java.util.PropertyPermission "*", "read, write";
+ 
+}; 
+

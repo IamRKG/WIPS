@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-P01003-ATTR" pic="XX" />
+		<Parameter name="TPO-P01003" pic="X(4)" />
+		<Parameter name="TPO-PROGRAM-ATTR" pic="XX" />
+		<Parameter name="TPO-PROGRAM" pic="X(4)" />
+		<Parameter name="TPO-P01013-ATTR" pic="XX" />
+		<Parameter name="TPO-P01013" pic="X(2)" />
+		<Parameter name="TPO-DATE-ATTR" pic="XX" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="XX" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG1" pic="X(75)" />
+		<Parameter name="TPO-LIT9-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT9" pic="X(78)" />
+		<Parameter name="TPO-LIT10-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT10" pic="X(78)" />
+		<Parameter name="TPO-LIT11-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT11" pic="X(78)" />
+		<Parameter name="TPO-LIT12-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT12" pic="X(78)" />
+		<Parameter name="TPO-LIT13-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT13" pic="X(78)" />
+		<Parameter name="TPO-LIT14-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT14" pic="X(78)" />
+		<Parameter name="TPO-LIT15-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT15" pic="X(78)" />
+		<Parameter name="TPO-LIT16-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT16" pic="X(78)" />
+		<Parameter name="TPO-LIT17-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT17" pic="X(78)" />
+		<Parameter name="TPO-LIT18-ATTR" pic="XX" />
+		<Parameter name="TPO-LIT18" pic="X(78)" />
+	</DataArea>
+</DataArea>

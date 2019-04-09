@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2016-11-10T07:44:01" hostname="WGC100HHBHH92" time="4.649">
+  <properties/>
+  <testcase name="retrieveFromCache_Success" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.031"/>
+  <testcase name="generateUniqueSessionIdForShortRACF" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <testcase name="testForIsValidUserSession_Success" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <testcase name="retrieveFromCache_Failure" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <testcase name="deleteStaleSessionsFromCache" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="3.573"/>
+  <testcase name="testForIsValidUserSession_SessionTimeOutFailure" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="1.014"/>
+  <testcase name="testForIsValidUserSession_Failure" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <testcase name="deleteSessionEntryFromCache_Success" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <testcase name="generateUniqueSessionIdForSameRacf" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.015"/>
+  <testcase name="createNewUserSession" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <testcase name="deleteSessionEntryFromCache_Failure" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <testcase name="testForRetrieveUserProfile_Success" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <testcase name="generateUniqueSessionId" classname="com.ford.purchasing.wips.inbound.layer.common.UserSessionCacheManagerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Nov 10, 2016 1:14:01 PM com.ford.it.cache.internal.CacheConfigurationManager setDiskStoreConfiguration
+INFO: APPLICATION_INSTALL_BASE = NULL, Cache Disk Store Path = C:\Users\gradhak3\AppData\Local\Temp\/caches
+Nov 10, 2016 1:14:06 PM com.ford.it.logging.JdkMapper info
+INFO: Session timeout for the lterm -->TSTRACFA
+Nov 10, 2016 1:14:06 PM com.ford.it.logging.JdkMapper info
+INFO: Lterm not found in the cache -->TSTRACF
+]]></system-err>
+</testsuite>

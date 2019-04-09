@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE property-group PUBLIC "PropertyGroup.dtd" "PropertyGroup.dtd">
+<property-group name="ConnectorConfig">
+    <property-group name="Conversions">
+        <property-group name="USA_CODEPAGE_037">
+            <property name="CharacterEncoding">Cp037</property>
+            <property name="CodePage">037</property>
+            <property name="Endian">BIGENDIAN</property>
+            <property name="FloatingPointFormat">IBM</property>
+            <property name="MachineType">MVS</property>
+            <property name="RemoteIntegerEndian">BIGENDIAN</property>
+        </property-group>
+    </property-group>
+    <property-group name="Operations">
+        <property-group name="AAIMA02L">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG53X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMA02L-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG53X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC32U">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMC32U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMC32U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMC32U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC32U-Q01X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMC32U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMQ01X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMC32U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC32U-S01O" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource" comment="">AAIMC32U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMS010-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMC32U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC32U_C33U">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMC32U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMC33U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMC32U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC33U">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMC33U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMC33U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMC33U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC33U-M00M">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource" comment="">AAIMC33U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMM00M-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMC33U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC33U_CR5X" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource" comment="">AAIMC33U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMCR5X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMC33U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMCR5X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMCR5X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMCR5X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMCR5X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMEPPS">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMEPPS-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMM00M-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMEPPS</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG51X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG51X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG53X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG51X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG52X-G55X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG52X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG55X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG52X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG53X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG53X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG53X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG53X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG53X-G52X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG53X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG52X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG53X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG53X-G56X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG53X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG56X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG53X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG53X-S010">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG53X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMS010-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG53X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG55X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG55X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG55X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG55X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG56X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG56X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG56X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG56X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMG56X-S01I0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMG56X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMS010-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMG56X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMM00M">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMM00M-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMM00M-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMM00M</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMM00M-Q01X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMM00M-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMQ01X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMM00M</property>
+            <property name="UserName"></property>
+        </property-group>
+         <property-group name="AAIMM00M-Q43L">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMM00M-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMQ43L-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMM00M</property>
+            <property name="UserName"></property>
+        </property-group>
+         <property-group name="AAIMQ43L">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMQ43L-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMQ43L-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMQ43L</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMQ01X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMQ01X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMQ01X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMQ01X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMQ01X-C32U">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMQ01X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMC32U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMQ01X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMQ01X-G51X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMQ01X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG51X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMQ01X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMQ01X-G53X">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMQ01X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMG53X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMQ01X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMS010-S011">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMS010-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource">AAIMQ01X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode">AAIMS01I</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMS01O-C32U" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMS010-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource" comment="">AAIMC32U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMS01I</property>
+            <property name="UserName"></property>
+        </property-group>
+        
+        <property-group name="AAIMCR5X_C33U">
+            <property name="ImplementationClassName">
+                com.ford.it.connector.ims.ManagedImsOperation
+            </property>
+            <property name="TranCode">AAIMCR5X</property>
+            <property name="InputRecordResource">AAIMCR5X-Input.xml</property>
+            <property name="OutputRecordResource">AAIMC33U-Output.xml</property>
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="UserName"></property>
+            <property name="Password" encrypted="false"></property>
+        </property-group>
+        <property-group name="AAIMC33U_C32U">
+            <property name="ImplementationClassName">
+                com.ford.it.connector.ims.ManagedImsOperation
+            </property>
+            <property name="TranCode">AAIMC33U</property>
+            <property name="InputRecordResource">AAIMC33U-Input.xml</property>
+            <property name="OutputRecordResource">AAIMC32U-Output.xml</property>
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="UserName"></property>
+            <property name="Password" encrypted="false"></property>
+        </property-group>
+        <property-group name="AAIMC32U-C34U" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMC32U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource" comment="">AAIMC34U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMC32U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC34U-C32U" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMC34U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource" comment="">AAIMC32U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMC34U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMQ43L-C36U" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMQ43L-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource" comment="">AAIMC36U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMQ43L</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMA02L-C36U" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMA02L-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource" comment="">AAIMC36U-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMA02L</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC36U-CR1X" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMC36U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource" comment="">AAIMCR1X-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMC36U</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMCR1X-CR3V" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMCR1X-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource" comment="">AAIMCR3V-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMCR1X</property>
+            <property name="UserName"></property>
+        </property-group>
+        <property-group name="AAIMC36U-C38V" update-period="0" comment="">
+            <property name="Conversion">USA_CODEPAGE_037</property>
+            <property name="ImplementationClassName">com.ford.it.connector.ims.ManagedImsOperation</property>
+            <property name="InputRecordResource">AAIMC36U-Input.xml</property>
+            <property name="JndiName">eis/ims/RT/IMSTB</property>
+            <property name="OutputRecordResource" comment="">AAIMC38V-Output.xml</property>
+            <property name="Password"></property>
+            <property name="TranCode" comment="">AAIMC36U</property>
+            <property name="UserName"></property>
+        </property-group>
+    </property-group>
+</property-group>

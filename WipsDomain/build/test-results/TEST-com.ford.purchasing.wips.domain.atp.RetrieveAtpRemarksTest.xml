@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.domain.atp.RetrieveAtpRemarksTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:15" hostname="WGC100HHBHH92" time="0.025">
+  <properties/>
+  <testcase name="retreiveAtpRemarks_g51xScreen_onePageOfSystemRemarks_onePageOfUserRemarks" classname="com.ford.purchasing.wips.domain.atp.RetrieveAtpRemarksTest" time="0.021"/>
+  <testcase name="retreiveAtpRemarks_onePageOfSystemRemarks_onePageOfUserRemarks" classname="com.ford.purchasing.wips.domain.atp.RetrieveAtpRemarksTest" time="0.001"/>
+  <testcase name="retreiveAtpRemarks_switchJobCode_onePageOfSystemRemarks_onePageOfUserRemarks" classname="com.ford.purchasing.wips.domain.atp.RetrieveAtpRemarksTest" time="0.0"/>
+  <testcase name="retreiveAtpRemarks_twoPagesOfSystemRemarks_onePageOfUserRemarks" classname="com.ford.purchasing.wips.domain.atp.RetrieveAtpRemarksTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

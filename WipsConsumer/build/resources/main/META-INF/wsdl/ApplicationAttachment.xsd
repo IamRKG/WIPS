@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:ford/Application/Attachment/v1.0" targetNamespace="urn:ford/Application/Attachment/v1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+      <xs:annotation>
+        <xs:documentation>
+            <!--  TODO: add url to link the schema to its logical model -->
+        </xs:documentation>
+    </xs:annotation>
+  
+  <xs:complexType name="ApplicationAttachmentInfoType">
+       <xs:annotation>
+        <xs:documentation>This entity represents the root element of the Service and it contains the Attachment</xs:documentation>
+        <xs:documentation>Meta data and actual attachments.</xs:documentation>
+      </xs:annotation>
+  	<xs:sequence>
+			<xs:element ref="tns:AttachmentApplication"/>
+			<xs:element ref="tns:Attachments"/>
+	</xs:sequence>		
+  </xs:complexType>
+  <xs:element name="ApplicationAttachmentInfo" type="tns:ApplicationAttachmentInfoType"/>
+  <xs:element name="AttachmentApplication" type="tns:AttachmentApplicationType"/>
+  <xs:element name="Attachment" type="tns:AttachmentType"/>
+  <xs:element name="Attachments" type="tns:AttachmentsType"/>
+	<xs:complexType name="AttachmentsType">
+		<xs:sequence>
+			<xs:element ref="tns:Attachment" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+  <xs:complexType name="AttachmentApplicationType">
+    <xs:annotation>
+      <xs:documentation>This entity has the application specific information to which this Attachment Service interacts with.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ApplicationID" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is the unique Application Indentifier so that the Service can indentify the consumers. ITMS Number of the Consumer application is recommended for this element value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+       <xs:element name="EntityName" type="xs:string">
+           <xs:annotation>
+             <xs:documentation>Considering an application can have multiple entities to store the attachments,this field should be </xs:documentation>
+             <xs:documentation>populated with the corresponding entity name to which the attachment can be stored </xs:documentation>
+             <xs:documentation>based on the ApplicationID value.</xs:documentation>
+           </xs:annotation>
+       </xs:element>
+	  <xs:element ref="tns:EntityAttributes" minOccurs="0" maxOccurs="1">       
+	       <xs:annotation>
+             <xs:documentation>Collection of Mandatory entity attributes </xs:documentation>
+             <xs:documentation>that should be populated when the attachment record </xs:documentation>
+             <xs:documentation>gets inserted /updated.</xs:documentation>
+           </xs:annotation>
+       </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+    
+ 	<xs:complexType name="EntityAttributeType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="value" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="EntityAttributesType">
+		<xs:sequence>
+			<xs:element name="EntityAttribute" minOccurs="1" maxOccurs="unbounded" type="tns:EntityAttributeType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="EntityAttributes" type="tns:EntityAttributesType"/>
+
+   <xs:complexType name="AttachmentType">
+      <xs:annotation>
+        <xs:documentation>This entity represents the actual attachment with any Mime type.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+            <xs:element name="AttachmentID" type="xs:integer" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Application specific unique sequence indentifier for the attachment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AttachmentName" type="xs:string"  minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The Name of the Attachment file name.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AttachmentMIMEType" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>This attribute holds the MIME type of the attachment.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        <xs:element xmlns:xmime="http://www.w3.org/2005/05/xmlmime" name="File" type="xs:base64Binary" 
+	        xmime:expectedContentTypes="*/*"  minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>This property holds the actual attachment file.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+         <xs:element name="AttachmentUserID" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>This attribute holds the UserID who performs the Transaction. </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+        
+      </xs:sequence>
+   </xs:complexType>
+   
+   
+     <xs:element name="AttachmentSearchCriteria" type="tns:AttachmentSearchCriteriaType"/>
+     <xs:element name="AttachmentSearchResults" type="tns:AttachmentSearchResultsType"/>
+     
+        <xs:complexType name="AttachmentSearchCriteriaType">
+        <xs:sequence>
+           <xs:element name="ApplicationID" type="xs:integer">
+             <xs:annotation>
+                    <xs:documentation>ITMS number</xs:documentation>
+            </xs:annotation>
+            </xs:element>
+            <xs:element name="DocumentNumber" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="DocumentVersion" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="Indicator" minOccurs="0" maxOccurs="1" type="tns:attachIndicator">
+                <xs:annotation>
+                    <xs:documentation>I for internal, E for External, none for both</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="AttachmentSearchResultsType">
+        <xs:sequence>
+            <xs:element name="AttachmentSearchResults" minOccurs="0" maxOccurs="unbounded" type="tns:AttachmentSearchResult"/>
+        </xs:sequence>
+    </xs:complexType>
+       <xs:complexType name="AttachmentSearchResult">
+        <xs:sequence>
+            <xs:element name="DocumentNumber" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="DocumentVersion" minOccurs="1" maxOccurs="1" default="0" type="xs:string"/>
+            <xs:element name="AttachmentID"  minOccurs="1" maxOccurs="1" type="xs:integer"/>
+            <xs:element name="AttachmentName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="AttachmentMIMEType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="AttachmentDescription" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Indicator" type="tns:attachIndicator" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>I for internal, E for External</xs:documentation>
+            </xs:annotation>
+            </xs:element>
+            <xs:element name="UploadDate" minOccurs="1" maxOccurs="1" type="xs:string"/>
+        </xs:sequence>
+       </xs:complexType>
+       
+       <xs:simpleType name="attachIndicator" final="restriction" >
+          <xs:restriction base="xs:string">
+             <xs:enumeration value="I" />
+             <xs:enumeration value="E" />
+          </xs:restriction>
+       </xs:simpleType>
+</xs:schema>

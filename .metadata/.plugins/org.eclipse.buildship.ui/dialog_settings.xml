@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.import">
+		<item value="C:\IBM\WAS80\java" key="java_home"/>
+		<item value="C:\projects\Accurev\WIPSWeb_WMMobile_PCS_Mid_Nov_2016Launch_DEV" key="project_location"/>
+		<item value="C:\ford\gradle" key="gradle_distribution_configuration"/>
+		<item value="LOCAL_INSTALLATION" key="gradle_distribution_type"/>
+	</section>
+</section>

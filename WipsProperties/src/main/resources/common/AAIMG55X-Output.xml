@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-SYSTEM-ATTR" pic="XX" />
+		<Parameter name="TPO-SYSTEM" pic="X(4)" />
+		<Parameter name="TPO-PROGRAM-ATTR" pic="XX" />
+		<Parameter name="TPO-PROGRAM" pic="X(4)" />
+		<Parameter name="TPO-VERSION-ATTR" pic="XX" />
+		<Parameter name="TPO-VERSION" pic="X(2)" />
+		<Parameter name="TPO-DATE-ATTR" pic="XX" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="XX" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-JOBCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-JOBCODE" pic="X(4)" />
+		<Parameter name="TPO-USERNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-USERNAME" pic="X(17)" />
+		<Parameter name="TPO-PAGENO-ATTR" pic="XX" />
+		<Parameter name="TPO-PAGENO" pic="X(2)" />
+		<Parameter name="TPO-MORE-ATTR" pic="XX" />
+		<Parameter name="TPO-MORE" pic="X(7)" />
+		<Parameter name="TPO-ERRMSG2-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG2" pic="X(66)" />
+		<Parameter name="TPO-PRTPRE-ATTR" pic="XX" />
+		<Parameter name="TPO-PRTPRE" pic="X(6)" />
+		<Parameter name="TPO-PRTBAS-ATTR" pic="XX" />
+		<Parameter name="TPO-PRTBAS" pic="X(8)" />
+		<Parameter name="TPO-PRTSUF-ATTR" pic="XX" />
+		<Parameter name="TPO-PRTSUF" pic="X(8)" />
+		<Parameter name="TPO-ATPNO-ATTR" pic="XX" />
+		<Parameter name="TPO-ATPNO" pic="X(6)" />
+		<Parameter name="TPO-BUYER-ATTR" pic="XX" />
+		<Parameter name="TPO-BUYER" pic="X(4)" />
+		<Parameter name="TPO-PRTNME-ATTR" pic="XX" />
+		<Parameter name="TPO-PRTNME" pic="X(34)" />
+		<Parameter name="TPO-RATECDE1-ATTR" pic="XX" />
+		<Parameter name="TPO-RATECDE1" pic="X(3)" />
+		<Parameter name="TPO-EXCHRAT1-ATTR" pic="XX" />
+		<Parameter name="TPO-EXCHRAT1" pic="X(12)" />
+		<Parameter name="TPO-ENGLVL-ATTR" pic="XX" />
+		<Parameter name="TPO-ENGLVL" pic="X(18)" />
+		<Parameter name="TPO-RATECDE2-ATTR" pic="XX" />
+		<Parameter name="TPO-RATECDE2" pic="X(3)" />
+		<Parameter name="TPO-EXCHRAT2-ATTR" pic="XX" />
+		<Parameter name="TPO-EXCHRAT2" pic="X(12)" />
+		<Parameter name="TPO-STRATTYP-ATTR" pic="XX" />
+		<Parameter name="TPO-STRATTYP" pic="X(21)" />
+		<Parameter name="TPO-STRATITL-ATTR" pic="XX" />
+		<Parameter name="TPO-STRATITL" pic="X(21)" />
+		<Parameter name="TPO-RATECDE3-ATTR" pic="XX" />
+		<Parameter name="TPO-RATECDE3" pic="X(3)" />
+		<Parameter name="TPO-EXCHRAT3-ATTR" pic="XX" />
+		<Parameter name="TPO-EXCHRAT3" pic="X(12)" />
+		<Parameter name="TPO-RANKNUM-ATTR" pic="XX" />
+		<Parameter name="TPO-RANKNUM-CHAR" pic="X(2)" />
+		<Parameter name="TPO-PENALTY-ATTR" pic="XX" />
+		<Parameter name="TPO-PENALTY" pic="X(12)" />
+		<Parameter name="TPO-RATECDE4-ATTR" pic="XX" />
+		<Parameter name="TPO-RATECDE4" pic="X(3)" />
+		<Parameter name="TPO-EXCHRAT4-ATTR" pic="XX" />
+		<Parameter name="TPO-EXCHRAT4" pic="X(12)" />
+		<Parameter name="TPO-RATECDE5-ATTR" pic="XX" />
+		<Parameter name="TPO-RATECDE5" pic="X(3)" />
+		<Parameter name="TPO-EXCHRAT5-ATTR" pic="XX" />
+		<Parameter name="TPO-EXCHRAT5" pic="X(12)" />
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="10">
+			<Parameter name="TPO-SUPCDE-ATTR" pic="XX" />
+			<Parameter name="TPO-SUPCDE" pic="X(5)" />
+			<Parameter name="TPO-SUPNME-ATTR" pic="XX" />
+			<Parameter name="TPO-SUPNME" pic="X(15)" />
+			<Parameter name="TPO-NATCDE-ATTR" pic="XX" />
+			<Parameter name="TPO-NATCDE" pic="X(3)" />
+			<Parameter name="TPO-PLTCDE-ATTR" pic="XX" />
+			<Parameter name="TPO-PLTCDE" pic="X(2)" />
+			<Parameter name="TPO-PLTNME-ATTR" pic="XX" />
+			<Parameter name="TPO-PLTNME" pic="X(20)" />
+			<Parameter name="TPO-PERCNT-ATTR" pic="XX" />
+			<Parameter name="TPO-PERCNT" pic="X(3)" />
+			<Parameter name="TPO-VOLUME-ATTR" pic="XX" />
+			<Parameter name="TPO-VOLUME" pic="X(13)" />
+		</Array>
+	</DataArea>
+</DataArea>

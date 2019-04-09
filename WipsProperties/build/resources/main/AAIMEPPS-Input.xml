@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-INPUT-BUFFER">
+	<DataArea name="TP-INPUT-FIELDS">
+		<Parameter name="TPI-IOINDIC" pic="X" />
+		<Parameter name="TPI-PFKEY" pic="99" />
+		<Parameter name="TPI-RACF-ID" pic="X(08)" />
+	</DataArea>
+</DataArea>

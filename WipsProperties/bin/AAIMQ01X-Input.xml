@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-INPUT-TABLE">
+	<Parameter name="TPI-IOINDIC" pic="X" />
+	<Parameter name="TPI-PFKEY" pic="99" />
+	<Parameter name="TPI-PAGENO" pic="X(2)" />
+	<Parameter name="TPI-SELNO" pic="X(3)" />
+	<Parameter name="TPI-SELPRE" pic="X(6)" />
+	<Parameter name="TPI-SELBAS" pic="X(8)" />
+	<Parameter name="TPI-SELSUF" pic="X(8)" />
+	<Parameter name="TPI-SELSUP" pic="X(5)" />
+	<Parameter name="TPI-SELCAUS" pic="X(6)" />
+	<Parameter name="TPI-SELAGE" pic="X(5)" />
+	<Parameter name="TPI-SELRESP" pic="X(4)" />
+	<Parameter name="TPI-SELPROG" pic="X(8)" />
+	<Parameter name="TPI-SELNUM" pic="X(6)" />
+	<Parameter name="TPI-SELREAD" pic="X" />
+	<Parameter name="TPI-SELCAT" pic="X(12)" />
+	<Parameter name="TPI-SELENG" pic="X(18)" />
+	<Array name="TPI-BUFFER-SEGLOOP" occurs="13">
+		<Parameter name="TPI-SELECT" pic="X" />
+	</Array>
+</DataArea>

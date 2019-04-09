@@ -1,0 +1,1 @@
+include 'WipsCommon', 'WipsBusiness', 'WipsConsumer', 'WipsDomain', 'WipsEar','WipsTest', 'WipsProperties', 'WipsUIWeb', 'WipsWeb', 'WipsServer'

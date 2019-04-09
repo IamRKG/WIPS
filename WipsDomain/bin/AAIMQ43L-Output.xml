@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-SYSID-ATTR" pic="XX" />
+		<Parameter name="TPO-SYSID" pic="X(4)" />
+		<Parameter name="TPO-PGMNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-PGMNAME" pic="X(4)" />
+		<Parameter name="TPO-PROGVRSN-ATTR" pic="XX" />
+		<Parameter name="TPO-PROGVRSN" pic="X(2)" />
+		<Parameter name="TPO-DATE-ATTR" pic="XX" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="XX" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-BCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-BCODE" pic="X(4)" />
+		<Parameter name="TPO-BNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-BNAME" pic="X(17)" />
+		<Parameter name="TPO-PAGENO-ATTR" pic="XX" />
+		<Parameter name="TPO-PAGENO-CHAR" pic="X(2)" />
+		<Parameter name="TPO-MORE-ATTR" pic="XX" />
+		<Parameter name="TPO-MORE" pic="X(7)" />
+		<Parameter name="TPO-SELLINE-ATTR" pic="XX" />
+		<Parameter name="TPO-SELLINE" pic="X(2)" />
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="14">
+			<Parameter name="TPO-LINENO-ATTR" pic="XX" />
+			<Parameter name="TPO-LINENO-CHAR" pic="X(2)" />
+			<Parameter name="TPO-EPPSNO-ATTR" pic="XX" />
+			<Parameter name="TPO-EPPSNO" pic="X(6)" />
+			<Parameter name="TPO-CTYPE-ATTR" pic="XX" />
+			<Parameter name="TPO-CTYPE" pic="X(2)" />
+			<Parameter name="TPO-SUPPNO-ATTR" pic="XX" />
+			<Parameter name="TPO-SUPPNO" pic="X(5)" />
+			<Parameter name="TPO-SNAME-ATTR" pic="XX" />
+			<Parameter name="TPO-SNAME" pic="X(10)" />
+			<Parameter name="TPO-CFACTR-ATTR" pic="XX" />
+			<Parameter name="TPO-CFACTR" pic="X(2)" />
+			<Parameter name="TPO-EDATE-ATTR" pic="XX" />
+			<Parameter name="TPO-EDATE" pic="X(6)" />
+			<Parameter name="TPO-RMRKS-ATTR" pic="XX" />
+			<Parameter name="TPO-RMRKS" pic="X(20)" />
+			<Parameter name="TPO-RQDATE-ATTR" pic="XX" />
+			<Parameter name="TPO-RQDATE" pic="X(6)" />
+			<Parameter name="TPO-RCDATE-ATTR" pic="XX" />
+			<Parameter name="TPO-RCDATE" pic="X(6)" />
+		</Array>
+		<Parameter name="TPO-PAGESKIP-ATTR" pic="XX" />
+		<Parameter name="TPO-PAGESKIP" pic="X(2)" />
+	</DataArea>
+</DataArea>

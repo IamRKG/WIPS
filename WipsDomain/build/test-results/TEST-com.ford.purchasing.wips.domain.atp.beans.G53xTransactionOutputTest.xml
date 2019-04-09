@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.domain.atp.beans.G53xTransactionOutputTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:15" hostname="WGC100HHBHH92" time="0.028">
+  <properties/>
+  <testcase name="retrieveAtpRecap_Failure_ImsTransactionError" classname="com.ford.purchasing.wips.domain.atp.beans.G53xTransactionOutputTest" time="0.021"/>
+  <testcase name="retrieveAtpRecapWithoutAutoPo_Success" classname="com.ford.purchasing.wips.domain.atp.beans.G53xTransactionOutputTest" time="0.004"/>
+  <testcase name="retrieveAtpRecapWithOnePageOfSupplier_Success" classname="com.ford.purchasing.wips.domain.atp.beans.G53xTransactionOutputTest" time="0.001"/>
+  <testcase name="retrieveAtpRecapWithThreePagesOfSupplier_Success" classname="com.ford.purchasing.wips.domain.atp.beans.G53xTransactionOutputTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

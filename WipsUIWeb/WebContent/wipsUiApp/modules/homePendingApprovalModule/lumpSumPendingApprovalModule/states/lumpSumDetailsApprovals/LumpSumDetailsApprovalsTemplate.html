@@ -1,0 +1,633 @@
+<h1>{{'lumpSumDetailsApprovals.title' | translate}} -
+    {{lumpSumDetailsApprovalsController.lumpSumInformation.lumpsumNumber}}
+</h1>
+<h3>{{'lumpSumDetailsApprovals.amendment' | translate}}
+    <select ng-model="lumpSumDetailsApprovalsController.lumpSumInformation.currentAmendment"
+            id="selectedVersion" name="selectedVersion" class="form-control"
+            ng-options="v for v in lumpSumDetailsApprovalsController.availableAmendments"
+            ng-change="lumpSumDetailsApprovalsController.readOnlyFunc()"></select>
+</h3>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-10">
+            <dl class="dl-horizontal">
+                <dt>{{'atpPendingApproval.jobCode' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.jobDetail.jobCode}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-10">
+            <dl class="dl-horizontal">
+                <dt>{{'atpPendingApproval.jobOwner' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.jobDetail.jobName}}</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<form name="lumpSumDetailsApprovals" wips-form-invalid-focus class="well" novalidate
+      ng-class="{ mandatoryHide : (lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag == 1) || (lumpSumDetailsApprovalsController.securityInformation.workTaskEditable==0 && lumpSumDetailsApprovalsController.securityInformation.globalSupplierAuditEditable==0 && lumpSumDetailsApprovalsController.securityInformation.classificationEditable==0 && lumpSumDetailsApprovalsController.securityInformation.shortAndLongTermEditable==0)}">
+
+    <div class="row pull-right" ng-if="lumpSumDetailsApprovalsController.lumpSumInformation.toggleCurrencyEnabled == true">
+        <div class="col-xs-3 top-margin-md">
+            <b>{{'lumpSumDetailsApprovals.currency' | translate}}</b>
+        </div>
+        <div class="btn-group col-xs-9" role="group">
+            <button type="button" class="btn btn-default" wips-active-button id="usdToggleButton"
+                    ng-click="lumpSumDetailsApprovalsController.currencyToggle('USD')">{{'lumpSumDetailsApprovals.usd' |
+                translate}}
+            </button>
+            <button type="button" class="btn btn-default active" id="localToggleButton" wips-active-button ng-click="lumpSumDetailsApprovalsController.currencyToggle()">
+                {{'lumpSumDetailsApprovals.local' | translate}}
+            </button>
+        </div>
+    </div>
+
+    <h2>{{'lumpSumDetailsApprovals.subTitle' | translate}}</h2>
+    <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.status' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.lumpsumStatus}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.linkedLSNo' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.linkedLSNo}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.paymentTitle' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.paymentTitle}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.lsType' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.lumpsumType}}</dd>
+            </dl>
+        </div>
+
+        <div class="col-xs-12">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>{{'lumpSumDetailsApprovals.supplierInformationTable.supplier' | translate}}</th>
+                    <th>{{'lumpSumDetailsApprovals.supplierInformationTable.parent' | translate}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="supplierInformation in lumpSumDetailsApprovalsController.lumpSumInformation.supplierInformation">
+                    <td>{{supplierInformation.siteCode}} - {{supplierInformation.siteName}}</td>
+                    <td>{{supplierInformation.parentCode}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.plantToPay' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.plantToPay}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.fundingOrg' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.fundingOrganization}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.partNo' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.partNumber}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.commodityCode' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.commodityCode}}</dd>
+            </dl>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.negotiatingJob' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.negotiatingJob}}</dd>
+            </dl>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.paymentTerm' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.paymentTerm}}</dd>
+            </dl>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.paymentType' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.paymentType}}</dd>
+            </dl>
+        </div>
+
+
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.amountCurrency' | translate}}</dt>
+                <dd>
+                   <span ng-if="lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.convertAmount(lumpSumDetailsApprovalsController.lumpSumInformation.currency)}}
+                    </span>
+                    <span ng-if="!lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.currency.amount}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.currency.sign}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.currency.currency}}
+                    </span>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.totalAmount' | translate}}</dt>
+                <dd>
+                    <span ng-if="lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.convertAmount(lumpSumDetailsApprovalsController.lumpSumInformation.totalAmount)}}
+                    </span>
+                    <span ng-if="!lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.totalAmount.amount}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.totalAmount.sign}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.totalAmount.currency}}
+                    </span>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-2">
+            <div class="form-group"
+                 ng-class="{'has-error':lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.gsaAmount.$invalid}">
+                <label for="gsaAmount" class="control-label"
+                       ng-class="{fieldMandatory:lumpSumDetailsApprovalsController.securityInformation.globalSupplierAuditEditable==0}">{{'lumpSumDetailsApprovals.gsaAmount'
+                    | translate}}</label>
+                <div class="input-group">
+                    <input type="text" ng-change="lumpSumDetailsApprovalsController.gsaAmountSave()"
+                           ng-readonly="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag || !lumpSumDetailsApprovalsController.securityInformation.globalSupplierAuditEditable || lumpSumDetailsApprovalsController.toggled"
+                           name="gsaAmount" id="gsaAmount" ng-model="lumpSumDetailsApprovalsController.gsaAmount"
+                           class="form-control"
+                           placeholder="" required ng-pattern="lumpSumDetailsApprovalsController.gsaAmountPattern();"
+                           ng-required="!lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag && lumpSumDetailsApprovalsController.securityInformation.globalSupplierAuditEditable">
+                         <div class="input-group-addon">
+                            <span ng-if="lumpSumDetailsApprovalsController.toggled">
+                               {{lumpSumDetailsApprovalsController.currencyUSD}}
+                            </span>
+                            <span ng-if="!lumpSumDetailsApprovalsController.toggled">
+                                {{lumpSumDetailsApprovalsController.lumpSumInformation.currency.currency}}
+                            </span>
+                         </div>
+                </div>
+                 <span class="label label-danger"
+                       ng-show="lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.gsaAmount.$invalid"><span
+                         class="glyphicon glyphicon-remove-circle"></span>
+                               <span class="label-text" ng-show="lumpSumDetailsApprovals.gsaAmount.$error.required">{{'application.errors.isGSAAmountError' | translate}}</span>
+                                <span class="label-text" ng-show="lumpSumDetailsApprovals.gsaAmount.$error.pattern">{{'application.errors.invalidGSAAmountError' | translate}}</span>
+                  </span>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.doaAmount' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.doAAmount}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.prevRsvBal' | translate}}</dt>
+                <dd>
+                    <span ng-if="lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.convertAmount(lumpSumDetailsApprovalsController.lumpSumInformation.previousRSVBalance)}}
+                    </span>
+                    <span ng-if="!lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.previousRSVBalance.amount}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.previousRSVBalance.sign}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.previousRSVBalance.currency}}
+                    </span>
+                 </dd>
+            </dl>
+        </div>
+        <div class="clearfix visible-lg visible-sm visible-xs"></div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.newRsvBal' | translate}}</dt>
+                <dd><span ng-if="lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.convertAmount(lumpSumDetailsApprovalsController.lumpSumInformation.newRSVBalance)}}
+                    </span>
+                    <span ng-if="!lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.newRSVBalance.amount}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.newRSVBalance.sign}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.newRSVBalance.currency}}
+                    </span>
+                </dd>
+            </dl>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.prevNTEBal' | translate}}</dt>
+                <dd>
+                    <span ng-if="lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.convertAmount(lumpSumDetailsApprovalsController.lumpSumInformation.previousNTEBalance)}}
+                    </span>
+                    <span ng-if="!lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.previousNTEBalance.amount}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.previousNTEBalance.sign}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.previousNTEBalance.currency}}
+                    </span>
+                </dd>
+            </dl>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.newNTEBal' | translate}}</dt>
+                <dd>
+                    <span ng-if="lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.convertAmount(lumpSumDetailsApprovalsController.lumpSumInformation.newNTEBalance)}}
+                    </span>
+                    <span ng-if="!lumpSumDetailsApprovalsController.toggled">
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.newNTEBalance.amount}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.newNTEBalance.sign}}
+                        {{lumpSumDetailsApprovalsController.lumpSumInformation.newNTEBalance.currency}}
+                    </span>
+                </dd>
+            </dl>
+        </div>
+        <!--  <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.paidIssuedDate' | translate}}</dt>
+               <dd>{{lumpSumDetailsApprovalsController.lumpSumInformation.paidDate}}</dd> /* commented due to incorrect value from server and uncomment it once get the correct value
+                <dd></dd>
+            </dl>
+        </div>-->
+
+        <div class="col-xs-12">
+            <div class="form-group"
+                ng-class="{'has-error':lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.gsaAudit.$invalid}">
+                <label for="gsaAudit" class="control-label"
+                    ng-class="{fieldMandatory:lumpSumDetailsApprovalsController.securityInformation.globalSupplierAuditEditable==0}">{{'lumpSumDetailsApprovals.gsaAudit'
+                    | translate}}</label> <select
+                    ng-model="lumpSumDetailsApprovalsController.selectedGSAAudit"
+                    ng-disabled="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag || !lumpSumDetailsApprovalsController.securityInformation.globalSupplierAuditEditable || lumpSumDetailsApprovalsController.toggled"
+                    id="gsaAudit" name="gsaAudit" class="form-control"
+                    ng-change="lumpSumDetailsApprovalsController.gsaAuditSave()"
+                    ng-options="g.code as g.codeAnddescription for g in lumpSumDetailsApprovalsController.lumpSumInformation.gsaAudit"
+                    required
+                    ng-required="!lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag && lumpSumDetailsApprovalsController.securityInformation.globalSupplierAuditEditable"></select>
+                <span class="label label-danger"
+                    ng-show="lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.gsaAudit.$invalid"><span
+                    class="glyphicon glyphicon-remove-circle"></span> <span
+                    class="label-text"
+                    ng-show="lumpSumDetailsApprovals.gsaAudit.$error.required">{{'application.errors.isGSAAuditError'
+                        | translate}}</span> </span>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+                    <dl>
+                        <dt>{{'lumpSumDetailsApprovals.paymentDescription' |
+                            translate}}
+                        </dt>
+                        <dd>
+                            <span class="col-xs-12"
+                                  ng-repeat="paymentDescription in lumpSumDetailsApprovalsController.additionalLumpSumInformation.paymentDescription">{{paymentDescription}}</span>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-xs-12">
+                    <button id="confirm"
+                            ng-click="lumpSumDetailsApprovalsController.getLumpSumDetailsConfirmApproval()"
+                            class="btn btn-primary btn-sm pull-right"
+                            ng-hide="(lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag==true) || (lumpSumDetailsApprovalsController.additionalLumpSumInformation.hasPaymentConfirmed==true)">
+
+                        <span ng-if="(lumpSumDetailsApprovalsController.isConfirm.defaultTrue == true) || (lumpSumDetailsApprovalsController.confirmLSFlagError == true)">
+                            {{'application.buttons.confirm' | translate}}
+                            </span>
+                        <span ng-if="lumpSumDetailsApprovalsController.confirmLSFlagError == false">
+                            <span
+                                    class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            {{'application.buttons.confirmed' | translate}}
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>{{'attachmentDetailsTable.attachment' | translate}}</th>
+                    <th>{{'attachmentDetailsTable.uploadDate' | translate}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="attachmentDetails in lumpSumDetailsApprovalsController.lumpSumInformation.attachmentDetails"
+                    ng-if="(!lumpSumDetailsApprovalsController.attachmentsErrorFlag) && lumpSumDetailsApprovalsController.lumpSumInformation.hasAttachments==='Yes'">
+                    <td><a href="javascript:;"
+                           ng-click="lumpSumDetailsApprovalsController.viewAttachmentDetails(attachmentDetails);">{{attachmentDetails.name}}</a>
+                    </td>
+                    <td>{{attachmentDetails.uploadDate}}</td>
+                </tr>
+                <tr ng-if="lumpSumDetailsApprovalsController.attachmentsErrorFlag && lumpSumDetailsApprovalsController.lumpSumInformation.hasAttachments==='Yes'">
+                    <td class="errorMsgRed">{{lumpSumDetailsApprovalsController.attachmentsErrorMessage}}</td>
+                </tr>
+                <tr ng-if="lumpSumDetailsApprovalsController.lumpSumInformation.hasAttachments==='No'">
+                    <td>No Attachments in WebQuote</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group"
+                 ng-class="{'has-error': lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.classification.$invalid}">
+                <label for="classification" class="control-label"
+                       ng-class="{fieldMandatory:lumpSumDetailsApprovalsController.securityInformation.classificationEditable==0}">{{'lumpSumDetailsApprovals.classification'
+                    |
+                    translate}}</label>
+                <select ng-disabled="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag || !lumpSumDetailsApprovalsController.securityInformation.classificationEditable"
+                        ng-model="lumpSumDetailsApprovalsController.selectedClassificationCode" id="classification"
+                        name="classification" class="form-control"
+                        ng-change="lumpSumDetailsApprovalsController.classificationSave()" required
+                        ng-required="!lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag && lumpSumDetailsApprovalsController.securityInformation.classificationEditable"
+                        ng-options="c.code as c.codeAnddescription for c in lumpSumDetailsApprovalsController.additionalLumpSumInformation.classification"></select>
+                        <span class="label label-danger"
+                              ng-show="lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.classification.$invalid"><span
+                                class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="label-text"
+                                      ng-show="lumpSumDetailsApprovals.classification.$error.required">{{'application.errors.isClassificationError' | translate}}</span>
+                  </span>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.prePayment' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.prePayment}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group"
+                 ng-class="{'has-error':lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.workTaskNo.$invalid}">
+                <label for="workTaskNo" class="control-label fieldMandatoryWorkTask">{{'lumpSumDetailsApprovals.workTaskNo'
+                    |
+                    translate}}</label>
+                <input type="text" ng-change="lumpSumDetailsApprovalsController.workTaskSave()"
+                       ng-readonly="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag || !lumpSumDetailsApprovalsController.securityInformation.workTaskEditable"
+                       name="workTaskNo" id="workTaskNo" ng-model="lumpSumDetailsApprovalsController.workTaskNoValue"
+                       class="form-control"
+                       placeholder="" maxlength="6" required
+                       ng-required="!lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag && lumpSumDetailsApprovalsController.securityInformation.workTaskEditable">
+                  <span class="label label-danger"
+                        ng-show="lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.workTaskNo.$invalid"><span
+                          class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="label-text" ng-show="lumpSumDetailsApprovals.workTaskNo.$error.required">{{'application.errors.invalidWorkTasknoError' | translate}}</span>
+                  </span>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.accountNo' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.additionalLumpSumInformation.accountNumber}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.subdivisionNo' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.additionalLumpSumInformation.subDivisionNumber}}</dd>
+            </dl>
+        </div>
+        <div class="clearfix visible-xs"></div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.deptNo' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.additionalLumpSumInformation.deptNumber}}</dd>
+            </dl>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <dl>
+                <dt>{{'lumpSumDetailsApprovals.modelYrModels' | translate}}</dt>
+                <dd>{{lumpSumDetailsApprovalsController.additionalLumpSumInformation.modelYear}} / <span
+                        ng-repeat="models in lumpSumDetailsApprovalsController.models track by $index">{{models}}</span>
+                </dd>
+            </dl>
+        </div>
+        <div ng-if="lumpSumDetailsApprovalsController.prePayment==='Y'">
+        <div class="col-xs-12 col-sm-3 col-md-2">
+            <div class="form-group"
+                 ng-class="{'has-error': lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.longTermCost.$invalid}">
+                <label for="longTermCost" class="control-label"
+                       ng-class="{fieldMandatory:lumpSumDetailsApprovalsController.securityInformation.shortAndLongTermEditable==0}">{{'lumpSumDetailsApprovals.longTermCost'
+                    |
+                    translate}}</label>
+                <div class="input-group">
+                    <input ng-change="lumpSumDetailsApprovalsController.longTermCostSave()" type="text"
+                           ng-readonly="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag || !lumpSumDetailsApprovalsController.securityInformation.shortAndLongTermEditable"
+                           name="longTermCost" id="longTermCost"
+                           ng-model="lumpSumDetailsApprovalsController.longTermCost"
+                           class="form-control" required
+                           ng-pattern="/^[0-9]{0,11}?$|\d+[+-]$|^\d{0,11}(\.\d{1,2})?$|^\d{0,11}(\.\d{1,2})+[+-]{0,1}?$/"
+                           placeholder=""
+                           ng-required="lumpSumDetailsApprovalsController.securityInformation.shortAndLongTermEditable && !lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag">
+                    <div class="input-group-addon">
+                        {{lumpSumDetailsApprovalsController.additionalLumpSumInformation.longTermCurrency}}
+                    </div>
+                </div>
+                <span class="label label-danger"
+                      ng-show="lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.longTermCost.$invalid"><span
+                        class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="label-text" ng-show="lumpSumDetailsApprovals.longTermCost.$error.required">{{'application.errors.isLongTasknoError' | translate}}</span>
+                                 <span class="label-text" ng-show="lumpSumDetailsApprovals.longTermCost.$error.pattern">{{'application.errors.invalidLongTasknoError' | translate}}</span>
+
+
+                  </span>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-2">
+            <div class="form-group"
+                 ng-class="{'has-error': lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.shortTermCost.$invalid}">
+                <label for="shortTermCost" class="control-label"
+                       ng-class="{fieldMandatory:lumpSumDetailsApprovalsController.securityInformation.shortAndLongTermEditable==0}">{{'lumpSumDetailsApprovals.shortTermCost'
+                    |
+                    translate}}</label>
+                <div class="input-group">
+                    <input ng-change="lumpSumDetailsApprovalsController.shortTermCostSave()" type="text"
+                           name="shortTermCost"
+                           ng-readonly="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag || !lumpSumDetailsApprovalsController.securityInformation.shortAndLongTermEditable"
+                           id="shortTermCost" ng-model="lumpSumDetailsApprovalsController.shortTermCost"
+                           class="form-control" required
+                           ng-pattern="/^[0-9]{0,11}?$|\d+[+-]$|^\d{0,11}(\.\d{1,2})?$|^\d{0,11}(\.\d{1,2})+[+-]{0,1}?$/"
+                           placeholder=""
+                           ng-required="lumpSumDetailsApprovalsController.securityInformation.shortAndLongTermEditable && !lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag">
+                    <div class="input-group-addon">
+                        {{lumpSumDetailsApprovalsController.additionalLumpSumInformation.longTermCurrency}}
+                    </div>
+                </div>
+                <span class="label label-danger"
+                      ng-show="lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.shortTermCost.$invalid"><span
+                        class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="label-text"
+                                      ng-show="lumpSumDetailsApprovals.shortTermCost.$error.required">{{'application.errors.isShortTasknoError' | translate}}</span>
+                                <span class="label-text" ng-show="lumpSumDetailsApprovals.shortTermCost.$error.pattern">{{'application.errors.invalidShortTasknoError' | translate}}</span>
+                  </span>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>{{'lumpSumDetailsApprovals.subTitleApprovals' | translate}}</h2>
+        </div>
+        <div class="col-xs-6 text-right">
+            <ul class="datatables-legend list-inline">
+                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><strong>{{'lumpSumDetailsApprovals.approvalDate'
+                    | translate}}</strong></li>
+            </ul>
+        </div>
+    </div>
+    <accordion
+            ng-repeat="approvalDetails in lumpSumDetailsApprovalsController.lumpSumRemarks.approvalDetails">
+        <accordion-group is-open="lumpSumDetailsApprovalsController.isRemarksOpen[$index]">
+            <accordion-heading>
+
+                <span>{{approvalDetails.jobCode}}</span>
+<span ng-if="approvalDetails.approverName != ''">-
+    {{approvalDetails.approverName}}</span>
+<span class="pull-right dateApproval"
+      ng-if="approvalDetails.status==='APPROVED'"><span
+        class="glyphicon glyphicon-ok" aria-hidden="true"></span><strong>{{approvalDetails.date
+    | date:'MMM-d-yyyy'}}</strong></span></accordion-heading>
+            <div
+                    ng-if="approvalDetails.jobCode != lumpSumDetailsApprovalsController.jobDetail.jobCode">
+                <label class="control-label">{{'lumpSumDetailsApprovals.approvalRemarks'
+                    | translate}}</label>
+
+                <p>
+                <div class="courier-new"
+                     ng-repeat="r in approvalDetails.remarks track by $index">{{r}}
+                </div>
+                </p>
+            </div>
+
+            <div
+                    ng-if="approvalDetails.jobCode == lumpSumDetailsApprovalsController.jobDetail.jobCode"
+                    ng-class="{ mandatoryHide : lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag == 1}">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group"
+                             ng-class="{'has-error':lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.lumpSumVersion.$invalid}">
+                            <label for="lumpSumVersion" class="control-label">{{'lumpSumDetailsApprovals.approvalRemarks'
+                                | translate}}</label>
+                <textarea
+                        ng-readonly="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag"
+                        id="lumpSumVersion" name="lumpSumVersion"
+                        wc-validation-indicator="{{'application.errors.isRemarksEmpty' | translate}}"
+                        placeholder="Enter your remark here" rows="10" cols="50"
+                        class="form-control" required ng-required=""
+                        ng-model="lumpSumDetailsApprovalsController.selectedApprovalDetailsNotes" wips-list
+                >
+
+                        </textarea>
+
+                        <span class="label label-danger"
+                              ng-show="lumpSumDetailsApprovalsController.isFormSubmitted && lumpSumDetailsApprovals.lumpSumVersion.$invalid"><span
+                                class="glyphicon glyphicon-remove-circle"></span>
+                               <span class="label-text"
+                                     ng-show="lumpSumDetailsApprovals.lumpSumVersion.$error.required">{{'application.errors.isRemarksEmpty' | translate}}</span>
+
+                  </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </accordion-group>
+
+    </accordion>
+
+
+    <div class="form-actions visible-md visible-lg">
+        <div class="row ">
+            <div class="col-sm-12">
+                <button id="previous-lg" class="btn btn-default"
+                        ng-click="lumpSumDetailsApprovalsController.lumpsumBack()">&larr;
+                    {{'application.buttons.lumpSumPendingApproval' | translate}}
+                </button>
+                <div class="pull-right"
+                     ng-hide="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag">
+                    <button type="submit" class="btn btn-primary"
+                            ng-click="lumpSumDetailsApprovalsController.getSaveDetails('Save')">
+                        {{'application.buttons.saveChanges'
+                        | translate}}
+                    </button>
+                    <button type="submit" ng-click="lumpSumDetailsApprovalsController.saveAndApproveReject('Approve')"
+                            class="btn btn-success text-nowrap"
+                            ng-disabled="(lumpSumDetailsApprovalsController.confirmLSFlagError==true) || (lumpSumDetailsApprovalsController.confirmPayment==false)">
+                    <span
+                            ng-hide="(lumpSumDetailsApprovalsController.confirmLSFlagError==false) ||  (lumpSumDetailsApprovalsController.additionalLumpSumInformation.hasPaymentConfirmed==true)"><span
+                            class="glyphicon glyphicon-exclamation-sign"
+
+                            aria-hidden="true"></span>
+                        {{'application.buttons.confirmPaymentDescriptionToApprove' |
+                        translate}}</span><span
+                            ng-show="(lumpSumDetailsApprovalsController.confirmLSFlagError==false) || (lumpSumDetailsApprovalsController.additionalLumpSumInformation.hasPaymentConfirmed==true)">{{'application.buttons.confirmPaymentToApprove'
+                        | translate}}</span>
+
+
+                    </button>
+
+                    <button type="submit" ng-click="lumpSumDetailsApprovalsController.saveAndApproveReject('Reject')"
+                            class="btn btn-danger">{{'application.buttons.reject'
+                        | translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row visible-xs visible-sm">
+        <div class="col-sm-12">
+            <button type="submit" wips-active-button
+                    ng-hide="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag"
+                    class="btn btn-primary btn-block"
+                    ng-click="lumpSumDetailsApprovalsController.getSaveDetails('Save')">
+                {{'application.buttons.saveChanges'
+                | translate}}
+            </button>
+            <button type="submit" wips-active-button
+                    ng-hide="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag"
+                    class="btn btn-success btn-block text-nowrap"
+                    ng-click="lumpSumDetailsApprovalsController.saveAndApproveReject('Approve')"
+                    ng-disabled="(lumpSumDetailsApprovalsController.confirmLSFlagError==true) || (lumpSumDetailsApprovalsController.confirmPayment==false)">
+            <span ng-hide="(lumpSumDetailsApprovalsController.confirmLSFlagError==false) ||  (lumpSumDetailsApprovalsController.additionalLumpSumInformation.hasPaymentConfirmed==true)"><span
+                    class="glyphicon glyphicon-exclamation-sign"
+
+                    aria-hidden="true"></span>{{'application.buttons.confirmPaymentDescriptionToApprove'
+                | translate}}</span><span
+                    ng-show="(lumpSumDetailsApprovalsController.confirmLSFlagError==false) ||  (lumpSumDetailsApprovalsController.additionalLumpSumInformation.hasPaymentConfirmed==true)">{{'application.buttons.confirmPaymentToApprove'
+                | translate}}</span>
+            </button>
+            <button type="submit" class="btn btn-danger btn-block" wips-active-button
+                    ng-click="lumpSumDetailsApprovalsController.saveAndApproveReject('Reject')"
+                    ng-hide="lumpSumDetailsApprovalsController.lumpSumReadOnlyFlag">{{'application.buttons.reject'
+                | translate}}
+            </button>
+
+            <button id="previous-lg" class="btn btn-default btn-block"
+                    ng-click="lumpSumDetailsApprovalsController.lumpsumBack()">&larr;
+                {{'application.buttons.lumpSumPendingApproval' | translate}}
+            </button>
+        </div>
+    </div>
+</form>

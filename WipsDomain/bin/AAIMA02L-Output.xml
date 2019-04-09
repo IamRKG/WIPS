@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-SYSID-ATTR" pic="XX" />
+		<Parameter name="TPO-SYSID" pic="X(4)" />
+		<Parameter name="TPO-PROGRAM-ATTR" pic="XX" />
+		<Parameter name="TPO-PROGRAM" pic="X(4)" />
+		<Parameter name="TPO-VERSION-ATTR" pic="XX" />
+		<Parameter name="TPO-VERSION" pic="X(2)" />
+		<Parameter name="TPO-DATE-ATTR" pic="XX" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="XX" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-JOBCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-JOBCODE" pic="X(4)" />
+		<Parameter name="TPO-EMPNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-EMPNAME" pic="X(17)" />
+		<Parameter name="TPO-PAGENO-ATTR" pic="XX" />
+		<Parameter name="TPO-PAGENO" pic="X(2)" />
+		<Parameter name="TPO-MORE-ATTR" pic="XX" />
+		<Parameter name="TPO-MORE" pic="X(7)" />
+		<Parameter name="TPO-APPTYPE-ATTR" pic="XX" />
+		<Parameter name="TPO-APPTYPE" pic="X(11)" />
+		<Parameter name="TPO-TYPENO-ATTR" pic="XX" />
+		<Parameter name="TPO-TYPENO" pic="X(6)" />
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="15">
+			<Parameter name="TPO-USRCDE-ATTR" pic="XX" />
+			<Parameter name="TPO-USRCDE" pic="X(4)" />
+			<Parameter name="TPO-USRNME-ATTR" pic="XX" />
+			<Parameter name="TPO-USRNME" pic="X(17)" />
+			<Parameter name="TPO-APPRDT-ATTR" pic="XX" />
+			<Parameter name="TPO-APPRDT" pic="X(6)" />
+			<Parameter name="TPO-STATUS-ATTR" pic="XX" />
+			<Parameter name="TPO-STATUS" pic="X(9)" />
+			<Parameter name="TPO-REMARK-ATTR" pic="XX" />
+			<Parameter name="TPO-REMARK" pic="X(3)" />
+		</Array>
+	</DataArea>
+</DataArea>

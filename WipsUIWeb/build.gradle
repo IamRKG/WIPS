@@ -1,0 +1,32 @@
+apply plugin: 'base'
+apply plugin: 'war'
+webAppDirName = 'WebContent'
+dependencies{
+	providedCompile libraries.wipsWebProvidedCompile
+}
+war {
+	if(buildForHteam){
+		include ('META-INF/**')
+		include ('WEB-INF/**')
+	}else{
+        eachFile {
+            if (it.file == project.file("${webAppDir}/WEB-INF/ibm-web-ext.xml")){
+                it.filter { line ->
+                    line.replaceAll('<enable-file-serving value="false"/>','<enable-file-serving value="true"/>')
+                }
+            }
+        }   
+    }
+}
+import org.gradle.api.tasks.Exec
+eclipse.project.file.beforeMerged{
+	project -> project.buildCommands.clear()
+}
+
+task runGruntTask (type: Exec) {
+   mustRunAfter build 
+   onlyIf {buildForHteam}
+   String grunt = "grunt --gruntfile " + project.projectDir.getAbsolutePath() + "/../Gruntfile.js"
+    //commandLine = ["cmd", "/c", grunt]
+    commandLine = './'+grunt
+}

@@ -1,0 +1,287 @@
+<form role="form">
+    <h1>{{'priceClaimDetailsApprovals.title' | translate}} -
+        {{priceClaimDetailsApprovalsController.priceClaimNumber}}
+    </h1>
+    <div class="well" scroll-top>
+        <div class="row">
+            <div class="col-xs-10">
+                <dl class="dl-horizontal">
+                    <dt>{{'priceClaimPendingApproval.jobCode' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.jobDetail.jobCode}}</dd>
+                </dl>
+            </div>
+            <div class="col-xs-10">
+                <dl class="dl-horizontal">
+                    <dt>{{'priceClaimPendingApproval.jobOwner' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.jobDetail.jobName}}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="PriceClaimDetail">
+        <div class="row">
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <dl>
+                    <dt>{{'priceClaimDetailsApprovals.supplier' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.pcsDetails.supplier}}</dd>
+                </dl>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <dl>
+                    <dt>{{'priceClaimDetailsApprovals.Buyer' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.pcsDetails.buyer}}</dd>
+                </dl>
+            </div>
+            <div class="clearfix visible-xs"></div>
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <dl>
+                    <dt>{{'priceClaimDetailsApprovals.casualFactor' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.pcsDetails.causalFactor}}</dd>
+                </dl>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <dl>
+                    <dt>{{'priceClaimDetailsApprovals.effectiveDate' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.pcsDetails.effectiveDate}}</dd>
+                </dl>
+            </div>
+            <div class="clearfix visible-sm visible-xs"></div>
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <dl>
+                    <dt>{{'priceClaimDetailsApprovals.exchangeRate' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.pcsDetails.exchangeRate}}</dd>
+                </dl>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <dl>
+                    <dt>{{'priceClaimDetailsApprovals.volumes' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.pcsDetails.volumes}}</dd>
+                </dl>
+            </div>
+            <div class="clearfix visible-lg visible-md visible-xs"></div>
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <dl>
+                    <dt>{{'priceClaimDetailsApprovals.intPrc' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.pcsDetails.intPrc}}</dd>
+                </dl>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <dl>
+                    <dt>{{'priceClaimDetailsApprovals.partsIncluded' | translate}}</dt>
+                    <dd>{{priceClaimDetailsApprovalsController.pcsDetails.partsIncluded}}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="well PriceClaimDetail">
+        <div class="row">
+
+            <p class="col-xs-12 lead">{{'priceClaimDetailsApprovals.pmClaimInstructions' | translate}}</p>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                <label class="control-label" form="purchasingManager">{{'priceClaimDetailsApprovals.purchasingManager' |
+                    translate}}</label>
+                <select id="purchasingManager" class="form-control"
+                        ng-options="pm as pm for pm in priceClaimDetailsApprovalsController.pcsDataFinance.purchaseManager" ng-change="priceClaimDetailsApprovalsController.reloadFinancialImpactInformation()"
+                        ng-model="priceClaimDetailsApprovalsController.selectedPMValue"></select>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group clearfix">
+                <fieldset class="col-xs-6 col-sm-4 col-md-3">
+                    <legend>{{'priceClaimDetailsApprovals.claimYear' | translate}}</legend>
+                    <div class="btn-group">
+                        <label class="btn btn-default"
+                               ng-repeat="cy in priceClaimDetailsApprovalsController.pcsDataFinance.claimYear"
+                               ng-model="priceClaimDetailsApprovalsController.selectedClaimYear" ng-change="priceClaimDetailsApprovalsController.reloadFinancialImpactInformation()"
+                               btn-radio="'{{cy}}'"
+                               >
+
+                            {{cy}}
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+            <div class="row" ng-if="priceClaimDetailsApprovalsController.pcsDataFinance.selectedPM == '*All'">
+                <div class="col-xs-12">
+                    <table class="table table-hover table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>{{'priceClaimDetailsApprovals.pmTable.purchasingManager' | translate}}</th>
+                            <th>{{'priceClaimDetailsApprovals.pmTable.claimTOPercentage' | translate}}</th>
+                            <th>{{'priceClaimDetailsApprovals.pmTable.frznTO' | translate}}</th>
+                            <th>{{'priceClaimDetailsApprovals.pmTable.ndpcsave' | translate}}</th>
+                            <th>{{'priceClaimDetailsApprovals.pmTable.ndpcsavePercentage' | translate}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="pmDetails in priceClaimDetailsApprovalsController.pcsDataFinance.purchasingManagerDetails">
+                            <td>{{pmDetails.pmCode}} - {{pmDetails.pmName}}</td>
+                            <td>{{pmDetails.pcsFinancialInfoDetail.claimTOPercentage}}</td>
+                            <td>{{pmDetails.pcsFinancialInfoDetail.frznTO}}</td>
+                            <td>{{pmDetails.pcsFinancialInfoDetail.ndpcsave}}</td>
+                            <td>{{pmDetails.pcsFinancialInfoDetail.ndpcsavePercentage}}</td>
+                        </tr>
+                        <tr ng-class="{info: priceClaimDetailsApprovalsController.pcsDataFinance.selectedPM == '*All'}">
+                            <td>{{'priceClaimDetailsApprovals.total' | translate}}</td>
+                            <td>{{priceClaimDetailsApprovalsController.pcsDataFinance.businessUnitTotalDetails.claimTOPercentage}}</td>
+                            <td>{{priceClaimDetailsApprovalsController.pcsDataFinance.businessUnitTotalDetails.frznTO}}</td>
+                            <td>{{priceClaimDetailsApprovalsController.pcsDataFinance.businessUnitTotalDetails.ndpcsave}}</td>
+                            <td>{{priceClaimDetailsApprovalsController.pcsDataFinance.businessUnitTotalDetails.ndpcsavePercentage}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="row" ng-if="priceClaimDetailsApprovalsController.pcsDataFinance.selectedPM != '*All'">
+                <div class="col-xs-12">
+                    <accordion>
+
+                        <accordion-group heading="{{'priceClaimDetailsApprovals.businessUnit' | translate}} - {{bu.businessUnit}}"
+                                         is-open="priceClaimDetailsApprovalsController.isOpen[$index]"
+                                         ng-repeat="bu in priceClaimDetailsApprovalsController.pcsDataFinance.businessUnits">
+
+                            <table class="table table-hover table-condensed row table-align table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>{{'priceClaimDetailsApprovals.pmTable.commodityCode' | translate}}</th>
+                                    <th>{{'priceClaimDetailsApprovals.pmTable.claimTOPercentage' | translate}}</th>
+                                    <th>{{'priceClaimDetailsApprovals.pmTable.frznTO' | translate}}</th>
+                                    <th>{{'priceClaimDetailsApprovals.pmTable.ndpcsave' | translate}}</th>
+                                    <th>{{'priceClaimDetailsApprovals.pmTable.ndpcsavePercentage' | translate}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="pcsBUD in bu.pcsBusinessUnitDetails">
+                                    <td>{{pcsBUD.commodityCode}}</td>
+                                    <td>{{pcsBUD.pcsFinancialInfoDetail.claimTOPercentage}}</td>
+                                    <td>{{pcsBUD.pcsFinancialInfoDetail.frznTO}}</td>
+                                    <td>{{pcsBUD.pcsFinancialInfoDetail.ndpcsave}}</td>
+                                    <td>{{pcsBUD.pcsFinancialInfoDetail.ndpcsavePercentage}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{'priceClaimDetailsApprovals.total' | translate}}</td>
+                                    <td>{{bu.businessUnitTotalDetail.claimTOPercentage}}</td>
+                                    <td>{{bu.businessUnitTotalDetail.frznTO}}</td>
+                                    <td>{{bu.businessUnitTotalDetail.ndpcsave}}</td>
+                                    <td>{{bu.businessUnitTotalDetail.ndpcsavePercentage}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </accordion-group>
+
+                    </accordion>
+                    <table class="table table-hover table-bordered">
+                        <tbody>
+                        <tr class="info">
+                            <td>{{'priceClaimDetailsApprovals.total' | translate}}</td>
+                            <td>{{priceClaimDetailsApprovalsController.pcsDataFinance.businessUnitTotalDetails.claimTOPercentage}}</td>
+                            <td>{{priceClaimDetailsApprovalsController.pcsDataFinance.businessUnitTotalDetails.frznTO}}</td>
+                            <td>{{priceClaimDetailsApprovalsController.pcsDataFinance.businessUnitTotalDetails.ndpcsave}}</td>
+                            <td>{{priceClaimDetailsApprovalsController.pcsDataFinance.businessUnitTotalDetails.ndpcsavePercentage}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <dl>
+                <dt>{{'priceClaimDetailsApprovals.claimRemarks' |
+                    translate}}
+                </dt>
+                <dd>
+                      <span class="col-xs-12"
+                            ng-repeat="remarks in priceClaimDetailsApprovalsController.priceClaimRemarks track by $index">{{remarks}}</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>{{'lumpSumDetailsApprovals.subTitleApprovals' | translate}}</h2>
+        </div>
+        <div class="col-xs-6 text-right">
+            <ul class="datatables-legend list-inline">
+                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><strong>{{'lumpSumDetailsApprovals.approvalDate'
+                    | translate}}</strong></li>
+            </ul>
+        </div>
+    </div>
+    <accordion
+            ng-repeat="approvalDetails in priceClaimDetailsApprovalsController.pcsData.priceClaimRemarks">
+        <accordion-group is-open="priceClaimDetailsApprovalsController.isRemarksOpen[$index]">
+            <accordion-heading>
+
+                <span>{{approvalDetails.jobCode}}</span>
+<span ng-if="approvalDetails.approverName != ''">-
+    {{approvalDetails.approverName}}</span>
+<span class="pull-right dateApproval"
+      ng-if="approvalDetails.status==='APPROVED'"><span
+        class="glyphicon glyphicon-ok" aria-hidden="true"></span><strong>{{approvalDetails.date
+        | date:'MMM-d-yyyy'}}</strong></span></accordion-heading>
+            <div
+                    ng-if="approvalDetails.jobCode != priceClaimDetailsApprovalsController.jobDetail.jobCode">
+                <label class="control-label">{{'lumpSumDetailsApprovals.approvalRemarks'
+                    | translate}}</label>
+                <p>
+                <div class="courier-new"
+                     ng-repeat="r in approvalDetails.remarks track by $index">{{r}}
+                </div>
+                </p>
+            </div>
+            <div ng-if="approvalDetails.jobCode == priceClaimDetailsApprovalsController.jobDetail.jobCode">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="priceClaimRemarks" class="control-label">{{'lumpSumDetailsApprovals.approvalRemarks'
+                                | translate}}</label>
+                <textarea id="priceClaimRemarks" name="priceClaimRemarks"
+                          placeholder="Enter your remark here" rows="10" cols="50"
+                          class="form-control"
+                          ng-model="priceClaimDetailsApprovalsController.selectedApprovalDetailsNotes" wips-list
+                >
+                        </textarea>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </accordion-group>
+    </accordion>
+    <div class="priceClaim">
+        <div class="row">
+            <div class="text-center">
+                <button id="previous-lg" ng-click="priceClaimDetailsApprovalsController.lumpsumBack()"
+                        class="col-lg-offset-1 col-md-offset-1 col-lg-1 col-md-1  btn btn-default  hidden-xs hidden-sm">&larr;</button>
+                <button type="submit"
+                        class="col-xs-12 col-sm-12 col-lg-offset-4 col-md-offset-3 col-lg-2 col-md-2 btn btn-primary"
+                        ng-click="priceClaimDetailsApprovalsController.getSaveDetails('Save')">
+                    {{'application.buttons.saveChanges' | translate}}
+                </button>
+                <button type="submit" class="col-xs-12 col-sm-12 col-lg-2 col-md-2 btn btn-success"
+                        ng-click="priceClaimDetailsApprovalsController.getApproveAndRejectDetails('Approve')">
+                    {{'application.buttons.confirmPaymentToApprove' | translate}}
+                </button>
+                <button type="submit" class="col-xs-12 col-sm-12 col-lg-2 col-md-2 btn btn-danger"
+                        ng-click="priceClaimDetailsApprovalsController.getApproveAndRejectDetails('Reject')">
+                    {{'application.buttons.reject' | translate}}
+                </button>
+                <button id="previous-lg" ng-click="priceClaimDetailsApprovalsController.lumpsumBack()"
+                        class="col-xs-12 col-sm-12 btn btn-default visible-xs-block visible-sm-block hidden-md hidden-lg">&larr;
+                    {{'application.buttons.priceClaimPendingApproval' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

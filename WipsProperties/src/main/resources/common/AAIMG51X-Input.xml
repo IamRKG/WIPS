@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<DataArea name="TPI-INPUT">
+	<Parameter name="TPI-IOINDIC" pic="X" />
+	<Parameter name="TPI-PFKEY" pic="99" />
+	<Parameter name="TPI-PAGENO" pic="X(2)" />
+	<Array name="TPI-BUFFER-SEGLOOP" occurs="11">
+		<Parameter name="TPI-SELECT" pic="X" />
+	</Array>
+</DataArea>

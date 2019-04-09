@@ -1,0 +1,302 @@
+﻿{
+  "application": {
+	"title": "WIPS - Worldwide Integrated Purchasing System",
+	"shortTitle": "WIPS",
+	"copyright": "© 2016 Ford Motor Company. All rights reserved.",
+	"navigation": {
+	  "toggleTitle": "Toggle navigation",
+	  "links": {
+		"authenticate": "Authenticate",
+		"atpsPendingApproval": "Pending Approval",
+		"SMS":"SMS",
+		"Notification":"Text Message Notifications",
+		"bookings": {
+		  "main": "Bookings",
+		  "create": "Create Booking",
+		  "search": "Search Bookings"
+		},
+		"agents": "Manage Agents",
+		"resources": {
+		  "main": "Resources",
+		  "statistics": "Booking Statistics"
+		},
+		"role": "Choose Role:",
+		"language": "Choose Language:",
+		"ok": "Ok",
+		"cancel": "Cancel"
+	  }
+	},
+	"welcomePhrase": "Welcome {{firstName}} {{lastName}} ({{cdsid}})",
+	"role": {
+	  "label": "Role:",
+	  "customer": "Customer",
+	  "agent": "Booking Agent"
+	},
+	"language": {
+	  "label": "Language:",
+	  "title": "Select Language",
+	  "instructions": "Select the language you wish to use for this application.",
+	  "english": "English",
+	  "chinese": "Chinese",
+	  "russian": "Russian"
+	},
+	"errors": {
+	  "wslError": "The application encountered an error with WSL authentication. It will continue in offline mode, using local cached data, unless you click the red 'nonAuthenticated' text in the heading to reauthenticate.",
+	  "isRequiredError": "is required.",
+	  "isInvalidError": "Please enter a valid",
+	  "isInvalidCustomError": "Please enter a valid job code",
+	  "isWorkTasknoError": "Please enter a Work Task No",
+	  "invalidWorkTasknoError": "Please enter valid Work Task No",
+	  "isLongTasknoError":"Please Enter Long Term Cost",
+	  "invalidLongTasknoError":"Invalid Long Term Cost",
+	   "isShortTasknoError":"Please Enter Short Term Cost",
+	  "invalidShortTasknoError":"Invalid Short Term Cost",
+	  "isClassificationError":"Please Enter Classification Code",
+	  "isGSAAmountError":"Please Enter GSA Amount",
+	  "invalidGSAAmountError":"Invalid GSA Amount",
+	  "isGSAAuditError":"Please Enter GSA Audit",
+	  "isRemarksEmpty":"Please Enter Remarks Before Rejecting",
+	  "internalServerError":"Unable to process your request currently. Please contact system administrator"
+	},
+	"success":{
+	   "Message":"Your option has been saved successfully"
+	},
+	"buttons": {
+	  "switch": "Switch",
+	  "remarks":"Remarks",
+	  "strategyDetail":"Strategy Detail",
+	  "previous":"Previous",
+	  "atpsPendingApproval":"ATPs Pending Approval",
+	  "recap":"Recap",
+	  "approve":"Approve",
+	  "reject":"Reject",
+	  "saveChanges":"Save Changes",
+	  "confirmPaymentDescriptionToApprove":"Confirm Payment Description to Approve",
+	  "confirmPaymentToApprove":"Approve",
+	  "confirm":"Confirm",
+	  "confirmed":"Confirmed",
+	  "lumpSumPendingApproval":"Lump Sums Pending Approval",
+	  "priceClaimPendingApproval":"Price Claims Pending Approval"
+	}
+  },
+  "login" : {
+ 	 "racfId": "RACF ID",
+ 	 "password" : "Password",
+ 	 "loginBtn" : "Login",
+ 	 "isRequiredErrorEnter" : "Please enter"
+  },
+  "atpPendingApproval" : {
+ 	 "title": "ATP Pending Approval",
+ 	 "jobCode" : "Job Code",
+ 	 "jobOwner" : "Job Owner",
+ 	 "altJobCode" :"Alt Job Code",
+ 	 "instruction":"Select an ATP to view recap, approve or reject.",
+ 	 	"tableHeader" :{
+ 			 "atpNo" : "ATP No.",
+ 			 "partNo" : "Part No.",
+ 			 "buyer" : "Buyer"
+ 			 	
+ 		 },
+ 	 "atpRecap" : {
+		"title": "ATP Recap",
+ 	 	"strategy" : "Strategy",
+ 	 	"part" : "Part",
+ 	 	"effective" : "Effective",
+ 	 	"reasonCode" : "Reason Code",
+ 	 	"autoPO" : "Auto PO",
+ 	 	"totalCost" : "Total Annual Cost",
+ 	 	"capacityShortfall" : "CAPACITY SHORTFALL",
+        "suppliers":"Suppliers",
+ 	 	"approvals":"Approvals",
+ 	 	"newPrice":"New Price",
+ 	 	"change":"Change",
+ 	 	"annualCost":"Annual Cost",
+ 	 	"sourcingAuthority":"Sourcing % / Authority",
+ 	 	"webQuoteAttachment":"WebQuote Attachment",
+ 	 	"ppc":"PPC",
+ 	 	"usdLiteral":"USD Literal",
+ 	 	"jobCode":"Job Code",
+ 	 	"date":"Date",
+ 	 	"remarks":"Remarks"
+ 	 },
+	 	 "atpRemarks" : {
+		"title": "ATP Remarks",
+ 	 	"part" : "Part",
+ 	 	"buyer" : "Buyer",
+ 	 	"engineeringLevel" : "Engineering Level",
+ 	 	"autoPO" : "Auto PO",
+ 	 	"suppliers":"Suppliers",
+ 	 	"approvals":"Approvals",
+ 	 	"newPrice":"New Price",
+ 	 	"change":"Change",
+ 	 	"annualCost":"Annual Cost",
+ 	 	"sourcingAuthority":"Sourcing % / Authority",
+ 	 	"webQuoteAttachment":"WebQuote Attachment",
+ 	 	"ppc":"PPC",
+ 	 	"usdLiteral":"USD Literal",
+ 	 	"jobCode":"Job Code",
+ 	 	"date":"Date",
+ 	 	"remarks":"Remarks"
+ 	 },
+ 	 	"strategyDetails" : {
+			"title": "ATP Strategy Details",
+			"strategy" : "Strategy",
+	 	 	"part" : "Part",
+	 	 	"engineeringLevel" : "Engineering Level",
+	 	 	"trendRate":"Trend Rate",
+	 	 	"buyer":"Buyer",
+	 	 	"status":"Status",
+	 	 	"atpType":"ATP Type",
+	 	 	"nationalCompany":"National Company",
+	 	 	"apw":"APW",
+	 	 	"tableHeader":{
+	 	 		"supplier":"Supplier",
+	 	 		"sourcingPercentage":"Sourcing %"
+	 	 	
+	 	 	}
+	 }
+
+ 	 
+ 	 
+  },
+  "menuPendingApproval":{
+  			"title": "Pending Approval",
+  			"instructions":"Selected Job has following items awaiting your approval.",
+  			"viewList":"View List",
+	  			"tableHeader":{	
+	  			"action":"Action",
+	  			"entity":"Entity",
+	  			"totalWaiting":"Total Waiting"
+	  			},
+	  		"switchJob":"Switch Job",
+	  		"yourJob":"Your Job",
+	  		"delegatedJobs":"Delegated Jobs"
+	  		
+  },
+  "SMS":{
+         "title":"SMS"
+  },
+  "Message":{
+         "title":"Text Message Notifications",
+         "CDSId":"CDS User ID",
+         "displayName":"Display Name",
+         "auxiliaryPhone":"Auxiliary Phone",
+         "yes":" Yes",
+         "no":" No",
+         "notificMessage":"Send notifications when there are new items pending approval"
+  },
+  "lumpSumPendingApproval":{
+  				"title":"Lump Sum Pending Approval",
+  				"instructions":"Select a Lump Sum to view details, approve or reject.",
+  				"tableHeader" :{
+ 			 		"lumpSumNo" : "Lump Sum No.",
+ 					 "buyer" : "Buyer",
+ 					 "cause" : "Cause",
+ 					 "supplier" : "Supplier"
+ 				  }
+  },"lumpSumDetailsApprovals":{
+	"title":"Lump Sum",
+	"amendment":"Amendment",
+	"subTitle":"Details",
+	"subTitleApprovals":"Approvals & Remarks",
+	"approvalDate":"Approval Date",
+	"approvalRemarks":"Remarks",
+	"status":"Status",
+	"linkedLSNo":"Linked LS No.",
+	"paymentTitle":"Payment Title",
+	"lsType":"LS Type",
+	"supplierInformationTable":{
+		"supplier":"Supplier",
+		"parent":"Parent"
+	},
+	"plantToPay":"Plant to Pay",
+	"fundingOrg":"Funding Org",
+	"partNo":"Part No./Part Name",
+	"commodityCode":"Commodity Code",
+	"negotiatingJob":"Negotiating Job",
+	"paymentTerm":"Payment Term",
+	"paymentType":"Payment Type",
+	"amountCurrency":"Amount / Currency",
+	"totalAmount":"Total Amount",
+	"gsaAmount":"GSA Amount",
+	"doaAmount":"DoA Amount",
+	"currency":"Currency",
+	"paymentDescription":"Payment Description",
+	"classification":"Classification",
+	"prePayment":"Pre Payment",
+	"workTaskNo":"Work Task No.",
+	"accountNo":"Account No.",
+	"subdivisionNo":"Subdivision No.",
+	"deptNo":"Dept No.",
+	"modelYrModels":"Model Yr./Models",
+	"longTermCost":"Long Term Cost",
+	"usd":"USD",
+	"local":"Local",
+	"shortTermCost":"Short Term Cost",
+	"prevRsvBal":"Prev Rsv Bal",
+	"newRsvBal":"New Rsv Bal",
+	"prevNTEBal":"Prev NTE Bal",
+	"newNTEBal":"New NTE Bal",
+	"paidIssuedDate":"Paid/Issued Date",
+	"gsaAudit":"GSA Audit",
+	"local":"Local"
+},
+"priceClaimDetailsApprovals":{
+"title":"Price Claim",
+"linkedPCNo":"Linked PC No.",
+"supplier":"Supplier",
+"Buyer":"Buyer",
+"casualFactor":"Casual Factor",
+"effectiveDate":"Effective Date",
+"exchangeRate":"Exchange Rate 1 USD =",
+"volumes":"Volumes",
+"pcsRemarks":"Pcs Remark",
+"intPrc":"Int Prc",
+"partsIncluded":"Parts Included",
+"claimRemarks":"Claim Remarks",
+"pmClaimInstructions":"Select one or all purchasing manager & a claim year, then Reload to view claim totals.",
+"purchasingManager":"Purchasing Manager",
+"claimYear":"Claim Year",
+"reload":"Reload",
+"total":"Total",
+"businessUnit":"Business Unit",
+"pmTable":{
+	"purchasingManager":"Purchasing Manager",
+	"claimTOPercentage":"Claim T/O % of Supl. T/O",
+	"frznTO":"Frzn T/O (000) USD",
+	"ndpcsave":"NDPC Save (000) USD",
+	"ndpcsavePercentage":"NDPC save %",
+	"commodityCode":"Commodity Code"
+}
+},
+"priceClaimPendingApproval":{
+  				"title":"Price Claims Pending Approval",
+  				"jobCode" : "Job Code",
+			 	"jobOwner" : "Job Owner",
+			 	"altJobCode" :"Alt Job Code",
+  				"instructions":"Select a Price Claim to view details, approve or reject.",
+  				"tableHeader" :{
+ 			 		"priceClaimNo" : "Price Claim No.",
+ 					 "supplier" : "Supplier",
+ 					 "effectiveDate" : "Effective Date",
+ 					 "claimTitle" : "Claim Title"
+ 				  }
+  },
+    "actions": {
+	"selectAll": "Select All",
+	"selectNone": "Select None"
+  },
+    "modal": {
+	"confirmation": "Confirmation",
+	"confirmMessageApprove":"Are you sure you want to approve?",
+	"confirmMessageReject":"Are you sure you want to reject?",
+	"yes":"Yes"
+ },
+ "sessionTimeOut":{
+    "message": "Session Expired!. Please login again to continue"
+ },
+"attachmentDetailsTable":{
+		"attachment":"Attachment",
+		"uploadDate":"Upload Date"
+}
+}

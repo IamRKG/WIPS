@@ -1,0 +1,5 @@
+//java.srcDir 'src'
+dependencies{
+	//compile libraries.wipCommonCompile
+	//testCompile libraries.jab7BusinessTestCompile
+}

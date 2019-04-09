@@ -1,0 +1,41 @@
+<h1>{{'Message.title' | translate}}</h1>
+<div class="well">
+	<div class="row">
+			<div class="col-xs-10">
+				<dl class="dl-horizontal">
+					<dt>{{'Message.CDSId' | translate}}</dt>
+					<dd>{{textMessageNotificationController.textMessageInputs.cdsId}}</dd>
+				</dl>
+			</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10">
+			<dl class="dl-horizontal">
+				<dt>{{'Message.displayName' | translate}}</dt>
+				<dd>{{textMessageNotificationController.textMessageInputs.cdsName}}</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10">
+			<dl class="dl-horizontal">
+				<dt>{{'Message.auxiliaryPhone' | translate}}</dt>
+				<dd>{{textMessageNotificationController.textMessageInputs.auxiliaryPhone}}</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 top-margin-md">
+            <b>{{'Message.notificMessage' | translate}}</b>
+        </div>
+        <div class="btn-group col-xs-12 col-sm-12 col-md-5 col-lg-3" role="group" >
+            <button type="button" class="btn btn-default" wips-active-button  id="yesButton" ng-click="textMessageNotificationController.notification('Yes')" ng-class="textMessageNotificationController.checkValueYes(null)"><span ng-class="textMessageNotificationController.notificationSymYes()" class="glyphicon glyphicon-ok"></span>{{ 'Message.yes' |
+                translate}}
+            </button>
+            <button type="button" class="btn btn-default" wips-active-button id="noButton" ng-click="textMessageNotificationController.notification('No')" ng-class="textMessageNotificationController.checkValueNo(null)">
+                <span ng-class="textMessageNotificationController.notificationSymNo()" class="glyphicon glyphicon-ok" ></span>{{ 'Message.no' | translate}}
+            </button>
+        </div>
+    </div>
+

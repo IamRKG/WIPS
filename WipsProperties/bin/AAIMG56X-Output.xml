@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-SYSTEM-ATTR" pic="XX" />
+		<Parameter name="TPO-SYSTEM" pic="X(4)" />
+		<Parameter name="TPO-PROGRAM-ATTR" pic="XX" />
+		<Parameter name="TPO-PROGRAM" pic="X(4)" />		
+		<Parameter name="TPO-VERSION-ATTR" pic="XX" />
+		<Parameter name="TPO-VERSION" pic="X(2)" />
+		<Parameter name="TPO-DATE-ATTR" pic="XX" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="XX" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="XX" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-USER-ATTR" pic="XX" />
+		<Parameter name="TPO-USER" pic="X(4)" />
+		<Parameter name="TPO-USERNM-ATTR" pic="XX" />
+		<Parameter name="TPO-USERNM" pic="X(17)" />
+		<Parameter name="TPO-PAGENO-ATTR" pic="XX" />
+		<Parameter name="TPO-PAGENO-CHAR" pic="X(2)" />
+		<Parameter name="TPO-MORE-ATTR" pic="XX" />
+		<Parameter name="TPO-MORE" pic="X(7)" />
+		<Parameter name="TPO-PREFIX-ATTR" pic="XX" />
+		<Parameter name="TPO-PREFIX" pic="X(6)" />
+		<Parameter name="TPO-BASE-ATTR" pic="XX" />
+		<Parameter name="TPO-BASE" pic="X(8)" />
+		<Parameter name="TPO-SUFFIX-ATTR" pic="XX" />
+		<Parameter name="TPO-SUFFIX" pic="X(8)" />
+		<Parameter name="TPO-ATP-ATTR" pic="XX" />
+		<Parameter name="TPO-ATP" pic="X(6)" />
+		<Parameter name="TPO-BUYER-ATTR" pic="XX" />
+		<Parameter name="TPO-BUYER" pic="X(4)" />
+		<Parameter name="TPO-ENGLVL-ATTR" pic="XX" />
+		<Parameter name="TPO-ENGLVL" pic="X(18)" />
+		<Parameter name="TPO-ENGCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-ENGCODE" pic="X(6)" />
+		<Parameter name="TPO-CANRMK1-ATTR" pic="XX" />
+		<Parameter name="TPO-CANRMK1" pic="X(3)" />
+		<Parameter name="TPO-CANRMK2-ATTR" pic="XX" />
+		<Parameter name="TPO-CANRMK2" pic="X(3)" />
+		<Parameter name="TPO-CANRMK3-ATTR" pic="XX" />
+		<Parameter name="TPO-CANRMK3" pic="X(3)" />
+		<Parameter name="TPO-CANRMK4-ATTR" pic="XX" />
+		<Parameter name="TPO-CANRMK4" pic="X(3)" />
+		<Parameter name="TPO-COPYRMK-ATTR" pic="XX" />
+		<Parameter name="TPO-COPYRMK" pic="X(6)" />
+		<Parameter name="TPO-RMKS1-ATTR" pic="XX" />
+		<Parameter name="TPO-RMKS1" pic="X(4)" />
+		<Parameter name="TPO-RMKS2-ATTR" pic="XX" />
+		<Parameter name="TPO-RMKS2" pic="X(4)" />
+		<Parameter name="TPO-RMKS3-ATTR" pic="XX" />
+		<Parameter name="TPO-RMKS3" pic="X(4)" />
+		<Parameter name="TPO-RMKS4-ATTR" pic="XX" />
+		<Parameter name="TPO-RMKS4" pic="X(4)" />
+		<Parameter name="TPO-RMKS5-ATTR" pic="XX" />
+		<Parameter name="TPO-RMKS5" pic="X(4)" />
+		<Parameter name="TPO-RMKS6-ATTR" pic="XX" />
+		<Parameter name="TPO-RMKS6" pic="X(4)" />
+		<Parameter name="TPO-JOBCODE-ATTR" pic="XX" />
+		<Parameter name="TPO-JOBCODE" pic="X(4)" />
+		<Parameter name="TPO-USERNAME-ATTR" pic="XX" />
+		<Parameter name="TPO-USERNAME" pic="X(17)" />
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="11">
+			<Parameter name="TPO-SEL-ATTR" pic="XX" />
+			<Parameter name="TPO-SEL" pic="X" />
+			<Parameter name="TPO-TEXT-ATTR" pic="XX" />
+			<Parameter name="TPO-TEXT" pic="X(72)" />
+		</Array>
+		<Parameter name="TPO-PFLNE1A-ATTR" pic="XX" />
+		<Parameter name="TPO-PFLNE1A" pic="X(23)" />
+		<Parameter name="TPO-PFLNE1B-ATTR" pic="XX" />
+		<Parameter name="TPO-PFLNE1B" pic="X(49)" />
+		<Parameter name="TPO-PFLNE2A-ATTR" pic="XX" />
+		<Parameter name="TPO-PFLNE2A" pic="X(35)" />
+		<Parameter name="TPO-PFLNE2B-ATTR" pic="XX" />
+		<Parameter name="TPO-PFLNE2B" pic="X(11)" />
+		<Parameter name="TPO-PFLNE2C-ATTR" pic="XX" />
+		<Parameter name="TPO-PFLNE2C" pic="X(25)" />
+	</DataArea>
+</DataArea>

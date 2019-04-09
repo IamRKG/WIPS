@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:19" hostname="WGC100HHBHH92" time="0.003">
+  <properties/>
+  <testcase name="classificationEditableForSettlementLinkedToNTE" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.001"/>
+  <testcase name="classificationNotEditableForUnLinkedSettlement_NotInitialLumpsumVersion" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationEditableForNTE" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationEditableForUnLinkedReserve" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="shortLongTermCostsEditableForPrepaymentLumpSum" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.001"/>
+  <testcase name="classificationEditableForForecast" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationNotEditableForSettlementLinkedToNTE_NotInitialLumpsumVersion" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationNotEditableForForecast_NotInitialLumpsumVersion" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationNotEditableForSettlementLinkedToReserve" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationEditableForUnLinkedSettlement" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="workTaskNotEditableForForeCast" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="shortLongTermCostsNotEditableForNonPrepaidType" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationEditableForLinkedReserve" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.001"/>
+  <testcase name="workTaskEditableForAllLumpsumTypes_exceptForecast" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="gsaAuditNotEditable" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationNotEditableForSettlementLinkedToReserveLinkedToNTE" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationNotEditableForLinkedReserve_NotInitialLumpsumVersion" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <testcase name="classificationNotEditableForUnLinkedReserve_NotInitialLumpsumVersion" classname="com.ford.purchasing.wips.domain.security.FinanceLL6SecurityTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE property-group SYSTEM "PropertyGroup.dtd">
+<!--****************************************************************** -->
+<!-- Property Group defining user-id / resources / privileges -->
+<!-- that will be controlled through the SimpleAuthorizationProvider -->
+<!-- Note: All user-ids are case sensitive and MUST be defined as -->
+<!-- lower-case. -->
+<!--****************************************************************** -->
+<property-group name="SimpleAuthorizationGroup">
+    <!--************************************************** -->
+    <!-- Administrator CDSID -->
+    <!-- Can use every function in the Admin Console. -->
+    <!--************************************************** -->
+    <property-group name="jnishan2">
+        <property name="DynaPropUnrestricted">execute</property>
+        <property name="DynaPropPasswordRecovery">execute</property>
+    </property-group>
+    <property-group name="svasu">
+        <property name="DynaPropUnrestricted">execute</property>
+        <property name="DynaPropPasswordRecovery">execute</property>
+    </property-group>
+    <!--**************************************************-->
+    <!-- Property Admin CDSID                             -->
+    <!--     Can only manage properties in namespaces.    -->
+    <!--**************************************************-->
+    <property-group name="gkamal">
+        <property name="DynaPropReadOnly">execute</property>
+    </property-group>
+    <property-group name="naravin1">
+        <property name="DynaPropReadOnly">execute</property>
+    </property-group>
+    <property-group name="sharipr1">
+        <property name="DynaPropReadOnly">execute</property>
+    </property-group>
+</property-group>

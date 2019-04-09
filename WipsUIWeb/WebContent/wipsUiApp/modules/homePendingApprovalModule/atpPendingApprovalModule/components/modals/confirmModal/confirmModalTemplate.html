@@ -1,0 +1,12 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="confirmModalInstanceController.reject()">&times;</button>
+	<h3 class="modal-title">{{'modal.confirmation' | translate}}</h3>
+</div>
+<div class="modal-body">
+	<span ng-if="confirmModalInstanceController.selectedButtonValue == 'Approve'">{{'modal.confirmMessageApprove' | translate}}</span>
+	<span ng-if="confirmModalInstanceController.selectedButtonValue == 'Reject'">{{'modal.confirmMessageReject' | translate}}</span>
+</div>
+<div class="modal-footer form-actions">
+	<button id="modal-submit" class="btn btn-primary-default" ng-click="confirmModalInstanceController.resolve()">{{'modal.yes' | translate}}</button>
+	<button id="modal-cancel" class="btn btn-secondary" ng-click="confirmModalInstanceController.reject()">Cancel</button>
+</div>

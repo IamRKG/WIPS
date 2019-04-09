@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:15" hostname="WGC100HHBHH92" time="0.072">
+  <properties/>
+  <testcase name="retrieveOneMorePageForLumpSum_Success" classname="com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest" time="0.017"/>
+  <testcase name="retrieveOneMorePageForAtp_Success" classname="com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest" time="0.005"/>
+  <testcase name="retrieveMorePagesForAtp_Failure_ErrorMessage" classname="com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest" time="0.004"/>
+  <testcase name="retrieveMorePagesForAtp_Failure_ImsError" classname="com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest" time="0.004"/>
+  <testcase name="retrieveTwoMorePagesForAtp_Success" classname="com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest" time="0.007"/>
+  <testcase name="resourceExceptionWhenGettingInput" classname="com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest" time="0.008"/>
+  <testcase name="connectorExceptionWhileCreating" classname="com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMA02L
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG53X-Input.xml
+outputRecordResource: AAIMA02L-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG53X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMA02L-C36U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMA02L-Input.xml
+outputRecordResource: AAIMC36U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMA02L
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC32U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC32U-Input.xml
+outputRecordResource: AAIMC32U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC32U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC32U-C34U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC32U-Input.xml
+outputRecordResource: AAIMC34U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC32U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC32U-Q01X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC32U-Input.xml
+outputRecordResource: AAIMQ01X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC32U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC32U-S01O
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC32U-Input.xml
+outputRecordResource: AAIMS010-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC32U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC32U_C33U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC32U-Input.xml
+outputRecordResource: AAIMC33U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC32U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC33U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC33U-Input.xml
+outputRecordResource: AAIMC33U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC33U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC33U-M00M
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC33U-Input.xml
+outputRecordResource: AAIMM00M-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC33U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC33U_C32U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC33U-Input.xml
+outputRecordResource: AAIMC32U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC33U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC33U_CR5X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC33U-Input.xml
+outputRecordResource: AAIMCR5X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC33U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC34U-C32U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC34U-Input.xml
+outputRecordResource: AAIMC32U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC34U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC36U-C38V
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC36U-Input.xml
+outputRecordResource: AAIMC38V-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC36U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMC36U-CR1X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMC36U-Input.xml
+outputRecordResource: AAIMCR1X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMC36U
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMCR1X-CR3V
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMCR1X-Input.xml
+outputRecordResource: AAIMCR3V-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMCR1X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMCR5X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMCR5X-Input.xml
+outputRecordResource: AAIMCR5X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMCR5X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMCR5X_C33U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMCR5X-Input.xml
+outputRecordResource: AAIMC33U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMCR5X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMEPPS
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMEPPS-Input.xml
+outputRecordResource: AAIMM00M-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMEPPS
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG51X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG51X-Input.xml
+outputRecordResource: AAIMG53X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG51X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG52X-G55X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG52X-Input.xml
+outputRecordResource: AAIMG55X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG52X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG53X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG53X-Input.xml
+outputRecordResource: AAIMG53X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG53X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG53X-G52X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG53X-Input.xml
+outputRecordResource: AAIMG52X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG53X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG53X-G56X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG53X-Input.xml
+outputRecordResource: AAIMG56X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG53X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG53X-S010
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG53X-Input.xml
+outputRecordResource: AAIMS010-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG53X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG55X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG55X-Input.xml
+outputRecordResource: AAIMG55X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG55X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG56X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG56X-Input.xml
+outputRecordResource: AAIMG56X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG56X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMG56X-S01I0
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMG56X-Input.xml
+outputRecordResource: AAIMS010-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMG56X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMM00M
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMM00M-Input.xml
+outputRecordResource: AAIMM00M-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMM00M
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMM00M-Q01X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMM00M-Input.xml
+outputRecordResource: AAIMQ01X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMM00M
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMM00M-Q43L
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMM00M-Input.xml
+outputRecordResource: AAIMQ43L-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMM00M
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMQ01X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMQ01X-Input.xml
+outputRecordResource: AAIMQ01X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMQ01X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMQ01X-C32U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMQ01X-Input.xml
+outputRecordResource: AAIMC32U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMQ01X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMQ01X-G51X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMQ01X-Input.xml
+outputRecordResource: AAIMG51X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMQ01X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMQ01X-G53X
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMQ01X-Input.xml
+outputRecordResource: AAIMG53X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMQ01X
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMQ43L
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMQ43L-Input.xml
+outputRecordResource: AAIMQ43L-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMQ43L
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMQ43L-C36U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMQ43L-Input.xml
+outputRecordResource: AAIMC36U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMQ43L
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMS010-S011
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMS010-Input.xml
+outputRecordResource: AAIMQ01X-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMS01I
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: OperationConfiguration
+Name: AAIMS01O-C32U
+implementationClassName: com.ford.it.connector.ims.ManagedImsOperation
+inputRecordResource: AAIMS010-Input.xml
+outputRecordResource: AAIMC32U-Output.xml
+conversionName: USA_CODEPAGE_037
+userName: 
+ltermName: null
+password: ****
+tranCode: AAIMS01I
+datastoreName: null
+hostName: null
+port: 0
+jndiName: eis/ims/RT/IMSTB
+responseMode: Response
+socketTimeout: 0
+Nov 09, 2016 3:06:15 PM com.ford.it.connector.ConnectorContextInitializer initialize
+INFO: ConversionStrategyConfiguration
+CodePage:037
+CharacterEncoding:Cp037
+UserDateCodePage:037
+MachineType:MVS
+FloatingPointFormat:IBM
+Endian:BIGENDIAN
+RemoteIntegerEndian:BIGENDIAN
+Nov 09, 2016 3:06:15 PM com.ford.it.logging.JdkMapper info
+INFO: Q01X Output                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+Nov 09, 2016 3:06:15 PM com.ford.it.logging.JdkMapper info
+INFO: Q01X Output                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+Nov 09, 2016 3:06:15 PM com.ford.it.logging.JdkMapper info
+INFO: Q01X Output                                                              MSG-3204                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+Nov 09, 2016 3:06:15 PM com.ford.it.logging.JdkMapper info
+INFO: Q01X Output                                                                                                                                                                                        
+Nov 09, 2016 3:06:15 PM com.ford.it.logging.JdkMapper info
+INFO: Q01X Output                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+Nov 09, 2016 3:06:15 PM com.ford.it.logging.JdkMapper info
+INFO: Q01X Output                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+Nov 09, 2016 3:06:15 PM com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7 executeWipsImsTransaction
+SEVERE: 
+
+	com.ford.purchasing.wips.domain.layer.exception.WipsImsInterfaceException for user [UnKnown] self logged on Nov 09, 2016 03:06:15 PM.
+	Exception instance reference code [13ECC4BA-D75C-246F-4871-EE184871EE18].
+
+com.ford.purchasing.wips.domain.layer.exception.WipsImsInterfaceException
+	at com.ford.purchasing.wips.domain.connector.WipsTransactionConnector.wipsImsInterfaceException(WipsTransactionConnector.java:74)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7.CGLIB$wipsImsInterfaceException$4(<generated>)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7$$FastClassByMockitoWithCGLIB$$661f195e.invoke(<generated>)
+	at org.mockito.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:216)
+	at org.mockito.internal.creation.AbstractMockitoMethodProxy.invokeSuper(AbstractMockitoMethodProxy.java:10)
+	at org.mockito.internal.invocation.realmethod.CGLIBProxyRealMethod.invoke(CGLIBProxyRealMethod.java:22)
+	at org.mockito.internal.invocation.realmethod.FilteredCGLIBProxyRealMethod.invoke(FilteredCGLIBProxyRealMethod.java:27)
+	at org.mockito.internal.invocation.InvocationImpl.callRealMethod(InvocationImpl.java:108)
+	at org.mockito.internal.stubbing.answers.CallsRealMethods.answer(CallsRealMethods.java:36)
+	at org.mockito.internal.handler.MockHandlerImpl.handle(MockHandlerImpl.java:93)
+	at org.mockito.internal.handler.NullResultGuardian.handle(NullResultGuardian.java:29)
+	at org.mockito.internal.handler.InvocationNotifierHandler.handle(InvocationNotifierHandler.java:38)
+	at org.mockito.internal.creation.MethodInterceptorFilter.intercept(MethodInterceptorFilter.java:51)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7.wipsImsInterfaceException(<generated>)
+	at com.ford.purchasing.wips.domain.connector.WipsTransactionConnector.executeWipsImsTransaction(WipsTransactionConnector.java:48)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction.executeWipsImsTransaction(Q01xTransaction.java:75)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7.CGLIB$executeWipsImsTransaction$0(<generated>)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7$$FastClassByMockitoWithCGLIB$$661f195e.invoke(<generated>)
+	at org.mockito.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:216)
+	at org.mockito.internal.creation.AbstractMockitoMethodProxy.invokeSuper(AbstractMockitoMethodProxy.java:10)
+	at org.mockito.internal.invocation.realmethod.CGLIBProxyRealMethod.invoke(CGLIBProxyRealMethod.java:22)
+	at org.mockito.internal.invocation.realmethod.FilteredCGLIBProxyRealMethod.invoke(FilteredCGLIBProxyRealMethod.java:27)
+	at org.mockito.internal.invocation.InvocationImpl.callRealMethod(InvocationImpl.java:108)
+	at org.mockito.internal.stubbing.answers.CallsRealMethods.answer(CallsRealMethods.java:36)
+	at org.mockito.internal.handler.MockHandlerImpl.handle(MockHandlerImpl.java:93)
+	at org.mockito.internal.handler.NullResultGuardian.handle(NullResultGuardian.java:29)
+	at org.mockito.internal.handler.InvocationNotifierHandler.handle(InvocationNotifierHandler.java:38)
+	at org.mockito.internal.creation.MethodInterceptorFilter.intercept(MethodInterceptorFilter.java:51)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7.executeWipsImsTransaction(<generated>)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest.resourceExceptionWhenGettingInput(Q01xTransactionTest.java:187)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.mockito.internal.runners.JUnit45AndHigherRunnerImpl.run(JUnit45AndHigherRunnerImpl.java:37)
+	at org.mockito.runners.MockitoJUnitRunner.run(MockitoJUnitRunner.java:62)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
+	at sun.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:377)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.resource.ResourceException
+	... 46 more
+
+Nov 09, 2016 3:06:15 PM com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7 executeWipsImsTransaction
+SEVERE: 
+
+	com.ford.purchasing.wips.domain.layer.exception.WipsImsInterfaceException for user [UnKnown] self logged on Nov 09, 2016 03:06:15 PM.
+	Exception instance reference code [13ECC4BA-8332-E0AE-4871-EE244871EE24].
+
+com.ford.purchasing.wips.domain.layer.exception.WipsImsInterfaceException: Null_Message
+	at com.ford.purchasing.wips.domain.connector.WipsTransactionConnector.wipsImsInterfaceException(WipsTransactionConnector.java:74)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7.CGLIB$wipsImsInterfaceException$4(<generated>)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7$$FastClassByMockitoWithCGLIB$$661f195e.invoke(<generated>)
+	at org.mockito.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:216)
+	at org.mockito.internal.creation.AbstractMockitoMethodProxy.invokeSuper(AbstractMockitoMethodProxy.java:10)
+	at org.mockito.internal.invocation.realmethod.CGLIBProxyRealMethod.invoke(CGLIBProxyRealMethod.java:22)
+	at org.mockito.internal.invocation.realmethod.FilteredCGLIBProxyRealMethod.invoke(FilteredCGLIBProxyRealMethod.java:27)
+	at org.mockito.internal.invocation.InvocationImpl.callRealMethod(InvocationImpl.java:108)
+	at org.mockito.internal.stubbing.answers.CallsRealMethods.answer(CallsRealMethods.java:36)
+	at org.mockito.internal.handler.MockHandlerImpl.handle(MockHandlerImpl.java:93)
+	at org.mockito.internal.handler.NullResultGuardian.handle(NullResultGuardian.java:29)
+	at org.mockito.internal.handler.InvocationNotifierHandler.handle(InvocationNotifierHandler.java:38)
+	at org.mockito.internal.creation.MethodInterceptorFilter.intercept(MethodInterceptorFilter.java:51)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7.wipsImsInterfaceException(<generated>)
+	at com.ford.purchasing.wips.domain.connector.WipsTransactionConnector.executeWipsImsTransaction(WipsTransactionConnector.java:46)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction.executeWipsImsTransaction(Q01xTransaction.java:75)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7.CGLIB$executeWipsImsTransaction$0(<generated>)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7$$FastClassByMockitoWithCGLIB$$661f195e.invoke(<generated>)
+	at org.mockito.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:216)
+	at org.mockito.internal.creation.AbstractMockitoMethodProxy.invokeSuper(AbstractMockitoMethodProxy.java:10)
+	at org.mockito.internal.invocation.realmethod.CGLIBProxyRealMethod.invoke(CGLIBProxyRealMethod.java:22)
+	at org.mockito.internal.invocation.realmethod.FilteredCGLIBProxyRealMethod.invoke(FilteredCGLIBProxyRealMethod.java:27)
+	at org.mockito.internal.invocation.InvocationImpl.callRealMethod(InvocationImpl.java:108)
+	at org.mockito.internal.stubbing.answers.CallsRealMethods.answer(CallsRealMethods.java:36)
+	at org.mockito.internal.handler.MockHandlerImpl.handle(MockHandlerImpl.java:93)
+	at org.mockito.internal.handler.NullResultGuardian.handle(NullResultGuardian.java:29)
+	at org.mockito.internal.handler.InvocationNotifierHandler.handle(InvocationNotifierHandler.java:38)
+	at org.mockito.internal.creation.MethodInterceptorFilter.intercept(MethodInterceptorFilter.java:51)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransaction$$EnhancerByMockitoWithCGLIB$$ccbbafe7.executeWipsImsTransaction(<generated>)
+	at com.ford.purchasing.wips.domain.atp.connector.Q01xTransactionTest.connectorExceptionWhileCreating(Q01xTransactionTest.java:172)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.mockito.internal.runners.JUnit45AndHigherRunnerImpl.run(JUnit45AndHigherRunnerImpl.java:37)
+	at org.mockito.runners.MockitoJUnitRunner.run(MockitoJUnitRunner.java:62)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
+	at sun.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:377)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.ford.it.connector.ConnectorException: Null_Message
+	... 46 more
+
+]]></system-err>
+</testsuite>

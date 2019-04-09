@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Class-Path: lib/WipsBusiness.jar lib/itcore-2.52.jar lib/cache-1.2.7.j
+ ar lib/ehcache-core-2.5.5.jar lib/ford-rest-1.0.0.jar lib/cdi-api-1.1
+ .jar lib/javax.inject-1.jar lib/jsr311-api-1.1.1.jar lib/javax.servle
+ t-api-3.0.1.jar lib/javaee-api-6.0.jar lib/javaee-6.0.jar lib/WipsCon
+ sumer.jar lib/WipsDomain.jar lib/wscore-2.8.jar lib/slf4j-api-1.7.2.j
+ ar lib/validation-api-1.1.0.Final.jar lib/commons-beanutils-1.9.2.jar
+  lib/junit-3.8.2.jar lib/cactus-1.8.1.jar lib/snacc-1.0.jar lib/el-ap
+ i-2.2.jar lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar lib/jsr
+ 250-api-1.0.jar lib/WipsCommon.jar lib/wsHandlers-1.5.jar lib/commons
+ -lang3-3.3.2.jar lib/commons-logging-1.1.1.jar lib/commons-collection
+ s-3.2.1.jar lib/commons-codec-1.9.jar lib/connector-1.12.jar lib/conn
+ ector-api-1.5.jar
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>WipsWeb</display-name>
+
+	<servlet>
+		<servlet-name>javax.ws.rs.core.Application</servlet-name>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>attachment</servlet-name>
+        <servlet-class>com.ford.purchasing.wips.inbound.layer.WipsAttachmentServletIC</servlet-class>
+    </servlet>
+
+	<servlet-mapping>
+		<servlet-name>javax.ws.rs.core.Application</servlet-name>
+		<url-pattern>/WIPS/REST/*</url-pattern>
+	</servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>attachment</servlet-name>
+        <url-pattern>/Attachment/*</url-pattern>
+    </servlet-mapping>
+
+	<!-- FILTERS -->
+ 	<filter>
+		<filter-name>RequestContextFilter</filter-name>
+		<filter-class>com.ford.it.context.RequestContextFilter</filter-class>
+	</filter>
+	
+	<filter>
+        <filter-name>WipsAuthorizationFilter</filter-name>
+        <filter-class>com.ford.purchasing.wips.inbound.filter.WipsAuthorizationFilter</filter-class>
+    </filter>
+
+	<!-- FILTER MAPPINGS -->
+
+	<filter-mapping>
+		<filter-name>RequestContextFilter</filter-name>
+		<url-pattern>/WIPS/REST/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+        <filter-name>WipsAuthorizationFilter</filter-name>
+        <url-pattern>/WIPS/REST/*</url-pattern>
+        <url-pattern>/Attachment/*</url-pattern>
+    </filter-mapping>
+
+	<!-- LISTENERS -->
+	<listener>
+		<description>This listener loads the Initializes DynaProp and loads all the namespaces from DynaProp.</description>
+		<display-name>WIPSApplicationInitializer</display-name>
+		<listener-class>com.ford.purchasing.wips.inbound.layer.WipsApplicationInitializer</listener-class>
+	</listener>
+
+	<listener>
+		<description>This Listener is used to load the cache-config.xml file</description>
+		<display-name>FJFCacheListener</display-name>
+		<listener-class>com.ford.it.cache.context.CacheContextListener</listener-class>
+	</listener>
+
+	<resource-ref>
+		<description>Datasource used to define the DynaProp DB.</description>
+		<res-ref-name>jdbc/DynaPropDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Application</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+		<lookup-name>jdbc/fjf/DynaPropJDBC</lookup-name>
+	</resource-ref>
+
+	<resource-ref>
+		<description>Datasource used to define the WIPS DB2 DB.</description>
+		<res-ref-name>WIPS_DB2</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Application</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+		<lookup-name>jdbc/DBCONN</lookup-name>
+	</resource-ref>
+</web-app>

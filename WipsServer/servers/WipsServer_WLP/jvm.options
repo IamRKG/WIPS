@@ -1,0 +1,14 @@
+## Set the maximum heap size to 256 mb.
+-Xmx256m
+
+## Set system properties.
+-DDYNAPROP_FILENAME=C:\\projects\\Accurev\\WIPSWeb_WMMobile_PCS_Mid_Nov_2016Launch_DEV\\WipsServer\\servers\\WipsServer_WLP\\dynaprop.cfg
+-DFJFConfig.property.encryption.algorithm=AES
+-DFJFConfig.property.encryption.key=KEY=WInIbZSoW5c4lxq8YEu5oF6PXeYP3kDJ38gneZaNcgE=
+
+-DDEPLOYED_ENVIRONMENT=DESKTOP
+-Dcom.ford.it.logging.CustomLogger=com.ford.it.logging.Log4j2Mapper
+-DAPPLICATION_INSTALL_BASE=C:\\projects\\Accurev\\WIPSWeb_WMMobile_PCS_Mid_Nov_2016Launch_DEV\\WipsServer\\servers\\WipsServer_WLP
+-Dcom.ford.it.logging.subpath=logs
+-Dlog4j2.disable.jmx=true
+

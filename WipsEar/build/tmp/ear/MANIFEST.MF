@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Ford Motor Company
+Implementation-Title: wips-v1.0.0-desktop
+Implementation-Version: 1.0.0
+Build-Date: Nov-16-2016 15:01:04
+Build-By: uBuild
+

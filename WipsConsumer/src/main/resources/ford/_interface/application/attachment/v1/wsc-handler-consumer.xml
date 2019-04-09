@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<javaee:handler-chains xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<javaee:handler-chain>
+	
+	    <!-- This handler takes care of logging various steps in the    -->
+        <!-- web services life cycle. It also is responsible for placing -->
+        <!-- various objects in the the WsCConsumerRequestContext for   -->
+        <!-- access by all WsCore classes running on the thread.        -->
+		<javaee:handler>
+			<javaee:handler-class>
+				com.ford.it.wscore.handler.WscBasicConsumerHandler
+			</javaee:handler-class>
+		</javaee:handler>
+		
+		<!-- This handler is responsible for placing the WSL Cookie -->
+        <!-- onto the outbound request. -->
+        <javaee:handler>
+            <javaee:handler-class>
+                com.ford.it.ws.handlers.cookie.jaxws.CookieHandler
+            </javaee:handler-class>
+        </javaee:handler>
+		
+		
+	</javaee:handler-chain>
+</javaee:handler-chains>

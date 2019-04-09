@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:16" hostname="WGC100HHBHH92" time="0.061">
+  <properties/>
+  <testcase name="singleTxnSucceeds" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.02"/>
+  <testcase name="transactionReturnsConnectorException" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.003"/>
+  <testcase name="transactionReturnsTransactionException" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.001"/>
+  <testcase name="twoTxnSucceedsWithMap" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.007"/>
+  <testcase name="twoTxnFailssWithMap" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.003"/>
+  <testcase name="thenTransactFails" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.005"/>
+  <testcase name="twoTxnWithTxtIfSucceedsWithFalse" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.005"/>
+  <testcase name="secondTransactionFails" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.003"/>
+  <testcase name="twoTxnWithTxtWhileFails" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.002"/>
+  <testcase name="twoTxnWithTxtWhileSucceeds" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.003"/>
+  <testcase name="twoTxnSucceeds" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.002"/>
+  <testcase name="transactionFailsWhenAccessingNonExistentFieldFromDataArea" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.002"/>
+  <testcase name="twoTxnWithTxtIfSucceedsWithTrue" classname="com.ford.purchasing.wips.domain.connector.ImsConversationCtxTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+Nov 09, 2016 3:06:16 PM com.ford.it.logging.JdkMapper info
+INFO: Raw Outputnull
+]]></system-err>
+</testsuite>

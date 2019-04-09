@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<DataArea name="TPI-INPUT">
+	<Parameter name="TPI-IOINDIC" pic="X" />
+	<Parameter name="TPI-PFKEY" pic="99" />
+	<Parameter name="TPI-PAGENO" pic="X(2)" />
+	<Parameter name="TPI-CANRMK1" pic="X(3)" />
+	<Parameter name="TPI-CANRMK2" pic="X(3)" />
+	<Parameter name="TPI-CANRMK3" pic="X(3)" />
+	<Parameter name="TPI-CANRMK4" pic="X(3)" />
+	<Parameter name="TPI-COPYRMK" pic="X(6)" />
+	<Array name="TPI-BUFFER-SEGLOOP" occurs="11">
+		<Parameter name="TPI-SEL" pic="X" />
+		<Parameter name="TPI-TEXT" pic="X(72)" />
+	</Array>
+</DataArea>

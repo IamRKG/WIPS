@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ford.purchasing.wips.domain.dao.LsApproversDAOTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-11-09T09:36:16" hostname="WGC100HHBHH92" time="0.005">
+  <properties/>
+  <testcase name="retrieveApproverList_WithoutSystemRemarks" classname="com.ford.purchasing.wips.domain.dao.LsApproversDAOTest" time="0.002"/>
+  <testcase name="retrieveApproverList_WithSystemRemarks" classname="com.ford.purchasing.wips.domain.dao.LsApproversDAOTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

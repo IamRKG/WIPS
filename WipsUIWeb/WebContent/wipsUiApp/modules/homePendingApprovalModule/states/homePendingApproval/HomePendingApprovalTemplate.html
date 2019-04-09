@@ -1,0 +1,42 @@
+
+
+<h1>{{'menuPendingApproval.title' | translate}}</h1>
+
+<div class="well">
+	<div class="row">
+			<div class="col-xs-10">
+				<dl class="dl-horizontal">
+					<dt>{{'atpPendingApproval.jobCode' | translate}}</dt>
+					<dd>{{homePendingApprovalController.homePendingApproval.jobCode}}</dd>
+				</dl>
+			</div>
+			<div class="col-xs-2" ng-if="homePendingApprovalController.ifAltJobCodeListTrue">
+				<button type="button" name="Switch" class="btn btn-default btn-xs pull-right" ng-click="homePendingApprovalController.switchJobCode();">{{'application.buttons.switch' | translate}}</button>
+			</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10">
+			<dl class="dl-horizontal">
+				<dt>{{'atpPendingApproval.jobOwner' | translate}}</dt>
+				<dd>{{homePendingApprovalController.homePendingApproval.jobName}}</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+
+
+<p ng-if="homePendingApprovalController.homePendingApprovalTable">{{'menuPendingApproval.instructions' | translate}}</p>
+
+<div wc-data-table="{{homePendingApprovalController.homePendingApprovalTable.overrideOptions}}" columns="homePendingApprovalController.homePendingApprovalTable.columns"
+	 column-defs="{{homePendingApprovalController.homePendingApprovalTable.columnDefs}}" data="homePendingApprovalController.homePendingApprovalTable" >
+	<table class="table table-striped table-bordered table-condensed" id="home-pending-approval-table">
+		<thead>
+			<tr>
+				<th scope="col">{{'menuPendingApproval.tableHeader.action' | translate}}</th>
+				<th scope="col">{{'menuPendingApproval.tableHeader.entity' | translate}}</th>
+				<th scope="col">{{'menuPendingApproval.tableHeader.totalWaiting' | translate}}</th>
+			</tr>
+		</thead>
+	</table>
+</div>

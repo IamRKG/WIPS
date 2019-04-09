@@ -1,0 +1,119 @@
+<project name="UnitTestExecution" xmlns:fbf="antlib:com.ford.it.buildframework"
+	xmlns="antlib:org.apache.tools.ant"
+	xmlns:jacoco="antlib:org.jacoco.ant">
+
+	<import file="../setupProperties-app.xml" />
+
+	<!-- Define the jacoco code coverage task -->
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="${JACOCO.HOME}/lib/jacocoant.jar" />
+	</taskdef>
+	<mkdir dir="${current.build.dir}/test"/>
+	<property name="build.reports.dir" value="${current.build.dir}"/>
+	<property name="jacoco.exec.file" value="${build.reports.dir}/jacoco.exec"/>
+	<!-- ******************************************************************* -->
+	<!-- Run all the targets necessary to execute the unit tests and produce -->
+	<!-- a code coverage report.                                             -->
+	<!-- ******************************************************************* -->
+	<target name="unitTestAndCoverageReport" depends="setupTestingProperties, unitTestWithCoverage, produceCoverageReport" />
+
+	<!-- ******************************************************************* -->
+	<!-- This is the unit test target that will fire any outside container   -->
+	<!-- tests that will be executed at build time.                          -->
+	<!-- ******************************************************************* -->
+	<target name="unitTestWithCoverage" depends="setupTestingProperties">
+		<echo message="Before running unittest ..." />
+
+		<jacoco:coverage destfile="${jacoco.exec.file}">
+			<junit haltonfailure="no" printsummary="yes" showoutput="yes" failureproperty="tests.failed" fork="true" forkmode="once" >
+
+				<sysproperty key="extract.dir" value="${extract.dir}" />
+				<classpath>
+					<path refid="ear.lib.path" />
+					<path refid="currBuild.lib.path" />
+					<path refid="testProject.lib.path" />
+					<pathelement location="${testProject.bin.dir}" />
+					<pathelement location="${webui.classes.dir}" />
+					<pathelement location="${common.bin.dir}" />
+					<pathelement location="${domain.bin.dir}" />
+					<pathelement location="${business.bin.dir}" />
+					<pathelement location="${property.bin.dir}" />
+					<pathelement location="${junit.jar}" />
+				</classpath>
+				<formatter type="xml" />
+
+				<batchtest todir="${build.reports.dir}">
+					<fileset dir="${extract.dir}/${BusinessProjectName}/bin">
+						<include name="${UBUILD.UNITTESTS.PROPERTY}" />
+					</fileset>
+					<fileset dir="${extract.dir}/${DomainProjectName}/bin">
+						<include name="${UBUILD.UNITTESTS.PROPERTY}" />
+					</fileset>
+					<fileset dir="${testProject.bin.dir}">
+						<include name="**/*Test.class" />
+						<exclude name="**/*Base*Test.class" />
+						<exclude name="**/*RepeatTest.class" />
+
+					</fileset>
+				</batchtest>
+
+			</junit>
+		</jacoco:coverage>
+		<fail if="tests.failed">
+            *******************************************************
+            *******************************************************
+            One or more tests failed. Check the output...
+            *******************************************************
+            *******************************************************
+       </fail>
+
+		<echo message="After running unittest ..." />
+	</target>
+
+	<!-- ******************************************************************* -->
+	<!-- This target will produce the jacoco code coverage report.           -->
+	<!-- ******************************************************************* -->
+	<target name="produceCoverageReport" depends="unitTestWithCoverage">
+
+		<echo message="Before running code coverage report ..." />
+
+		<jacoco:report>
+			<executiondata>
+				<file file="${jacoco.exec.file}" />
+			</executiondata>
+
+			<structure name="WipsMobileApplication">
+
+				<group name="JaCoCo-Multi">
+					<classfiles>
+						<fileset dir="${current.build.dir}" includes="${CommonProjectName}.jar" />
+						<fileset dir="${current.build.dir}" includes="${DomainProjectName}.jar" />
+						<fileset dir="${current.build.dir}" includes="${BusinessProjectName}.jar" />
+						<fileset dir="${current.build.dir}" includes="${ConsumerProjectName}.jar" />
+						<fileset dir="${current.build.dir}" includes="${WebUiProjectName}.jar" />
+						<fileset dir="${current.build.dir}" includes="${WebProjectName}.jar" />
+					</classfiles>
+					<sourcefiles>
+						<fileset dir="${extract.dir}/${CommonProjectName}" />
+						<fileset dir="${extract.dir}/${DomainProjectName}" />
+						<fileset dir="${extract.dir}/${BusinessProjectName}" />
+						<fileset dir="${extract.dir}/${ConsumerProjectName}" />
+						<fileset dir="${extract.dir}/${WebUiProjectName}" />
+						<fileset dir="${extract.dir}/${WebProjectName}" />
+					</sourcefiles>
+				</group>
+
+				
+
+			</structure>
+
+			<xml destfile="${build.reports.dir}/jacoco.xml" />
+			<html destfile="${build.reports.dir}/jacoco.zip" />
+
+		</jacoco:report>
+
+		<echo message="After running code coverage report ..." />
+
+	</target>
+
+</project>

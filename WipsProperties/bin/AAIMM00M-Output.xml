@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-OUTPUT-BUFFER">
+	<DataArea name="TP-OUTPUT-BUFFER-FIELDS">
+		<Parameter name="TPO-SYSTEM-ATTR" pic="X(6)" />
+		<Parameter name="TPO-SYSTEM" pic="X(4)" />
+		<Parameter name="TPO-PROGRAM-ATTR" pic="X(6)" />
+		<Parameter name="TPO-PROGRAM" pic="X(4)" />
+		<Parameter name="TPO-VERSION-ATTR" pic="X(6)" />
+		<Parameter name="TPO-VERSION" pic="X(2)" />
+		<Parameter name="TPO-TITLE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-TITLE" pic="X(40)" />
+		<Parameter name="TPO-DATE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-DATE" pic="X(8)" />
+		<Parameter name="TPO-LTERM-ATTR" pic="X(6)" />
+		<Parameter name="TPO-LTERM" pic="X(8)" />
+		<Parameter name="TPO-ERRMSG1-ATTR" pic="X(6)" />
+		<Parameter name="TPO-ERRMSG1" pic="X(76)" />
+		<Parameter name="TPO-JOBCODE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-JOBCODE" pic="X(4)" />
+		<Parameter name="TPO-EMPNAME-ATTR" pic="X(6)" />
+		<Parameter name="TPO-EMPNAME" pic="X(17)" />
+		<Parameter name="TPO-PAGENO-ATTR" pic="X(6)" />
+		<Parameter name="TPO-PAGENO-CHAR" pic="X(2)" />
+		<Parameter name="TPO-MORE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-MORE" pic="X(7)" />
+		<Parameter name="TPO-WARNING-ATTR" pic="X(6)" />
+		<DataArea name="TPO-WARNING">
+			<Parameter name="TPO-FILLER1" pic="X(17)" />
+			<Parameter name="TPO-DELEG-JOB1" pic="X(4)" />
+			<Parameter name="TPO-FILLER2" pic="X(1)" />
+			<Parameter name="TPO-DELEG-JOB2" pic="X(4)" />
+			<Parameter name="TPO-FILLER3" pic="X(1)" />
+			<Parameter name="TPO-DELEG-JOB3" pic="X(4)" />
+			<Parameter name="TPO-FILLER4" pic="X(1)" />
+			<Parameter name="TPO-DELEG-JOB4" pic="X(4)" />
+			<Parameter name="TPO-FILLER5" pic="X(1)" />
+			<Parameter name="TPO-DELEG-JOB5" pic="X(4)" />
+			<Parameter name="TPO-FILLER6" pic="X(1)" />
+			<Parameter name="TPO-DELEG-JOB6" pic="X(4)" />
+			<Parameter name="TPO-FILLER7" pic="X(4)" />
+		</DataArea>
+		<Parameter name="TPO-OPTION-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION" pic="X(3)" />
+		<Parameter name="TPO-ALTCODE-ATTR" pic="X(6)" />
+		<Parameter name="TPO-ALTCODE" pic="X(4)" />
+		<Parameter name="TPO-OPTNO1-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO1" pic="X(2)" />
+		<Parameter name="TPO-OPTION1-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION1" pic="X(22)" />
+		<Parameter name="TPO-OPTNO5-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO5" pic="X(2)" />
+		<Parameter name="TPO-OPTION5-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION5" pic="X(22)" />
+		<Parameter name="TPO-OPTNO9-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO9" pic="X(2)" />
+		<Parameter name="TPO-OPTION9-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION9" pic="X(22)" />
+		<Parameter name="TPO-OPTNO2-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO2" pic="X(2)" />
+		<Parameter name="TPO-OPTION2-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION2" pic="X(22)" />
+		<Parameter name="TPO-OPTNO6-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO6" pic="X(2)" />
+		<Parameter name="TPO-OPTION6-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION6" pic="X(22)" />
+		<Parameter name="TPO-OPTNO10-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO10" pic="X(2)" />
+		<Parameter name="TPO-OPTION10-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION10" pic="X(22)" />
+		<Parameter name="TPO-OPTNO3-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO3" pic="X(2)" />
+		<Parameter name="TPO-OPTION3-ATTR" pic="X(6)" />
+		<DataArea name="TPO-OPTION3">
+			<Parameter name="TPO-OPTION3-TXT" pic="X(18)" />
+			<Parameter name="TPO-OPTION3-CLM-CNT" pic="ZZZ9" />
+		</DataArea>
+		<Parameter name="TPO-OPTNO7-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO7" pic="X(2)" />
+		<Parameter name="TPO-OPTION7-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION7" pic="X(22)" />
+		<Parameter name="TPO-OPTNO11-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO11" pic="X(2)" />
+		<Parameter name="TPO-OPTION11-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION11" pic="X(22)" />
+		<Parameter name="TPO-OPTNO4-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO4" pic="X(2)" />
+		<Parameter name="TPO-OPTION4-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION4" pic="X(22)" />
+		<Parameter name="TPO-OPTNO8-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO8" pic="X(2)" />
+		<Parameter name="TPO-OPTION8-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION8" pic="X(22)" />
+		<Parameter name="TPO-OPTNO12-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTNO12" pic="X(2)" />
+		<Parameter name="TPO-OPTION12-ATTR" pic="X(6)" />
+		<Parameter name="TPO-OPTION12" pic="X(22)" />
+		<Array name="TPO-BUFFER-SEGLOOP" occurs="20">
+			<Parameter name="TPO-CATNO-ATTR" pic="X(6)" />
+			<Parameter name="TPO-CATNO" pic="X(3)" />
+			<Parameter name="TPO-WCAT-ATTR" pic="X(6)" />
+			<Parameter name="TPO-WCAT" pic="X(24)" />
+			<Parameter name="TPO-UNREAD-ATTR" pic="X(6)" />
+			<Parameter name="TPO-UNREAD" pic="X(4)" />
+			<Parameter name="TPO-TOTAL-ATTR" pic="X(6)" />
+			<Parameter name="TPO-TOTAL" pic="X(4)" />
+		</Array>
+		<Parameter name="TPO-P24066-ATTR" pic="X(6)" />
+		<Parameter name="TPO-P24066" pic="X(10)" />
+		<Parameter name="TPO-EMAIL-ATTR" pic="X(6)" />
+		<Parameter name="TPO-EMAIL" pic="X(3)" />
+	</DataArea>
+</DataArea>

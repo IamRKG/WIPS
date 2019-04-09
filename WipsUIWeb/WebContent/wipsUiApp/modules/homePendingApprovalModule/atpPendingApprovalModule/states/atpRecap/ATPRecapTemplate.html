@@ -1,0 +1,177 @@
+<h1> {{'atpPendingApproval.atpRecap.title' | translate}} - {{atpRecapController.atpRecap.atpNumber}}</h1>
+<div class="well">
+	<div class="row">
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<dl class="dl-horizontal">
+					<dt>{{'atpPendingApproval.jobCode' | translate}}</dt>
+					<dd>{{atpRecapController.jobDetail.jobCode}}</dd>
+				</dl>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3">
+			<dl class="dl-horizontal">
+				<dt>{{'atpPendingApproval.jobOwner' | translate}}</dt>
+				<dd>{{atpRecapController.jobDetail.jobName}}</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRecap.strategy' | translate}}</dt>
+			<dd>{{atpRecapController.atpRecap.strategy}}</dd>
+		</dl>
+	</div>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRecap.part' | translate}}</dt>
+			<dd>{{atpRecapController.atpRecap.part}} &nbsp</dd>
+		</dl>
+		</div>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRecap.effective' | translate}}</dt>
+			<dd>{{atpRecapController.atpRecap.effectiveDate}}</dd>
+		</dl>
+	</div>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRecap.reasonCode' | translate}}</dt>
+			<dd>{{atpRecapController.atpRecap.reasonCode}}</dd>
+		</dl>
+	</div>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRecap.autoPO' | translate}}</dt>
+			<dd>{{atpRecapController.atpRecap.autoPo}}</dd>
+		</dl>
+	</div>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRecap.totalCost' | translate}}</dt>
+			<dd>{{atpRecapController.atpRecap.totalCost}}</dd>
+		</dl>
+	</div>
+	
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-hover">
+			<thead>
+			<tr>
+				<th>{{'attachmentDetailsTable.attachment' | translate}}</th>
+				<th>{{'attachmentDetailsTable.uploadDate' | translate}}</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="attachmentDetails in atpRecapController.atpRecap.attachmentDetails"
+					ng-if="(!atpRecapController.attachmentsErrorFlag) && atpRecapController.atpRecap.attachmentsExist == true">
+				<td><a href="javascript:;"
+					   ng-click="atpRecapController.viewAttachmentDetails(attachmentDetails);">{{attachmentDetails.name}}</a>
+				</td>
+				<td>{{attachmentDetails.uploadDate}}</td>
+			</tr>
+			<tr ng-if="atpRecapController.attachmentsErrorFlag == true && atpRecapController.atpRecap.attachmentsExist == true">
+				<td class="errorMsgRed">{{atpRecapController.attachmentsErrorMessage}}</td>
+			</tr>
+			<tr ng-if="atpRecapController.atpRecap.attachmentsExist == false">
+				<td>No Attachments in WebQuote</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div ng-if="atpRecapController.atpRecap.capacityShortfallFlag == true">
+        <dl>
+            <dt style="color:red">{{'atpPendingApproval.atpRecap.capacityShortfall' | translate}}</dt>
+         </dl>
+    </div>
+<div class="row">
+	<div class="col-xs-12 text-left">
+		<button id="login"  class="btn btn-primary" ng-click="atpRecapController.atpRemarks();">{{'application.buttons.remarks' | translate}}</button>
+		<button id="login"  class="btn btn-primary" name="strategyDetail" ng-click="atpRecapController.atpStrategyDetails();">{{'application.buttons.strategyDetail' | translate}}</button>
+	</div>
+</div>
+
+
+<div class="panel panel-default" >
+
+	<div class="panel-heading">
+		<h3 class="panel-title row"><span class="col-xs-6">{{'atpPendingApproval.atpRecap.suppliers' | translate}}</span></h3>
+	</div>
+	<div class="panel-body">
+	
+	<accordion ng-repeat="suppList in atpRecapController.atpRecap.suppliers">
+	    <accordion-group>
+		    <accordion-heading>{{suppList.siteCode}} - {{suppList.siteName}}</accordion-heading>
+		    <dl class="listview dl-horizontal">
+	            <dt>{{'atpPendingApproval.atpRecap.newPrice' | translate}}</dt>
+	            <dd>{{suppList.newPrice}} {{suppList.usdLiteral}}</dd>
+          </dl>
+           <dl class="listview dl-horizontal">
+	            <dt>{{'atpPendingApproval.atpRecap.change' | translate}}</dt>
+	            <dd>{{suppList.priceChange}}</dd>
+          </dl>
+           <dl class="listview dl-horizontal">
+	            <dt>{{'atpPendingApproval.atpRecap.annualCost' | translate}}</dt>
+	            <dd>{{suppList.annualCost}}</dd>
+          </dl>
+          <dl class="listview dl-horizontal">
+	            <dt>{{'atpPendingApproval.atpRecap.sourcingAuthority' | translate}}</dt>
+	            <dd>{{suppList.sourcingPercentage}} {{suppList.authority}}</dd>
+          </dl>
+           <dl class="listview dl-horizontal">
+	            <dt>{{'atpPendingApproval.atpRecap.webQuoteAttachment' | translate}}</dt>
+	            <dd>{{suppList.webquoteAttachment}}</dd>
+          </dl>
+          <dl class="listview dl-horizontal">
+	            <dt>{{'atpPendingApproval.atpRecap.ppc' | translate}}</dt>
+	            <dd>{{suppList.ppc}}</dd>
+          </dl>
+	    </accordion-group>
+	    
+    </accordion>
+
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title row"><span class="col-xs-6">{{'atpPendingApproval.atpRecap.approvals' | translate}}</span></h3>
+	</div>
+	<div class="panel-body">
+	
+		<accordion ng-repeat="approList in atpRecapController.atpRecap.approvers">
+	    <accordion-group>
+		    <accordion-heading>{{approList.approver}}</accordion-heading>
+			    <dl class="listview dl-horizontal">
+		            <dt>{{'atpPendingApproval.atpRecap.jobCode' | translate}}</dt>
+		            <dd>{{approList.jobCode}}</dd>
+	          </dl>
+			    <dl class="listview dl-horizontal">
+		            <dt>{{'atpPendingApproval.atpRecap.date' | translate}}</dt>
+		            <dd>{{approList.date}}</dd>
+	          </dl>
+	           <dl class="listview dl-horizontal">
+		            <dt>{{'atpPendingApproval.atpRecap.remarks' | translate}}</dt>
+		            <dd>{{approList.remarks}}</dd>
+	          </dl>
+  	    </accordion-group>
+    </accordion>
+
+	</div>
+</div>
+	<div class="form-actions">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<button id="previous" ng-click="atpRecapController.getPrevious();" class="btn btn-default"><span class="visible-sm visible-md visible-lg"> &larr; {{'application.buttons.atpsPendingApproval' | translate}}</span> <span class="visible-xs">&larr;</span>
+				</button>
+				<button id="approve"  class="btn btn-success" ng-click="atpRecapController.getATPApprove();">{{'application.buttons.approve' | translate}}</button>
+				<button id="reject" class="btn btn-danger" ng-click="atpRecapController.getATPReject();">{{'application.buttons.reject ' | translate}}</button>
+			</div>
+		</div>
+	</div>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE property-group PUBLIC "PropertyGroup.dtd" "PropertyGroup.dtd">
+<property-group name="cache-config">
+
+	<!-- cacheSizeOnHeap: optional, constrains the cache to 25 MB. -->
+	<property name="cacheSizeOnHeap">25</property>
+
+    <!-- name: required -->
+	<property-group name="UserSession">
+		<property name="eternal">true</property>
+		<property name="diskPersistent">false</property>
+	</property-group>	
+	
+
+	<!-- name: required -->
+	<property-group name="wipscache">
+		<!-- maxObjectsInMemory: optional -->
+		<!-- <property name="maxObjectsInMemory">5000</property> -->
+		<!-- overflowToDisk: optional -->
+		<property name="overflowToDisk">false</property>
+		<!-- memoryStoreEvictionPolicy: optional, values: LRU, LFU, FIFO. default: 
+			LRU -->
+		<property name="memoryStoreEvictionPolicy">LRU</property>
+		<!-- diskStorePath: optional -->
+		<property name="diskStorePath">/cache</property>
+		<!-- eternal: optional, if true, timeToLiveInSeconds and timeToIdleInSeconds 
+			will be ignored -->
+		<property name="eternal">false</property>
+		<!-- timeToLiveInSeconds: optional. Refreshes objects after this many seconds. -->
+		<property name="timeToLiveInSeconds">3600</property>
+		<!-- timeToIdleInSeconds: optional. Refreshes objects after this many seconds 
+			of non-use. -->
+		<property name="timeToIdleInSeconds">3600</property>
+		<!-- diskPersistent: optional -->
+		<property name="diskPersistent">false</property>
+		<!-- replication default: false. required. -->
+		<property name="replication">false</property>
+	</property-group>
+</property-group>

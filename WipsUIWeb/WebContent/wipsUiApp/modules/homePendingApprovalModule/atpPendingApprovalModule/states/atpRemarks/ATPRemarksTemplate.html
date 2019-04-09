@@ -1,0 +1,79 @@
+<h1> {{'atpPendingApproval.atpRemarks.title' | translate}} - {{atpRemarksController.atpRemarks.atpNumber}}</h1>
+
+<div class="well">
+	<div class="row">
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<dl class="dl-horizontal">
+					<dt>{{'atpPendingApproval.jobCode' | translate}}</dt>
+					<dd>{{atpRemarksController.jobDetail.jobCode}}</dd>
+				</dl>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3">
+			<dl class="dl-horizontal">
+				<dt>{{'atpPendingApproval.jobOwner' | translate}}</dt>
+				<dd>{{atpRemarksController.jobDetail.jobName}}</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRemarks.part' | translate}}</dt>
+			<dd>{{atpRemarksController.atpRemarks.partNumber}}</dd>
+		</dl>
+	</div>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRemarks.buyer' | translate}}</dt>
+			<dd>{{atpRemarksController.atpRemarks.buyerCode}}</dd>
+		</dl>
+		</div>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<dl>
+			<dt>{{'atpPendingApproval.atpRemarks.engineeringLevel' | translate}}</dt>
+			<dd>{{atpRemarksController.atpRemarks.engineeringLevel}}</dd>
+		</dl>
+	</div>
+</div>
+
+
+	<accordion ng-repeat="remarks in atpRemarksController.atpRemarks.remark">
+	    <accordion-group>
+		    <accordion-heading>{{remarks.userJobCode}} &#45; {{remarks.user}}</accordion-heading>
+		    <div ng-if="remarks.userJobCode != atpRemarksController.ifMatchATPRemarksList.userJobCode">
+		  	  <p><div  class="courier-new" ng-repeat="rem in remarks.remarks track by $index">{{rem}}</div></p>
+		    </div>
+
+		    <div ng-if="remarks.userJobCode == atpRemarksController.ifMatchATPRemarksList.userJobCode">
+			    <div class="row">
+					<div class="col-sm-12">
+						<div class="form-group">
+						<textarea name="remarks" placeholder="Enter your remark here"  rows="10" cols="50" class="form-control" ng-model="atpRemarksController.selectedRemarksNotes" wips-list>
+						</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 text-center">
+		        			<button id="saveremark" type="submit" class="btn btn-primary" ng-click="atpRemarksController.save();">Save</button>
+		        			<button id="clear" ng-click="atpRemarksController.clear();" class="btn btn-default">Clear</button>
+					</div>
+				</div>
+		</div>
+	    </accordion-group>
+	    
+    </accordion>
+    
+    	<div class="form-actions">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<button id="previous" ng-click="atpRemarksController.getPrevious();" class="btn btn-default"><span class="visible-sm visible-md visible-lg"> &larr; {{'application.buttons.recap' | translate}}</span> <span class="visible-xs">&larr;</span>
+				</button>
+				<button id="approve"  class="btn btn-success" ng-click="atpRemarksController.getATPApprove();">{{'application.buttons.approve' | translate}}</button>
+				<button id="reject" class="btn btn-danger" ng-click="atpRemarksController.getATPReject();">{{'application.buttons.reject ' | translate}}</button>
+			</div>
+		</div>
+	</div>
+

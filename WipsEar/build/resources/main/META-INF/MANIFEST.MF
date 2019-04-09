@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.4
+Created-By: pxa6460_26sr6ifx-20130705_01 (SR6) (IBM Corporation)
+Build-By: uBuild(Buildlife: 114709)
+Build-Date: Sep-15-2015 15:01:20
+Implementation-Title:  Distribution package - wips-vdist-v6.6.4-dist - 
+ Ear project - WipsEAR - Environment - dist
+Implementation-Version: WIPS-V6.6
+Implementation-Vendor: Ford Motor Company
+

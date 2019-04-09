@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+
+	<Appenders>
+		<Console name="Console">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<RandomAccessFile name="Logfile"
+			fileName="${sys:APPLICATION_INSTALL_BASE}/${sys:com.ford.it.logging.subpath}/Wips_log4j2.log"
+			immediateFlush="true">
+			<PatternLayout>
+				<Pattern>%d %5p [%t] %c{1} %X{transactionId} - %m%n</Pattern>
+			</PatternLayout>
+		</RandomAccessFile>
+	</Appenders>
+	
+	<Loggers>
+		<AsyncLogger name="com.ford.purchasing.wips" level="info" includeLocation="false">
+			<AppenderRef ref="Logfile" />
+		</AsyncLogger>
+		<Root level="info">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+	
+
+</Configuration>
+	

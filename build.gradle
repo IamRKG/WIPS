@@ -1,0 +1,145 @@
+apply from: 'dependencies.gradle'
+
+buildscript {
+    repositories {
+        maven {
+            url "http://www.nexus.ford.com/content/groups/public/"
+        }
+        maven {
+            url "http://www.nexus.ford.com/content/repositories/ford_experimental_repository/"
+        }
+    }
+    dependencies{
+        classpath "com.ford.it.gradle.plugin:FordGradlePlugins:1.0.0-SNAPSHOT"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:1.2"
+    }
+}
+if (project.hasProperty('runSonarqube')){
+    apply plugin: 'org.sonarqube'
+   sonarqube {
+       properties {
+           property "sonar.projectKey", "com.ford.purchasing.wips:WIPSWeb_WMMobile_PCS_GRADLE_DEV"
+           property "sonar.projectName", "WIPSWeb_WMMobile_PCS_GRADLE_DEV Project"
+       }
+   }
+}
+
+allprojects {
+    apply plugin: 'eclipse-wtp'
+    apply plugin: 'maven'
+    apply plugin: 'jacoco'
+    apply plugin: 'java'
+    
+    group = 'com.ford.purchasing.wips'
+    version = ""
+
+    repositories {
+    
+        maven {
+            url "http://www.nexus.ford.com/content/groups/public/"
+        }
+        maven {
+            url "http://www.nexus.ford.com/content/repositories/ford_experimental_repository/"
+        }
+    }
+    
+    if(!ubuildName.equals("wips") && !ubuildVersion.equals("1.0.0") && !ubuildEnv.equals("desktop")){
+        buildForHteam = true
+        version = ""
+    }
+
+    eclipse.classpath.downloadSources=true
+
+    pluginManager.withPlugin('fordWasServer') {
+        fordWasServer {
+            wasVersion = "8.0"
+            serverName = "WipsServer"
+       }
+    }
+    
+    jacoco {
+    	toolVersion = "0.7.4.201502262128"
+  	}
+    test {
+        jacoco {
+            append = false
+            destinationFile = file("$buildDir/jacoco/jacoco.exec")
+        }
+    }
+    jacocoTestReport {
+        group = "verification" 
+        description = "Generates the code coverage result"
+        dependsOn 'test'
+        reports {
+            xml.enabled true
+            xml.destination "${buildDir}/jacoco/test/jacoco.xml"
+            html.destination "${buildDir}/jacocoHtml"
+        }
+    }
+}
+
+
+configure(subprojects - project(":WipsEar")) {
+    apply plugin: 'fordJava'
+    
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    
+    test.doFirst {
+        copy {
+            from project.buildDir.getAbsolutePath()+'/resources/main/META-INF/beans.xml'
+            into project.buildDir.getAbsolutePath()+'/classes/main/META-INF'
+       }
+    }
+
+   task copyToLib(type: Copy) {
+       into "$buildDir/output/lib"
+       from configurations.runtime
+    }
+    
+    //sets test output folder to test-bin
+    eclipse.classpath.file.whenMerged { 
+        classpath -> classpath.entries.findAll{it instanceof org.gradle.plugins.ide.eclipse.model.SourceFolder &&
+        it.path.startsWith("src/test/")}*.output = "test-bin" 
+    }
+
+
+    //Gradle has a bug in eclipse that includes test dependencies in war
+    eclipse.classpath.file.withXml {
+        xml -> def node = xml.asNode()
+        (configurations.testCompile - configurations.compile).each { 
+            dependency -> def nodeToBeRemoved = node.find { it.@path == "${dependency.path.replace('\\', '/')}" }
+            if(nodeToBeRemoved != null) {
+                node.remove(nodeToBeRemoved)
+            }
+            System.out.println("dependency Path:" + dependency.path)
+            //node.appendNode( 'classpathentry', [ kind: 'lib', path: "$dependency.path"])
+        }
+        node.each {System.out.println("node Path:" + it.@path)}            
+    }
+}
+
+task mergeJacoco(type: JacocoMerge) {
+     executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec").exclude("WipsUIWeb")
+     destinationFile = file("${buildDir}/../jacoco.exec")
+     jacocoClasspath = fileTree(project.rootDir.absolutePath).include("**/jacoco-lib/*.jar").exclude("WipsUIWeb")
+}
+task dropEar(type: Copy){
+    from 'WipsEar/build/libs'
+    into 'WipsServer/servers/WipsServer_WLP/dropins'
+}
+task buildAndDropEAR(dependsOn: ['build']){
+    group = "deployment"
+    doLast{tasks.dropEar.execute()}
+}
+
+task cleanBuildAndDropEAR(){
+	group = "deployment"
+	dependsOn 'clean'
+	dependsOn 'buildAndDropEAR'
+}
+build.mustRunAfter clean
+buildAndDropEAR.mustRunAfter build
+
+apply plugin: 'fordWasServer'
+apply from: 'distribution.gradle'

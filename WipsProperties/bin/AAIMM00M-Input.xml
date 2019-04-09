@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<DataArea name="TP-INPUT-BUFFER">
+- <DataArea name="TP-INPUT-FIELDS">
+  <Parameter name="TPI-IOINDIC" pic="X" /> 
+  <Parameter name="TPI-PFKEY" pic="99" /> 
+  <Parameter name="TPI-PAGENO" pic="X(2)" /> 
+  <Parameter name="TPI-OPTION" pic="X(3)" /> 
+  <Parameter name="TPI-ALTCODE" pic="X(4)" /> 
+  </DataArea>
+  </DataArea>

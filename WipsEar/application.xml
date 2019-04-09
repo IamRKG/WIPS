@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="Application_ID" version="6"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd">
+	<display-name>WipsEAR</display-name>
+	<module id="Module_1453817911082">
+		<web>
+			<web-uri>WipsUIWeb.war</web-uri>
+			<context-root>WipsUIWeb</context-root>
+		</web>
+	</module>
+	<module id="Module_1453817925982">
+		<web>
+			<web-uri>WipsWeb.war</web-uri>
+			<context-root>WipsWeb</context-root>
+		</web>
+	</module>
+
+	<security-role>
+		<role-name>AllUsers</role-name>
+	</security-role>
+
+</application>

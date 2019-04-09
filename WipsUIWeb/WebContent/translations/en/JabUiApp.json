@@ -1,0 +1,349 @@
+{
+  "application": {
+	"title": "Purchasing - WIPS",
+	"shortTitle": "WIPS",
+	"copyright": "© 2015 Ford Motor Company. All rights reserved.",
+	"navigation": {
+	  "toggleTitle": "Toggle navigation",
+	  "links": {
+		"authenticate": "Authenticate",
+		"home": "Home",
+		"bookings": {
+		  "main": "Bookings",
+		  "create": "Create Booking",
+		  "search": "Search Bookings"
+		},
+		"agents": "Manage Agents",
+		"resources": {
+		  "main": "Resources",
+		  "statistics": "Booking Statistics"
+		},
+		"role": "Choose Role:",
+		"language": "Choose Language:",
+		"ok": "Ok",
+		"cancel": "Cancel"
+	  }
+	},
+	"welcomePhrase": "Welcome {{firstName}} {{lastName}} ({{cdsid}})",
+	"role": {
+	  "label": "Role:",
+	  "customer": "Customer",
+	  "agent": "Booking Agent"
+	},
+	"language": {
+	  "label": "Language:",
+	  "title": "Select Language",
+	  "instructions": "Select the language you wish to use for this application.",
+	  "english": "English",
+	  "chinese": "Chinese",
+	  "russian": "Russian"
+	},
+	"errors": {
+	  "wslError": "The application encountered an error with WSL authentication. It will continue in offline mode, using local cached data, unless you click the red 'nonAuthenticated' text in the heading to reauthenticate.",
+	  "isRequiredError": "is required.",
+	  "isInvalidError": "Please enter a valid"
+	},
+	"buttons": {
+	  "create": "Create ",
+	  "search": "Search ",
+	  "delete": "Delete ",
+	  "yes": "Yes",
+	  "no": "No"
+	}
+  },
+  "conflictNotification": {
+	"unableToUpdate": "Unable to Update {{item}}",
+	"unableToDelete": "Unable to Delete {{item}}",
+	"recordUpdatedConflict": "The {{item}} you are editing has been updated by someone else. Click 'Ok' to refresh the latest data and make your changes again.",
+	"recordDeletedConflict": "The {{item}} you are editing has been deleted by someone else. Click 'Ok' to return to the List Booking page.",
+	"offlineUpdateConflict": "The following {{item}} could not be updated because another user has edited {{pronoun}} while you were offline.",
+	"offlineDeleteConflict": "The following {{item}} could not be deleted because another user has deleted {{pronoun}} while you were offline."
+  },
+  "login" : {
+ 	 "racfId": "RACF ID",
+ 	 "password" : "Password",
+ 	 "loginBtn" : "Login"
+  },
+  "booking": {
+	"type": "Booking",
+	"types": "Bookings",
+	"selectedTypes": "Selected Bookings",
+	"listBooking": {
+	  "title": "List Bookings",
+	  "instructions": "The existing bookings are listed below. You may create new bookings or search for existing ones.",
+	  "customerTitle": "Bookings for {{email}} ({{lastName}}, {{firstName}})",
+	  "customerInstructions": "Your bookings are listed below. Please contact your agent for information about updating or canceling your bookings.",
+	  "subTitle": "Bookings",
+	  "bookingsFailed": "Failed to get bookings: {{error}}"
+	},
+	"deleteBooking": {
+	  "deleteSuccess": "{{numberOfBookings}} booking(s) have been successfully deleted.",
+	  "deleteFailed": "Failed to delete booking(s): {{error}}",
+	  "title": "Delete Bookings",
+	  "instructions": "The following bookings will be deleted. This action cannot be undone. Are you sure you wish to continue?"
+	},
+	"updateBooking": {
+	  "title": "Update Booking",
+	  "headerText": "Select Booking Options",
+	  "instruction": "Use this form to update your booking options.",
+	  "save": "Save",
+	  "updateSuccess": "Booking {{id}} has been successfully updated.",
+	  "updateFailed": "Failed to update booking.",
+	  "unableToUpdate": "Unable to Update Booking",
+	  "unableToDelete": "Unable to Delete Booking",
+	  "recordUpdatedConflict": "The Booking you are editing has been updated by someone else. Click 'Ok' to refresh the latest data and make your changes again.",
+	  "recordDeletedConflict": "The Booking you are editing has been deleted by someone else. Click 'Ok' to return to the List Booking page.",
+	  "offlineUpdateConflict": "The following Booking could not be updated because another user has edited it while you were offline.",
+	  "offlineDeleteConflict": "The following Booking could not be deleted because another user has deleted it while you were offline."
+	},
+	"viewBooking": {
+	  "headerText": "Booking Details",
+	  "bookingOptions": "Booking Options",
+	  "flightDetails": "Flight Details",
+	  "adventure": "Adventure",
+	  "customerInfo": "Customer Information",
+	  "flightInfo": "Flight Information",
+	  "edit": "Edit",
+	  "type": "Type",
+	  "includedActivities": "Included Activities",
+	  "name": "Name",
+	  "address": "Address",
+	  "phone": "Phone",
+	  "backToPrevious": "<- Back to Previous"
+	},
+	"searchBooking": {
+	  "headerText": "Search for Bookings",
+	  "criteria": {
+		"header": "Search Bookings",
+		"instruction": "Please specify your search criteria and click 'Search'.",
+		"customers": "Customer(s)",
+		"adventureTypes": "Adventure Type(s)",
+		"customerEmails": "Customer Email(s)"
+	  },
+	  "results": {
+		"header": "Search Results",
+		"instruction": "Please enjoy these results tailored to your query.",
+		"modifySearch": "Modify Search",
+		"newSearch": "New Search",
+		"delete": "Delete Booking",
+		"actions": "Actions",
+		"telephone": "Telephone",
+		"totalPrice": "Total Price",
+		"dailyPrice": "Daily Price",
+		"numberOfDays": "Number of Days",
+		"adventureName": "Adventure Name",
+		"endDate": "End Date",
+		"startDate": "Start Date",
+		"bookingDetails": "Booking Details",
+		"confirmationNumber": "Booking Confirmation Number",
+		"selectBooking": "Select Booking",
+		"includedActivities": "Included Activities",
+		"returningFlightNumber": "Returning Flight #",
+		"departingFlightNumber": "Departing Flight #",
+		"updateBookingOptions": "Update Booking Options",
+		"updateFlightInformation": "Update Flight Information",
+		"bookingInformation": "Booking Information",
+		"view": "View Details",
+		"deleteSelectedBookings": "Delete Selected Bookings",
+		"noResultsAvailableMessage": "The results of this search are no longer available.  Please ",
+		"noResultsAvailableMessageLink": "return to the search criteria",
+		"noResultsAvailableMessageContinued": " and try your search again.",
+		"resultsPerPage": "Results per page: ",
+		"showingResultsInfo": "Showing Results: "
+	  },
+	  "cancel": "Cancel",
+	  "search": "Search",
+	  "noResultsFoundMessage": "No results matched your criteria.  Please adjust your criteria and try again."
+	},
+	"createBooking": {
+	  "title": "Create Booking",
+	  "previous": "Previous",
+	  "cancel": "Cancel",
+	  "continue": "Continue",
+	  "bookAdventure": "Book Adventure",
+	  "pleaseWait": "Please wait...",
+	  "enterNewCustomer": "Enter New Customer",
+	  "useExistingCustomer": "Use Existing Customer",
+	  "custInfo": "Customer Information",
+	  "email": "Customer Email",
+	  "custName": "Name",
+	  "firstName": "First Name",
+	  "lastName": "Last Name",
+	  "streetAddress": "Street Address",
+	  "streetAddress1": "Street Address 1",
+	  "streetAddress2": "Street Address 2",
+	  "custCountry": "Country",
+	  "custState": "State",
+	  "custCity": "City",
+	  "postalCode": "US Zip Code",
+	  "custTelephone": "Telephone",
+	  "custNotes": "Notes",
+	  "notesPlaceholder": "Enter your message here",
+	  "adventureType": "Adventure Type",
+	  "adventure": "Adventure",
+	  "selectedAdventure": "Selected Adventure",
+	  "bookingOptions": "Booking Options",
+	  "anyPrice": "Any",
+	  "location": "Location",
+	  "dailyPrice": "Daily Price",
+	  "activities": "Included Activities",
+	  "startDate": "Start Date",
+	  "endDate": "End Date",
+	  "numberOfDays": "No. of Days",
+	  "totalPrice": "Total Price",
+	  "flightInformation": "Flight Information",
+	  "flightDeparting": "Departing",
+	  "flightReturning": "Returning",
+	  "airline": "Airline",
+	  "flightNumber": "Flight Number",
+	  "departureTime": "Departure Time",
+	  "arrivalTime": "Arrival Time",
+	  "flightPrice": "Price",
+	  "flightSelection": "Flight selection",
+	  "flightMaxPrice": "Flight Maximum Price",
+	  "stepOne": {
+		"header": "Step 1 of 6: Enter Customer Information",
+		"instruction": "Begin by entering the customer's email address."
+	  },
+	  "stepTwo": {
+		"header": "Step 2 of 6: Select Adventure",
+		"instruction": "Select an adventure type and a corresponding adventure."
+	  },
+	  "stepThree": {
+		"header": "Step 3 of 6: Select Booking Options",
+		"instruction": "Specify the start and end dates for this adventure."
+	  },
+	  "stepFour": {
+		"header": "Step 4 of 6: Select Departing Flight",
+		"instruction": "Departing on"
+	  },
+	  "stepFive": {
+		"header": "Step 5 of 6: Select Returning Flight",
+		"instruction": "Returning on"
+	  },
+	  "stepSix": {
+		"header": "Step 6 of 6: Review Details",
+		"instruction": "Review the booking details below. To make corrections, click on the previous button. If all details are correct, click Book Adventure."
+	  },
+	  "createSuccess": "Booking {{bookingID}} has been successfully created.",
+	  "createFailed": "Failed to create booking: {{error}}",
+	  "countriesFailed": "Failed to get countries: {{error}}",
+	  "statesFailed": "Failed to get states: {{error}}",
+	  "citiesFailed": "Failed to get cities: {{error}}",
+	  "customersFailed": "Failed to get customers: {{error}}",
+	  "adventureTypesFailed": "Failed to get adventure types: {{error}}",
+	  "adventuresFailed": "Failed to get adventures: {{error}}",
+	  "departingFlightsFailed": "Failed to get departing flights: {{error}}",
+	  "returningFlightsFailed": "Failed to get returning flights: {{error}}",
+	  "validationErrors": "Errors found on this page. Please see below for details.",
+	  "adventureQueuedLocally": "{{customerEmailId}}'s {{adventureType}} adventure beginning on {{startDay}} queued for save locally."
+	},
+	"actions": "Actions",
+	"customerName": "Customer Name",
+	"confirmationNumber": "Booking Confirmation Number",
+	"adventure": "Adventure",
+	"startDate": "Start Date",
+	"numDays": "# of Days"
+  },
+  "agent": {
+	"type": "Agent",
+	"types": "Agents",
+	"selectedTypes": "Selected Agents",
+	"actions": "Actions",
+	"name": "Name",
+	"gender": "Gender",
+	"male": "Male",
+	"female": "Female",
+	"birthYear": "Birth Year",
+	"mostRecentCertificationYear": "Most Recent Certification Year",
+	"listAgent": {
+	  "title": "Manage Agents",
+	  "instruction": "A list of travel agents appears below. You can create a new agent or update an existing agent.",
+	  "filterOptions": "Filter Options",
+	  "apply": "Apply ",
+	  "clear": "Clear ",
+	  "filter": "Filter",
+	  "createNewAgent": "Create New Agent",
+	  "bookingPerPage": "Bookings Per Page",
+	  "showingBookings": "Showing Bookings",
+	  "deleteAgent": "Delete Agent",
+	  "deleteSelectedAgents": "Delete Selected Agents"
+	},
+	"updateAgent": {
+	  "title": "Update Agent",
+	  "updateSuccess": "Agent {{name}} has been successfully updated.",
+	  "updateFailed": "Failed to update agent: {{error}}",
+	  "unableToUpdate": "Unable to Update Agent",
+	  "unableToDelete": "Unable to Delete Agent",
+	  "recordUpdatedConflict": "The agent you are editing has been updated by someone else.  Click 'Ok' to refresh the latest data and make your changes again.",
+	  "recordDeletedConflict": "The agent you are editing has been deleted by someone else. Click 'Ok' to return to the List Agents page.",
+	  "offlineUpdateConflict": "The following agent could not be updated because another user has edited them while you were offline.",
+	  "offlineDeleteConflict": "The following agent could not be deleted because another user has deleted them while you were offline."
+	},
+	"createAgent": {
+	  "title": "Create Agent",
+	  "reviewDetails": "Review Agent Details",
+	  "details": "Agent Details",
+	  "instruction": "Specify the following information for a travel agent.",
+	  "reviewInstruction": "Review the agent details below. To make corrections, click on the previous button. If all details are correct, click 'Save.'",
+	  "name": "Name",
+	  "firstName": "First Name",
+	  "lastName": "Last Name",
+	  "gender": "Gender",
+	  "male": "Male",
+	  "female": "Female",
+	  "birthYear": "Birth Year",
+	  "skills": "Skills",
+	  "cert": "Certification",
+	  "certifications": "Certifications",
+	  "certificationsInstruction": "Use the \"Add Certification\" button to add a new certification for agent - {{firstName}} {{lastName}}.",
+	  "continue": "Continue",
+	  "previous": "Previous",
+	  "save": "Save",
+	  "cancel": "Cancel",
+	  "step1": "Step 1 of 3: Enter Agent Details",
+	  "step2": "Step 2 of 3: Add Certifications",
+	  "step3": "Step 3 of 3: Review Details",
+	  "createSuccess": "Agent {{name}} has been successfully created.",
+	  "createFailed": "Failed to create agent: {{error}}",
+	  "birthYearError": "Please enter a valid birth year.",
+	  "birthYearInValidError": "Birth Year must be after 1900.",
+	  "birthYearBefore18Error": "The agent must be at least 18 years old.",
+	  "addCertification": "Add Certification",
+	  "invalidCertificationError": "The Birth Year must be before the Certification Year.",
+	  "certification": {
+		"title": "Add Certification",
+		"details": "Certification Details",
+		"instructions": "Please enter the certification information below.",
+		"year": "Certification Year",
+		"comments": "Comments",
+		"certificationLevels": "Certification Levels",
+		"saveCertification": "Save Certification",
+		"cancel": "Cancel",
+		"notFound": "No Records Found",
+		"removeTitle": "Delete Certification",
+		"removeMessage": "Please confirm removal of this certification. This action cannot be undone.",
+		"removeCertification": "Delete",
+		"edit": "Edit",
+		"delete": "Delete",
+		"none": "None",
+		"table": {
+		  "year": "Year",
+		  "actions": "Actions",
+		  "level": "Level",
+		  "comments": "Comments"
+		}
+	  }
+	},
+	"deleteAgent": {
+	  "deleteSuccess": "{{numberOfAgents}} agents(s) have been successfully deleted.",
+	  "deleteFailed": "Failed to delete agents(s): {{error}}",
+	  "title": "Delete Agents",
+	  "instructions": "The following agents will be deleted. This action cannot be undone. Are you sure you wish to continue?"
+	}
+  },
+  "actions": {
+	"selectAll": "Select All",
+	"selectNone": "Select None"
+  }
+}
